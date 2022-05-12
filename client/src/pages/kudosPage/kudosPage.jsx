@@ -40,6 +40,7 @@ function kudosPage() {
 
   const [data, setData] = useState([]);
 
+  // ====== RETRIEVE THE DATA FROM THE SERVER ======
   useEffect(() => {
     axios({
       method: "get",
@@ -55,60 +56,56 @@ function kudosPage() {
   if (data) {
     kudosCards = data.map((k) => {
       return (
-        <body sx={{  my: 2, mx: 1 }}>
-          <div>
-            <Header />
-          </div>
-          <div>
-            <Card sx={{ maxWidth: 345, my: 2, mx: 1 }}>
-              <CardHeader
-                avatar={
-                  <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                    {k.name[0]}
-                  </Avatar>
-                }
-                action={
-                  <IconButton aria-label="settings">
-                    <MoreVertIcon />
-                  </IconButton>
-                }
-                title={k.name}
-                subheader={k.timestamp}
-              />
-              <CardMedia
-                component="img"
-                height="194"
-                image={k.image}
-                alt="Paella dish"
-              />
-              <CardContent>
-                <Typography variant="body2" color="text.secondary">
-                  {k.text}
-                </Typography>
-              </CardContent>
-              <CardActions disableSpacing>
-                <IconButton aria-label="add to favorites">
-                  <FavoriteIcon />
-                </IconButton>
-                <IconButton aria-label="share">
-                  <ShareIcon />
-                </IconButton>
-              </CardActions>
-            </Card>
-          </div>
-        </body>
+        <Card sx={{ maxWidth: 345, my: 2, mx: 1 }}>
+          <CardHeader
+            avatar={
+              <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                {k.name[0]}
+              </Avatar>
+            }
+            action={
+              <IconButton aria-label="settings">
+                <MoreVertIcon />
+              </IconButton>
+            }
+            title={k.name}
+            subheader={k.timestamp}
+          />
+          <CardMedia
+            component="img"
+            height="194"
+            image={k.image}
+            alt="Paella dish"
+          />
+          <CardContent>
+            <Typography variant="body2" color="text.secondary">
+              {k.text}
+            </Typography>
+          </CardContent>
+          <CardActions disableSpacing>
+            <IconButton aria-label="add to favorites">
+              <FavoriteIcon />
+            </IconButton>
+            <IconButton aria-label="share">
+              <ShareIcon />
+            </IconButton>
+          </CardActions>
+        </Card>
       );
     });
   }
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-      }}
-    >
-      {kudosCards}
-    </Box>
+    <>
+      <Header />
+      <Box
+        sx={{
+          display: "flex",
+        }}
+      >
+        {kudosCards}
+      </Box>
+    </>
   );
 }
 
