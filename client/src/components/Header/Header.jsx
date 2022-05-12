@@ -38,7 +38,7 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="static" color="secondary" sx={{  }} >
+    <AppBar position="static" color="secondary" sx={{ width:'95%', mx:'.5rem', my:'.5rem' }} >
       <Container variant="contained" maxWidth="xl">
         <Toolbar disableGutters>
           <CelebrationIcon
