@@ -6,17 +6,17 @@ import IconButton from "@mui/material/IconButton";
 import AddBoxIcon from "@mui/icons-material/AddBox";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-// import MenuIcon from '@mui/icons-material/Menu';
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
-// import Button from '@mui/material/Button';
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import CelebrationIcon from "@mui/icons-material/Celebration";
+import { Button } from "@mui/material";
+// import MenuIcon from '@mui/icons-material/Menu';
+// import Button from '@mui/material/Button';
 
-// const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ["Dashboard", "Logout"];
-const creates = [];
+// const creates = [];
 
 const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -40,82 +40,50 @@ const Header = () => {
   return (
     <AppBar
       position="relative"
-      color="secondary"
+      color="grey"
       sx={{
         width: "95%",
         mx: ".5rem",
         my: ".5rem",
         borderRadius: ".25rem",
         boxShadow: "10px -5px 10px #ccc, -20px -20px 100px #fff",
+        background:
+          "linear-gradient(90deg, rgba(255,255,255,1) 20%, rgba(183,203,231,1) 40%, rgba(166,210,208,1) 65%, rgba(236,188,171,1) 95%)",
       }}
     >
-      <Container variant="contained" maxWidth="xl">
+      <Container variant="contained" maxWidth="xl" sx={{
+        p:'0.5rem',}}>
         <Toolbar disableGutters>
-          <CelebrationIcon
-            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
-          />
-          <Typography
+          <Box
             variant="h6"
             noWrap
             component="a"
             href="/"
             sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
+              justifyContent:'space-between',
+              display: { xs: "none", md: "flex", lg: "flex" },
+              fontFamily: "Titillium Web",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+              color: "#008996",
               textDecoration: "none",
             }}
           >
-            KUDOS
-          </Typography>
-
-          {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
+            <CelebrationIcon
               sx={{
-                display: { xs: 'block', md: 'none' },
+                display: { xs: "none", md: "flex" },
+                mr: 1,
+                color: "#FF8B53",
               }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box> */}
-          <CelebrationIcon
-            sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
-          />
-          <Typography
+            />
+            <Typography>KUDOS</Typography>
+          </Box>
+
+          <Box
+            component="a"
+            href="/kudos"
             variant="h5"
             noWrap
-            component="a"
-            href=""
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -123,29 +91,31 @@ const Header = () => {
               fontFamily: "Titillium Web",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+              color: "#008996",
               textDecoration: "none",
             }}
           >
-            KUDOS
-          </Typography>
-          {/* <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box> */}
+            <CelebrationIcon
+              sx={{
+                display: { xs: "flex", md: "none" },
+                mr: 1,
+                color: "#FF8B53",
+              }}
+            />
+            <Typography>KUDOS</Typography>
+          </Box>
 
-          <Box sx={{ display: "flex", flexDirection: "row" }}>
+          <Box
+            sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
+          >
             <Box sx={{ flexGrow: 0, md: "flex" }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                  <Avatar
+                    alt="Nathaniel Neufeld"
+                    src="/static/images/avatar/2.jpg"
+                    sx={{ bgcolor: "#FF8B53" }}
+                  />
                 </IconButton>
               </Tooltip>
               <Menu
@@ -171,15 +141,27 @@ const Header = () => {
                 ))}
               </Menu>
             </Box>
-            <Box sx={{ flexGrow: 0, md: "flex", lg: "flex" }}>
-              <Tooltip title="Create Kudo">
+            <Button
+              variant="contained"
+              fontSize="xlarge"
+              sx={{
+                fontSize: 20,
+                padding: 1,
+                ml: ".5rem",
+                md: "flex",
+                lg: "flex",
+                color: "#778FC2",
+                bgcolor: "white",
+              }}
+              startIcon={
                 <AddBoxIcon
-                  fontSize="large"
                   onClick={"/create"}
-                  sx={{ pt: ".2rem" }}
+                  sx={{ width:'100', m:'0', padding:0, color: "#778FC2" }}
                 ></AddBoxIcon>
-              </Tooltip>
-            </Box>
+              }
+            >
+              KUDO!
+            </Button>
           </Box>
         </Toolbar>
       </Container>

@@ -8,13 +8,11 @@ import CardActions from "@mui/material/CardActions";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import { red } from "@mui/material/colors";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ShareIcon from "@mui/icons-material/Share";
+import SentimentVerySatisfiedSharpIcon from '@mui/icons-material/SentimentVerySatisfiedSharp';
+import CommentIcon from '@mui/icons-material/Comment';
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import axios from "axios";
 import { API_URL } from "../../App";
-import { shadows } from '@mui/system';
 import Header from "../../components/Header/Header";
 // import { styled } from "@mui/material/styles";
 // import Collapse from "@mui/material/Collapse";
@@ -75,7 +73,7 @@ function kudosPage() {
         >
           <CardHeader
             avatar={
-              <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+              <Avatar sx={{ bgcolor: '#008996' }} aria-label="recipe">
                 {k.name[0]}
               </Avatar>
             }
@@ -99,12 +97,12 @@ function kudosPage() {
               {k.text}
             </Typography>
           </CardContent>
-          <CardActions disableSpacing>
-            <IconButton aria-label="add to favorites">
-              <FavoriteIcon />
+          <CardActions sx={{ display:'flex', justifyContent:'space-between' }}>
+            <IconButton aria-label="like">
+              <SentimentVerySatisfiedSharpIcon />
             </IconButton>
-            <IconButton aria-label="share">
-              <ShareIcon />
+            <IconButton aria-label="comment">
+              <CommentIcon sx={{  }} />
             </IconButton>
           </CardActions>
         </Card>
@@ -113,7 +111,7 @@ function kudosPage() {
   }
 
   return (
-    <>
+    <Box sx={{  }} >
       <Header />
       <Box
         sx={{
@@ -124,7 +122,7 @@ function kudosPage() {
       >
         {kudosCards}
       </Box>
-    </>
+    </Box>
   );
 }
 

@@ -1,6 +1,10 @@
+
 body {
   margin: 0;
-  font-family: 'Titillium Web', sans-serif;
+
+  /* ===== trying to import a google font ===== */
+  font-family: 'Macondo', sans-serif;
+  src: url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

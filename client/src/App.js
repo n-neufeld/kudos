@@ -16,7 +16,7 @@ function App() {
     <Router className="App">
       <Switch>
         {/* {loginPage} */}
-        <Route path="/" exact component="/"></Route> 
+        <Route path="/" exact component="/login"></Route> 
         {/* {createAccount} */}
         <Route path="/create-account" component="/"></Route>
         
