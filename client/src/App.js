@@ -14,15 +14,18 @@ function App() {
   return (
     <Router className="App">
       <Switch>
-        <Route path="/" exact component="/"></Route> {/* {loginPage} */}
-        <Route path="/create-account" component="/"></Route>{" "}
+        {/* {loginPage} */}
+        <Route path="/" exact component="/"></Route> 
         {/* {createAccount} */}
-        <Route path="/kudos" component={kudosPage}></Route> {/* {kudosPage} */}
-        <Route path="/kudos/:id" exact component="/"></Route> {/* {kudoId} */}
-        <Route path="/comment" exact component="/"></Route>{" "}
+        <Route path="/create-account" component="/"></Route>
+        
+        <Route path="/kudos" component={kudosPage}></Route> 
+        {/* {kudoId} */}
+        <Route path="/kudos/:id" exact component="/"></Route> 
         {/* {commentKudo} */}
-        <Route path="/create-kudo" exact component="/"></Route>{" "}
+        <Route path="/comment" exact component="/"></Route>
         {/* {createKudo} */}
+        <Route path="/create-kudo" exact component="/"></Route>
       </Switch>
     </Router>
   );
