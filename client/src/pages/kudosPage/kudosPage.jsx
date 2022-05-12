@@ -100,7 +100,9 @@ function kudosPage() {
       <Header />
       <Box
         sx={{
-          display: "flex",
+          justifyContent: 'center',
+          display: 'flex',
+          flexWrap: 'wrap',
         }}
       >
         {kudosCards}

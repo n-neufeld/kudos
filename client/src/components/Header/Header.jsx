@@ -1,21 +1,21 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import AddBoxIcon from '@mui/icons-material/AddBox';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import AddBoxIcon from "@mui/icons-material/AddBox";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
 // import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
+import Container from "@mui/material/Container";
+import Avatar from "@mui/material/Avatar";
 // import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import CelebrationIcon from '@mui/icons-material/Celebration';
+import Tooltip from "@mui/material/Tooltip";
+import MenuItem from "@mui/material/MenuItem";
+import CelebrationIcon from "@mui/icons-material/Celebration";
 
 // const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Dashboard', 'Logout'];
+const settings = ["Dashboard", "Logout"];
 const creates = [];
 
 const Header = () => {
@@ -38,10 +38,12 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" color="secondary" sx={{  }} >
       <Container variant="contained" maxWidth="xl">
         <Toolbar disableGutters>
-          <CelebrationIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <CelebrationIcon
+            sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+          />
           <Typography
             variant="h6"
             noWrap
@@ -49,12 +51,12 @@ const Header = () => {
             href="/"
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
+              display: { xs: "none", md: "flex" },
+              fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
           >
             KUDOS
@@ -96,7 +98,9 @@ const Header = () => {
               ))}
             </Menu>
           </Box> */}
-          <CelebrationIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <CelebrationIcon
+            sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
+          />
           <Typography
             variant="h5"
             noWrap
@@ -104,13 +108,13 @@ const Header = () => {
             href=""
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'none' },
+              display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: 'monospace',
+              fontFamily: "Titillium Web",
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
           >
             KUDOS
@@ -127,68 +131,48 @@ const Header = () => {
             ))}
           </Box> */}
 
-          
-
-          <Box sx={{ flexGrow: 0, md: 'flex'  }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
+          <Box sx={{ display:'flex', flexDirection:'row'}} >
+            <Box sx={{ flexGrow: 0, md: "flex" }}>
+              <Tooltip title="Open settings">
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                </IconButton>
+              </Tooltip>
+              <Menu
+                sx={{ mt: "45px" }}
+                id="menu-appbar"
+                anchorEl={anchorElUser}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}
+              >
+                {settings.map((setting) => (
+                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">{setting}</Typography>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
+            <Box sx={{ flexGrow: 0, md: "flex", lg: "flex" }}>
+              <Tooltip title="Create Kudo">
+                <AddBoxIcon
+                  fontSize="large"
+                  onClick={'/create'}
+                  sx={{ pt:'.2rem' }}
+                >
+                </AddBoxIcon>
+              </Tooltip>
+              
+            </Box>
           </Box>
-          <Box sx={{ flexGrow: 0, md: 'flex', lg: 'flex', flexDirection: 'row-reverse'  }}>
-            <Tooltip title="Open creates">
-              <AddBoxIcon fontSize='large' onClick={handleOpenUserMenu} sx={{ pl: 1 }}>
-                {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" /> */}
-              </AddBoxIcon>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {creates.map((create) => (
-                <MenuItem key={create} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{create}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          
-
         </Toolbar>
       </Container>
     </AppBar>
