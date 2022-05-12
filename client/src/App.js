@@ -9,6 +9,7 @@ import React from "react";
 import kudosPage from "./pages/kudosPage/kudosPage";
 
 export const API_KEY = "8805a904-196b-4285-8a8c-50e4dedaed47";
+export const API_URL = 'http://localhost:8080';
 
 function App() {
   return (
