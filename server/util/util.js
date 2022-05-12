@@ -13,6 +13,6 @@ function writeJSONFile(content) {
 }
 
 module.exports = {
-    writeJSONFile,
-    setNewId
+  writeJSONFile,
+  setNewId,
 };

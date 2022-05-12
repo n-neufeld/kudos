@@ -1,10 +1,11 @@
-const express = require('express');
-const cors = require('cors');
+const express = require("express");
+const cors = require("cors");
 const app = express();
-const kudoRoutes = require('./routes/kudoRoutes');
+
+const kudoRoutes = require("./routes/kudoRoutes");
 
 // <=====> port configuration <=====>
-require('dotenv').config();
+require("dotenv").config();
 const PORT = process.env.PORT || 8080;
 
 // <=====> allows access to my local host <=====>
@@ -17,9 +18,9 @@ app.use(cors());
 //   next();
 // });
 
-app.get("/", (req, res) => {
-    res.send("This is the API documentation")
-})
+// app.get("/", (req, res) => {
+//   res.send("This is the API documentation");
+// });
 
 app.use("/kudos", kudoRoutes);
 

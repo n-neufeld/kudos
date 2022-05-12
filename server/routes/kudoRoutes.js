@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const util = require("../util/util");
-const kudosFile = ("../data/kudos.json");
+const kudosFile = "../data/kudos.json";
 const kudos = require(kudosFile);
 
 // router.use((req, res, next) => {
@@ -18,7 +18,7 @@ function readJSONFile() {
 
 // <=====> ROUTE FOR GETTING ALL KUDOS <=====>
 router.get("/", (_req, res) => {
-  const kudos = readJSONFile()
+  const kudos = readJSONFile();
   res.status(200).json(kudos);
 });
 
@@ -55,11 +55,11 @@ router.get("/:id", (req, res) => {
   }
 });
 
-
 router.post("/create", (req, res) => {
   const kudosList = readJSONFile();
 
-  if (!req.body.title) { //<======== turnary?
+  if (!req.body.title) {
+    //<======== turnary?
     return res.status(400);
   }
   if (!req.body.description) {
