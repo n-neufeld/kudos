@@ -51,8 +51,13 @@ const Header = () => {
           "linear-gradient(90deg, rgba(255,255,255,1) 20%, rgba(183,203,231,1) 40%, rgba(166,210,208,1) 65%, rgba(236,188,171,1) 95%)",
       }}
     >
-      <Container variant="contained" maxWidth="xl" sx={{
-        p:'0.5rem',}}>
+      <Container
+        variant="contained"
+        maxWidth="xl"
+        sx={{
+          p: "0.5rem",
+        }}
+      >
         <Toolbar disableGutters>
           <Box
             variant="h6"
@@ -60,7 +65,7 @@ const Header = () => {
             component="a"
             href="/"
             sx={{
-              justifyContent:'space-between',
+              justifyContent: "space-between",
               display: { xs: "none", md: "flex", lg: "flex" },
               fontFamily: "Titillium Web",
               fontWeight: 700,
@@ -143,22 +148,22 @@ const Header = () => {
             </Box>
             <Button
               variant="contained"
-              fontSize="xlarge"
               sx={{
-                fontSize: 15,
+                fontSize: 16,
                 padding: 1,
                 ml: ".5rem",
                 md: "flex",
                 lg: "flex",
                 color: "#778FC2",
                 bgcolor: "white",
-                borderTopLeftRadius: '5rem',
-                borderBottomLeftRadius: '5rem',
+                borderTopLeftRadius: "5rem",
+                borderBottomLeftRadius: "5rem",
+                borderBottomRightRadius: "5rem",
               }}
               startIcon={
                 <AddBoxIcon
                   onClick={"/create"}
-                  sx={{ width:'100', m:'0', padding:0, color: "#778FC2" }}
+                  sx={{ size: "large", m: "0", padding: 0, color: "#778FC2" }}
                 ></AddBoxIcon>
               }
             >
