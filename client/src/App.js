@@ -7,6 +7,7 @@ import React from "react";
 // import commentKudo from "./pages/commentKudo/commentKudo";
 // import createKudo from "./pages/createKudo/createKudo";
 import kudosPage from "./pages/kudosPage/kudosPage";
+import createKudo from './pages/createKudo/createKudo';
 
 export const API_KEY = "8805a904-196b-4285-8a8c-50e4dedaed47";
 export const API_URL = 'http://localhost:8080';
@@ -26,7 +27,7 @@ function App() {
         {/* {commentKudo} */}
         <Route path="/comment" exact component="/"></Route>
         {/* {createKudo} */}
-        <Route path="/create-kudo" exact component="/"></Route>
+        <Route path="/create-kudo" exact component={createKudo}></Route>
       </Switch>
     </Router>
   );

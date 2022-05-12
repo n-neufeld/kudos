@@ -145,13 +145,15 @@ const Header = () => {
               variant="contained"
               fontSize="xlarge"
               sx={{
-                fontSize: 20,
+                fontSize: 15,
                 padding: 1,
                 ml: ".5rem",
                 md: "flex",
                 lg: "flex",
                 color: "#778FC2",
                 bgcolor: "white",
+                borderTopLeftRadius: '5rem',
+                borderBottomLeftRadius: '5rem',
               }}
               startIcon={
                 <AddBoxIcon
