@@ -14,6 +14,7 @@ import ShareIcon from "@mui/icons-material/Share";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import axios from "axios";
 import { API_URL } from "../../App";
+import { shadows } from '@mui/system';
 import Header from "../../components/Header/Header";
 // import { styled } from "@mui/material/styles";
 // import Collapse from "@mui/material/Collapse";
@@ -56,7 +57,22 @@ function kudosPage() {
   if (data) {
     kudosCards = data.map((k) => {
       return (
-        <Card sx={{ maxWidth: 345, my: 2, mx: 1 }}>
+        <Card
+          sx={{
+            maxWidth: 345,
+            my: 2,
+            mx: 2,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            borderRadius: '1rem',
+            borderTopRightRadius: '0',
+            boxShadow: '10px -5px 10px #ccc, -20px -20px 100px #fff',
+            borderRight:'1px solid #ccc',
+            borderTop:'1px solid #ccc',
+            
+          }}
+        >
           <CardHeader
             avatar={
               <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -72,6 +88,7 @@ function kudosPage() {
             subheader={k.timestamp}
           />
           <CardMedia
+            sx={{ width: "90%" }}
             component="img"
             height="194"
             image={k.image}
@@ -100,9 +117,9 @@ function kudosPage() {
       <Header />
       <Box
         sx={{
-          justifyContent: 'center',
-          display: 'flex',
-          flexWrap: 'wrap',
+          justifyContent: "center",
+          display: "flex",
+          flexWrap: "wrap",
         }}
       >
         {kudosCards}

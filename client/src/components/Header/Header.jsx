@@ -38,7 +38,17 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="static" color="secondary" sx={{ width:'95%', mx:'.5rem', my:'.5rem' }} >
+    <AppBar
+      position="relative"
+      color="secondary"
+      sx={{
+        width: "95%",
+        mx: ".5rem",
+        my: ".5rem",
+        borderRadius: ".25rem",
+        boxShadow: "10px -5px 10px #ccc, -20px -20px 100px #fff",
+      }}
+    >
       <Container variant="contained" maxWidth="xl">
         <Toolbar disableGutters>
           <CelebrationIcon
@@ -131,7 +141,7 @@ const Header = () => {
             ))}
           </Box> */}
 
-          <Box sx={{ display:'flex', flexDirection:'row'}} >
+          <Box sx={{ display: "flex", flexDirection: "row" }}>
             <Box sx={{ flexGrow: 0, md: "flex" }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -165,12 +175,10 @@ const Header = () => {
               <Tooltip title="Create Kudo">
                 <AddBoxIcon
                   fontSize="large"
-                  onClick={'/create'}
-                  sx={{ pt:'.2rem' }}
-                >
-                </AddBoxIcon>
+                  onClick={"/create"}
+                  sx={{ pt: ".2rem" }}
+                ></AddBoxIcon>
               </Tooltip>
-              
             </Box>
           </Box>
         </Toolbar>
