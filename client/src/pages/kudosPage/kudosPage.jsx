@@ -40,7 +40,7 @@ function kudosPage() {
 
   const [data, setData] = useState([]);
 
-  // ====== RETRIEVE THE DATA FROM THE SERVER ======
+  // <====================> RETRIEVE THE DATA FROM THE SERVER <====================>
   useEffect(() => {
     axios({
       method: "get",
@@ -56,6 +56,7 @@ function kudosPage() {
   if (data) {
     kudosCards = data.map((k) => {
       return (
+        // <====================> KUDO CARD <====================>
         <Card
           sx={{
             maxWidth: 345,
@@ -72,6 +73,7 @@ function kudosPage() {
             
           }}
         >
+          {/* <==========> CARD HEADER <==========> */}
           <CardHeader
             avatar={
               <Avatar sx={{ bgcolor: '#008996' }} aria-label="recipe">
@@ -84,8 +86,9 @@ function kudosPage() {
               </IconButton>
             }
             title={k.name}
-            subheader={k.timestamp}
+            subheader={new Date(k.timestamp).toLocaleDateString()}
           />
+          {/* <==========> CARD IMAGE <==========> */}
           <CardMedia
             sx={{ width: "90%" }}
             component="img"
@@ -93,6 +96,7 @@ function kudosPage() {
             image={k.image}
             alt="Paella dish"
           />
+          {/* <==========> CARD COMMENT <==========> */}
           <CardContent>
             <Typography variant="body2" color="text.secondary">
               {k.text}
@@ -117,7 +121,9 @@ function kudosPage() {
       flexDirection: 'column',
       alignItems: 'center',
       }} >
+        {/* <====================> HEADER <====================> */}
       <Header />
+      {/* <====================> CARDS <====================> */}
       <Box
         sx={{
           justifyContent: "center",
