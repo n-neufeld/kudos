@@ -11,7 +11,7 @@ import Typography from "@mui/material/Typography";
 import SentimentVerySatisfiedSharpIcon from "@mui/icons-material/SentimentVerySatisfiedSharp";
 import CommentIcon from "@mui/icons-material/Comment";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import KudoForm from '../../components/KudoForm/KudoForm';
+import KudoForm from "../../components/KudoForm/KudoForm";
 // import axios from "axios";
 // import { API_URL } from "../../App";
 import Header from "../../components/Header/Header";
@@ -43,17 +43,20 @@ function CreateKudo() {
   let kudosCard = [];
 
   return (
-    <Box sx={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-    }}>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
       {/* <====================> HEADER <====================> */}
       <Header />
       {/* <====================> KUDO CARD <====================> */}
       <Card
         sx={{
           maxWidth: 345,
+          minWidth: 300,
           my: 2,
           mx: 2,
           display: "flex",
@@ -66,39 +69,11 @@ function CreateKudo() {
           borderTop: "1px solid #ccc",
         }}
       >
-        {/* <==========> CARD HEADER <==========> */}
-        <CardHeader
-          avatar={
-            <Avatar sx={{ bgcolor: "#008996" }} aria-label="recipe"></Avatar>
-          }
-          action={
-            <IconButton aria-label="settings">
-              <MoreVertIcon />
-            </IconButton>
-          }
-          title="placeholder"
-          subheader="11424234245534"
-        />
-        {/* <==========> CARD IMAGE <==========> */}
-        <CardMedia
-          sx={{ width: "90%" }}
-          component="img"
-          height="194"
-          image="placholder"
-          alt="placeholder image"
-        />
         {/* <==========> CARD COMMENT <==========> */}
         <CardContent>
-          <KudoForm/>
+          <KudoForm />
+          
         </CardContent>
-        <CardActions sx={{ display: "flex", justifyContent: "space-between" }}>
-          <IconButton aria-label="like">
-            <SentimentVerySatisfiedSharpIcon />
-          </IconButton>
-          <IconButton aria-label="comment">
-            <CommentIcon sx={{}} />
-          </IconButton>
-        </CardActions>
       </Card>
     </Box>
   );

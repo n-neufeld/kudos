@@ -34,9 +34,9 @@ import Header from "../../components/Header/Header";
 function KudosPage() {
   const [expanded, setExpanded] = React.useState(false);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+  // const handleExpandClick = () => {
+  //   setExpanded(!expanded);
+  // };
 
   const [data, setData] = useState([]);
 
