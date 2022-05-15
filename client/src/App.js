@@ -19,11 +19,11 @@ function App() {
         {/* {loginPage} */}
         <Route path="/login" exact component="/login"></Route> 
         {/* {createAccount} */}
-        <Route path="/create-account" component="/create-acount"></Route>
+        <Route path="/create-account" exact component="/create-acount"></Route>
         
-        <Route path="/" component={kudosPage}></Route> 
+        <Route path="/" exact component={kudosPage}></Route> 
         {/* {kudoId} */}
-        <Route path="/:id" exact component="/:id"></Route> 
+        <Route path="/id" exact component="/:id"></Route> 
         {/* {commentKudo} */}
         <Route path="/comment" exact component="/comment"></Route>
         {/* {createKudo} */}

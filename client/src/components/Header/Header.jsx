@@ -12,7 +12,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import CelebrationIcon from "@mui/icons-material/Celebration";
 import { Button } from "@mui/material";
-import createKudo from "../../pages/createKudo/createKudo";
+// import createKudo from "../../pages/createKudo/createKudo";
 // import MenuIcon from '@mui/icons-material/Menu';
 // import Button from '@mui/material/Button';
 
@@ -20,7 +20,7 @@ const settings = ["Dashboard", "Logout"];
 // const creates = [];
 
 const Header = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  // const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   // <====================> OPEN MENU <====================>
@@ -111,11 +111,12 @@ const Header = () => {
             {/* <==========> HEADER TITLE <==========> */}
             <Typography>KUDOS</Typography>
           </Box>
-
+          {/* <====================> PROFILE / CREATE KUDO CONTAINER <====================> */}
           <Box
             sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
           >
             <Box sx={{ flexGrow: 0, md: "flex" }}>
+            {/* <====================> PROFILE <====================> */}
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar
@@ -125,6 +126,7 @@ const Header = () => {
                   />
                 </IconButton>
               </Tooltip>
+              {/* <==========> PROFILE MENU DROPDOWN <==========> */}
               <Menu
                 sx={{ mt: "45px" }}
                 id="menu-appbar"
@@ -148,8 +150,10 @@ const Header = () => {
                 ))}
               </Menu>
             </Box>
+
+            {/* <====================> CREAT KUDO BUTTON + <====================> */}
             <Button
-              to={"/create-kudo"}
+              href="/create-kudo"
               variant="contained"
               sx={{
                 fontSize: 16,
