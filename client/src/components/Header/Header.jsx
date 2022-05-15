@@ -12,6 +12,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import CelebrationIcon from "@mui/icons-material/Celebration";
 import { Button } from "@mui/material";
+import createKudo from "../../pages/createKudo/createKudo";
 // import MenuIcon from '@mui/icons-material/Menu';
 // import Button from '@mui/material/Button';
 
@@ -22,17 +23,12 @@ const Header = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
+  // <====================> OPEN MENU <====================>
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
+  //  <====================> CLOSE MENU <====================>
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
@@ -59,11 +55,12 @@ const Header = () => {
         }}
       >
         <Toolbar disableGutters>
+          {/* <====================> ICON & TITLE MOBILE <====================> */}
           <Box
-            variant="h6"
-            noWrap
             component="a"
             href="/"
+            variant="h6"
+            noWrap
             sx={{
               justifyContent: "space-between",
               display: { xs: "none", md: "flex", lg: "flex" },
@@ -74,6 +71,7 @@ const Header = () => {
               textDecoration: "none",
             }}
           >
+            {/* <==========> HEADER ICON <==========> */}
             <CelebrationIcon
               sx={{
                 display: { xs: "none", md: "flex" },
@@ -81,12 +79,14 @@ const Header = () => {
                 color: "#FF8B53",
               }}
             />
+            {/* <==========> HEADER TITLE <==========> */}
             <Typography>KUDOS</Typography>
           </Box>
 
+          {/* <====================> ICON & TITLE TABLET + <====================> */}
           <Box
             component="a"
-            href="/kudos"
+            href="/"
             variant="h5"
             noWrap
             sx={{
@@ -100,6 +100,7 @@ const Header = () => {
               textDecoration: "none",
             }}
           >
+            {/* <==========> HEADER ICON <==========> */}
             <CelebrationIcon
               sx={{
                 display: { xs: "flex", md: "none" },
@@ -107,6 +108,7 @@ const Header = () => {
                 color: "#FF8B53",
               }}
             />
+            {/* <==========> HEADER TITLE <==========> */}
             <Typography>KUDOS</Typography>
           </Box>
 
@@ -147,6 +149,7 @@ const Header = () => {
               </Menu>
             </Box>
             <Button
+              to={"/create-kudo"}
               variant="contained"
               sx={{
                 fontSize: 16,
@@ -162,7 +165,6 @@ const Header = () => {
               }}
               startIcon={
                 <AddBoxIcon
-                  onClick={"/create"}
                   sx={{ size: "large", m: "0", padding: 0, color: "#778FC2" }}
                 ></AddBoxIcon>
               }

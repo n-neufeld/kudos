@@ -17,15 +17,15 @@ function App() {
     <Router className="App">
       <Switch>
         {/* {loginPage} */}
-        <Route path="/" exact component="/login"></Route> 
+        <Route path="/login" exact component="/login"></Route> 
         {/* {createAccount} */}
-        <Route path="/create-account" component="/"></Route>
+        <Route path="/create-account" component="/create-acount"></Route>
         
-        <Route path="/kudos" component={kudosPage}></Route> 
+        <Route path="/" component={kudosPage}></Route> 
         {/* {kudoId} */}
-        <Route path="/kudos/:id" exact component="/"></Route> 
+        <Route path="/:id" exact component="/:id"></Route> 
         {/* {commentKudo} */}
-        <Route path="/comment" exact component="/"></Route>
+        <Route path="/comment" exact component="/comment"></Route>
         {/* {createKudo} */}
         <Route path="/create-kudo" exact component={createKudo}></Route>
       </Switch>
