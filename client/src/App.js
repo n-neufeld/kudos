@@ -6,8 +6,8 @@ import React from "react";
 // import kudoId from "./pages/kudoId/kudoId";
 // import commentKudo from "./pages/commentKudo/commentKudo";
 // import createKudo from "./pages/createKudo/createKudo";
-import kudosPage from "./pages/kudosPage/kudosPage";
-import createKudo from './pages/createKudo/createKudo';
+import KudosPage from "./pages/KudosPage/KudosPage";
+import CreateKudo from './pages/CreateKudo/CreateKudo';
 
 export const API_KEY = "8805a904-196b-4285-8a8c-50e4dedaed47";
 export const API_URL = 'http://localhost:8080';
@@ -21,13 +21,13 @@ function App() {
         {/* {createAccount} */}
         <Route path="/create-account" exact component="/create-acount"></Route>
         
-        <Route path="/" exact component={kudosPage}></Route> 
+        <Route path="/" exact component={KudosPage}></Route> 
         {/* {kudoId} */}
         <Route path="/id" exact component="/:id"></Route> 
         {/* {commentKudo} */}
         <Route path="/comment" exact component="/comment"></Route>
         {/* {createKudo} */}
-        <Route path="/create-kudo" exact component={createKudo}></Route>
+        <Route path="/create-kudo" exact component={CreateKudo}></Route>
       </Switch>
     </Router>
   );

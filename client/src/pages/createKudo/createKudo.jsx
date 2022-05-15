@@ -11,6 +11,7 @@ import Typography from "@mui/material/Typography";
 import SentimentVerySatisfiedSharpIcon from "@mui/icons-material/SentimentVerySatisfiedSharp";
 import CommentIcon from "@mui/icons-material/Comment";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import KudoForm from '../../components/KudoForm/KudoForm';
 // import axios from "axios";
 // import { API_URL } from "../../App";
 import Header from "../../components/Header/Header";
@@ -30,7 +31,7 @@ import Header from "../../components/Header/Header";
 //   }),
 // }));
 
-function kudosPage() {
+function CreateKudo() {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -47,7 +48,9 @@ function kudosPage() {
       flexDirection: 'column',
       alignItems: 'center',
     }}>
+      {/* <====================> HEADER <====================> */}
       <Header />
+      {/* <====================> KUDO CARD <====================> */}
       <Card
         sx={{
           maxWidth: 345,
@@ -63,6 +66,7 @@ function kudosPage() {
           borderTop: "1px solid #ccc",
         }}
       >
+        {/* <==========> CARD HEADER <==========> */}
         <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: "#008996" }} aria-label="recipe"></Avatar>
@@ -75,6 +79,7 @@ function kudosPage() {
           title="placeholder"
           subheader="11424234245534"
         />
+        {/* <==========> CARD IMAGE <==========> */}
         <CardMedia
           sx={{ width: "90%" }}
           component="img"
@@ -82,10 +87,9 @@ function kudosPage() {
           image="placholder"
           alt="placeholder image"
         />
+        {/* <==========> CARD COMMENT <==========> */}
         <CardContent>
-          <Typography variant="body2" color="text.secondary">
-            'asfdgafdgadfgad dafjd gadg fg fadgfd gasdgfgafgaga'
-          </Typography>
+          <KudoForm/>
         </CardContent>
         <CardActions sx={{ display: "flex", justifyContent: "space-between" }}>
           <IconButton aria-label="like">
@@ -100,4 +104,4 @@ function kudosPage() {
   );
 }
 
-export default kudosPage;
+export default CreateKudo;

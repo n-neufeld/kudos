@@ -31,7 +31,7 @@ import Header from "../../components/Header/Header";
 //   }),
 // }));
 
-function kudosPage() {
+function KudosPage() {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -137,4 +137,4 @@ function kudosPage() {
   );
 }
 
-export default kudosPage;
+export default KudosPage;
