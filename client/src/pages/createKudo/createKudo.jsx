@@ -42,7 +42,11 @@ function kudosPage() {
   let kudosCard = [];
 
   return (
-    <Box sx={{}}>
+    <Box sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    }}>
       <Header />
       <Card
         sx={{

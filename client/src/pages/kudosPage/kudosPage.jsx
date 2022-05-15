@@ -112,7 +112,11 @@ function kudosPage() {
   }
 
   return (
-    <Box sx={{  }} >
+    <Box sx={{
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      }} >
       <Header />
       <Box
         sx={{
