@@ -14,7 +14,6 @@ import CelebrationIcon from "@mui/icons-material/Celebration";
 import { Button } from "@mui/material";
 // import createKudo from "../../pages/createKudo/createKudo";
 // import MenuIcon from '@mui/icons-material/Menu';
-// import Button from '@mui/material/Button';
 
 const settings = ["Dashboard", "Logout"];
 // const creates = [];
@@ -116,7 +115,7 @@ const Header = () => {
             sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
           >
             <Box sx={{ flexGrow: 0, md: "flex" }}>
-            {/* <====================> PROFILE <====================> */}
+              {/* <====================> PROFILE <====================> */}
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar
@@ -151,7 +150,7 @@ const Header = () => {
               </Menu>
             </Box>
 
-            {/* <====================> CREAT KUDO BUTTON + <====================> */}
+            {/* <====================> CREATE KUDO BUTTON <====================> */}
             <Button
               href="/create-kudo"
               variant="contained"
@@ -161,15 +160,20 @@ const Header = () => {
                 ml: ".5rem",
                 md: "flex",
                 lg: "flex",
-                color: "#778FC2",
-                bgcolor: "white",
+                color: "white",
+                "&:hover": {
+                  color: "#37cd7b",
+                  backgroundColor: "white",
+                  
+                },
+                bgcolor: "#37cd7b",
                 borderTopLeftRadius: "5rem",
                 borderBottomLeftRadius: "5rem",
                 borderBottomRightRadius: "5rem",
               }}
               startIcon={
                 <AddBoxIcon
-                  sx={{ size: "large", m: "0", padding: 0, color: "#778FC2" }}
+                  sx={{ size: "large", m: "0", padding: 0, color: "white" }}
                 ></AddBoxIcon>
               }
             >
