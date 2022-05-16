@@ -14,7 +14,7 @@
 // import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 // import { getData } from "../../api/getData";
 import Card from "@mui/material/Card";
-import React, { useState,  } from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import CardContent from "@mui/material/CardContent";
 import KudoForm from "../../components/KudoForm/KudoForm";
@@ -59,9 +59,9 @@ function CreateKudo() {
           minWidth: 300,
           my: 2,
           mx: 2,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+          // display: "flex",
+          // flexDirection: "column",
+          // alignItems: "center",
           borderRadius: "1rem",
           borderTopRightRadius: "0",
           boxShadow: "10px -5px 10px #ccc, -20px -20px 100px #fff",
@@ -70,10 +70,9 @@ function CreateKudo() {
         }}
       >
         {/* <==========> CARD COMMENT <==========> */}
-        <CardContent>
+        {/* <CardContent> */}
           <KudoForm />
-          
-        </CardContent>
+        {/* </CardContent> */}
       </Card>
     </Box>
   );

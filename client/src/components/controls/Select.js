@@ -7,8 +7,7 @@ import {
 import React from "react";
 
 export default function Select(props) {
-  const { name, label, value, onChange, options } = props;
-
+  const { name, label, placeholder, value, onChange, options } = props;
   return (
     <FormControl 
     variant="outlined">
@@ -16,6 +15,7 @@ export default function Select(props) {
       <MuiSelect 
         name={name} 
         label={label} 
+        placeholder={placeholder}
         value={value} 
         onChange={onChange}>
           <MenuItem value="">None</MenuItem>

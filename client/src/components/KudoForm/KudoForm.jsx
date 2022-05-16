@@ -6,8 +6,8 @@ import { Button } from "@mui/material";
 import { useForm, Form } from "../useForm";
 import { CardContent } from "@mui/material";
 import Input from "../controls/Input";
-import Select from '../controls/Select'
-import * as employees from '../../employees/employees'
+import Select from "../controls/Select";
+import * as employees from "../../employees/employees";
 
 /* <====================> DEFINED FORM PROPERTIES <====================> */
 const initialFValues = {
@@ -22,94 +22,102 @@ export default function KudoForm() {
   const { values, setValues, handleInputChange } = useForm(initialFValues);
 
   return (
-    <Form sx={{
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      width: '100%'
-    }}>
-      {/* <CardContent> */}
-        {/* <====================> FORM CONTAINER <====================> */}
+    <Form
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        // width: "100%",
+      }}
+    >
+      {/* <====================> FORM CONTAINER <====================> */}
+      <Grid
+        container
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          my: ".5rem",
+        }}
+      >
+        {/* <==========> RECIPIENT <==========> */}
         <Grid
-          container
+          item
+          // xs={8}
           sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            margin: ".5rem",
-            width: '100%'
+            mb: ".5rem",
           }}
         >
-          {/* <==========> RECIPIENT <==========> */}
-          <Grid
-            item
-            xs={6}
-            sx={{
-              mb: ".5rem",
-            }}
-          >
-            <Select
-              label="Recipient"
-              placeholder="Select Recipient"
-              name="Full Name"
-              value={values.fullName}
-              onChange={handleInputChange}
-              options={[employees.getEmployees]}
-              style={{ width: 200 }}
-            />
-
-
-          </Grid>
-          {/* <==========> KUDO <==========> */}
-          <Grid
-            item
-            xs={6}
-            sx={{
-              mb: ".5rem",
-            }}
-            >
-            <Input
-              variant="outlined"
-              label="Kudo"
-              name="Kudo"
-              placeholder="Leave your Kudo here!"
-              value={values.kudo}
-              onChange={handleInputChange}
-            />
-          </Grid>
+          <Input
+            label="Recipient"
+            placeholder="Select Recipient"
+            name="Full Name"
+            value={values.fullName}
+            onChange={handleInputChange}
+            options={[employees.getEmployees]}
+            // style={{ width: 200 }}
+          />
         </Grid>
 
-        {/* <====================> IMAGE <====================> */}
+        {/* <==========> KUDO <==========> */}
+        <Grid
+          item
+          // xs={8}
+          sx={{
+            mb: ".5rem",
+          }}
+        >
+          <Input
+            variant="outlined"
+            label="Kudo"
+            name="Kudo"
+            placeholder="Leave your Kudo here!"
+            value={values.kudo}
+            onChange={handleInputChange}
+          />
+        </Grid>
+      </Grid>
+
+      {/* <====================> IMAGE <====================> */}
+      <Grid
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "90%",
+          ml: '.5rem',
+        }}
+      >
         <CardMedia
-          sx={{ width: "90%" }}
           component="img"
           height="194"
           image={placeholder}
           alt="placeholder image"
         />
-        {/* <====================> SUBMIT KUDO <====================> */}
-        <Button
-          href="/create-kudo"
-          variant="contained"
-          sx={{
-            m: "1rem",
-            fontSize: 16,
-            padding: 1,
-            color: "white",
-            "&:hover": {
-              color: "#37cd7b",
-              backgroundColor: "white",
-            },
-            bgcolor: "#37cd7b",
-            borderTopLeftRadius: "5rem",
-            borderBottomLeftRadius: "5rem",
-            borderBottomRightRadius: "5rem",
-          }}
-        >
-          POST KUDO
-        </Button>
-      {/* </CardContent> */}
+      </Grid>
+
+      {/* <====================> SUBMIT KUDO <====================> */}
+      <Button
+        href="/create-kudo"
+        variant="contained"
+        sx={{
+          my: "1rem",
+          fontSize: 16,
+          padding: 1,
+          color: "white",
+          "&:hover": {
+            color: "#37cd7b",
+            backgroundColor: "white",
+          },
+          bgcolor: "#37cd7b",
+          borderTopLeftRadius: "5rem",
+          borderBottomLeftRadius: "5rem",
+          borderBottomRightRadius: "5rem",
+        }}
+      >
+        POST KUDO
+      </Button>
     </Form>
   );
 }
