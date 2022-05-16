@@ -5,6 +5,18 @@ import placeholder from "../../assets/image-placeholder.jpeg";
 import CardContent from "@mui/material/CardContent";
 import { Button } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
+import { ThemeContext } from "@emotion/react";
+
+
+/* <====================> SET CONSISTENT SYLING PROPERTIES <====================> */
+const useStyle = makeStyles( theme =>({
+  root: {
+'& .MuiFormControl-root': {
+  width: '80%',
+  margin:theme.spacing(1)
+}
+  }
+}))
 
 /* <====================> DEFINED FORM PROPERTIES <====================> */
 const initialFValues = {
@@ -16,16 +28,14 @@ const initialFValues = {
 }
 
 function KudoForm() {
+
   {/* <====================> SET STATE <====================> */}
-  const [values, setValues] = useState({
-  });
+  const [values, setValues] = useState({initialFValues});
+  const classes = useStyle();
 
-  useEffect(()=>{
-
-  },[values])
 
   return (
-    <form>
+    <form classeName={classes.root}>
       <CardContent
         sx={{
           display: "flex",
@@ -37,13 +47,27 @@ function KudoForm() {
         }}
       >
         {/* <====================> FORM <====================> */}
-        <Grid>
+        <Grid container sx={{
+          display:'flex',
+          flexDirection:'column',
+          alignItems:'center',
+        }}>
+          <Grid item xs={6}>
             <TextField
               variant="outlined"
               label="Recipient"
               placeholder="Select Recipient"
+              value={values.employeeId}
+            />
+          </Grid>
+          <Grid item xs={6}>
+            <TextField
+              variant="outlined"
+              label="Kudo"
+              placeholder="Leave your Kudo here!"
               // value={}
             />
+          </Grid>
         </Grid>
 
         {/* <====================> IMAGE <====================> */}
