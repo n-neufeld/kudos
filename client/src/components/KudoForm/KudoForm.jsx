@@ -1,10 +1,11 @@
 import React from "react";
-import {  Grid, TextField, } from "@mui/material";
+import { Grid, TextField } from "@mui/material";
 import CardMedia from "@mui/material/CardMedia";
 import placeholder from "../../assets/image-placeholder.jpeg";
 import { Button } from "@mui/material";
 import { useForm, Form } from "../useForm";
 import { CardContent } from "@mui/material";
+import Input from "../controls/Input";
 
 /* <====================> DEFINED FORM PROPERTIES <====================> */
 const initialFValues = {
@@ -16,16 +17,7 @@ const initialFValues = {
 };
 
 export default function KudoForm() {
-  
-  const{
-    values,
-    setValues,
-    handleInputChange,
-  }=useForm(initialFValues);
-  
-  
-  
-  
+  const { values, setValues, handleInputChange } = useForm(initialFValues);
 
   return (
     <Form>
@@ -34,11 +26,9 @@ export default function KudoForm() {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          justifyContent: "",
-          maxWidth: 280,
-          minWidth: 280,
-        }} 
-       >
+          justifyContent: "center",
+        }}
+      >
         {/* <====================> FORM <====================> */}
         <Grid
           container
@@ -56,14 +46,20 @@ export default function KudoForm() {
               mb: ".5rem",
             }}
           >
-            <TextField
-              variant="outlined"
+            <Input
               label="Recipient"
               placeholder="Select Recipient"
               name="Full Name"
               value={values.fullName}
               onChange={handleInputChange}
             />
+            {/* <TextField
+              variant="outlined"
+              label="Recipient"
+              placeholder="Select Recipient"
+              name="Full Name"
+              value={values.fullName}
+            /> */}
           </Grid>
           <Grid
             item
@@ -71,13 +67,14 @@ export default function KudoForm() {
             sx={{
               mb: ".5rem",
             }}
-          >
-            <TextField
+            >
+            <Input
               variant="outlined"
               label="Kudo"
               name="Kudo"
               placeholder="Leave your Kudo here!"
               value={values.kudo}
+              onChange={handleInputChange}
             />
           </Grid>
         </Grid>
@@ -95,7 +92,7 @@ export default function KudoForm() {
           href="/create-kudo"
           variant="contained"
           sx={{
-            m: '1rem',
+            m: "1rem",
             fontSize: 16,
             padding: 1,
             color: "white",
