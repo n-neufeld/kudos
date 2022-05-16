@@ -54,7 +54,7 @@ const Header = () => {
         }}
       >
         <Toolbar disableGutters>
-          {/* <====================> ICON & TITLE MOBILE <====================> */}
+          {/* <====================> MOBILE ICON & TITLE <====================> */}
           <Box
             component="a"
             href="/"
@@ -82,7 +82,7 @@ const Header = () => {
             <Typography>KUDOS</Typography>
           </Box>
 
-          {/* <====================> ICON & TITLE TABLET + <====================> */}
+          {/* <====================> TABLET ICON & TITLE + <====================> */}
           <Box
             component="a"
             href="/"
@@ -110,12 +110,13 @@ const Header = () => {
             {/* <==========> HEADER TITLE <==========> */}
             <Typography>KUDOS</Typography>
           </Box>
+
           {/* <====================> PROFILE / CREATE KUDO CONTAINER <====================> */}
           <Box
             sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
           >
             <Box sx={{ flexGrow: 0, md: "flex" }}>
-              {/* <====================> PROFILE <====================> */}
+              {/* <==========> PROFILE ICON <==========> */}
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar

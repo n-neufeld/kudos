@@ -1,20 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Card, FormControl, Grid, TextField, Typography } from "@mui/material";
 import CardMedia from "@mui/material/CardMedia";
 import placeholder from "../../assets/image-placeholder.jpeg";
 import CardContent from "@mui/material/CardContent";
 import { Button } from "@mui/material";
+import Avatar from "@mui/material/Avatar";
 
-// THE COMMENT FORM ON THE VIDEO PAGE
+/* <====================> DEFINED FORM PROPERTIES <====================> */
+const initialFValues = {
+  employeeId:'',
+  id: 0,
+  name: "",
+  comment: "",
+  postDate: new Date()
+}
+
 function KudoForm() {
+  {/* <====================> SET STATE <====================> */}
   const [values, setValues] = useState({
-    name: "",
-    department: "",
-    comment: "",
   });
 
+  useEffect(()=>{
+
+  },[values])
+
   return (
-    <Card>
+    <form>
       <CardContent
         sx={{
           display: "flex",
@@ -26,15 +37,15 @@ function KudoForm() {
         }}
       >
         {/* <====================> FORM <====================> */}
-        <Grid container spacing={1}>
-          <Grid item>
-            <TextField label='Recipient' placeholder="Select Recipient" />
-
-            
-          </Grid>
-
+        <Grid>
+            <TextField
+              variant="outlined"
+              label="Recipient"
+              placeholder="Select Recipient"
+              // value={}
+            />
         </Grid>
-        
+
         {/* <====================> IMAGE <====================> */}
         <CardMedia
           sx={{ width: "90%" }}
@@ -64,21 +75,7 @@ function KudoForm() {
           POST KUDO
         </Button>
       </CardContent>
-    </Card>
-    // <section className='form-card'>
-    //   <section className='form-container'>
-    //     <img className='form-image' alt='user portrait'  src={profileImg} />
-    //     <div className='comment'>
-    //       <div className='comment__container'>
-    //         <article className='comment__container-label'>
-    //             JOIN THE CONVERSATION
-    //         </article>
-    //         <textarea className='comment-input' type='text' id='comment' name='comment' placeholder='Add a new comment' required />
-    //       </div>
-    //       <button className='comment-button'>COMMENT</button>
-    //     </div>
-    //   </section>
-    // </section>
+    </form>
   );
 }
 
