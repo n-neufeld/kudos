@@ -6,6 +6,8 @@ import { Button } from "@mui/material";
 import { useForm, Form } from "../useForm";
 import { CardContent } from "@mui/material";
 import Input from "../controls/Input";
+import Select from '../controls/Select'
+import * as employees from '../../employees/employees'
 
 /* <====================> DEFINED FORM PROPERTIES <====================> */
 const initialFValues = {
@@ -29,7 +31,7 @@ export default function KudoForm() {
           justifyContent: "center",
         }}
       >
-        {/* <====================> FORM <====================> */}
+        {/* <====================> FORM CONTAINER <====================> */}
         <Grid
           container
           sx={{
@@ -39,6 +41,7 @@ export default function KudoForm() {
             margin: ".5rem",
           }}
         >
+          {/* <==========> RECIPIENT <==========> */}
           <Grid
             item
             xs={6}
@@ -46,21 +49,18 @@ export default function KudoForm() {
               mb: ".5rem",
             }}
           >
-            <Input
+            <Select
               label="Recipient"
               placeholder="Select Recipient"
               name="Full Name"
               value={values.fullName}
               onChange={handleInputChange}
+              options={[employees.getEmployees]}
             />
-            {/* <TextField
-              variant="outlined"
-              label="Recipient"
-              placeholder="Select Recipient"
-              name="Full Name"
-              value={values.fullName}
-            /> */}
+
+
           </Grid>
+          {/* <==========> KUDO <==========> */}
           <Grid
             item
             xs={6}
