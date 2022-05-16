@@ -1,42 +1,36 @@
-import React, { useState, useEffect } from "react";
-import { Card, FormControl, Grid, TextField, Typography } from "@mui/material";
+import React, { useState, } from "react";
+import {  Grid, TextField, } from "@mui/material";
 import CardMedia from "@mui/material/CardMedia";
 import placeholder from "../../assets/image-placeholder.jpeg";
-import CardContent from "@mui/material/CardContent";
 import { Button } from "@mui/material";
-import Avatar from "@mui/material/Avatar";
-import { ThemeContext } from "@emotion/react";
-
-
-/* <====================> SET CONSISTENT SYLING PROPERTIES <====================> */
-const useStyle = makeStyles( theme =>({
-  root: {
-'& .MuiFormControl-root': {
-  width: '80%',
-  margin:theme.spacing(1)
-}
-  }
-}))
 
 /* <====================> DEFINED FORM PROPERTIES <====================> */
 const initialFValues = {
-  employeeId:'',
-  id: 0,
   name: "",
+  id: 0,
+  fullName: "",
   comment: "",
-  postDate: new Date()
-}
+  postDate: new Date(),
+};
 
-function KudoForm() {
-
+export default function KudoForm() {
+  
   {/* <====================> SET STATE <====================> */}
-  const [values, setValues] = useState({initialFValues});
-  const classes = useStyle();
-
+  const [values, setValues] = useState({ initialFValues });
+  {/* <====================> INPUT CHANGE HANDLER <====================> */}
+  const handleInputChange = e => {
+    const { name, value } = e.target;
+    setValues({
+      ...values,
+      [name]: value,
+    });
+  };
+  
+  
 
   return (
-    <form classeName={classes.root}>
-      <CardContent
+    <form>
+      {/* <CardContent
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -44,28 +38,47 @@ function KudoForm() {
           justifyContent: "",
           maxWidth: 280,
           minWidth: 280,
-        }}
-      >
+        }} 
+       > */}
         {/* <====================> FORM <====================> */}
-        <Grid container sx={{
-          display:'flex',
-          flexDirection:'column',
-          alignItems:'center',
-        }}>
-          <Grid item xs={6}>
+        <Grid
+          container
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            margin: ".5rem",
+          }}
+        >
+          <Grid
+            item
+            xs={6}
+            sx={{
+              mb: ".5rem",
+            }}
+          >
             <TextField
               variant="outlined"
               label="Recipient"
               placeholder="Select Recipient"
-              value={values.employeeId}
+              name="Full Name"
+              value={values.fullName}
+              onChange={handleInputChange}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid
+            item
+            xs={6}
+            sx={{
+              mb: ".5rem",
+            }}
+          >
             <TextField
               variant="outlined"
               label="Kudo"
+              name="Kudo"
               placeholder="Leave your Kudo here!"
-              // value={}
+              value={values.kudo}
             />
           </Grid>
         </Grid>
@@ -83,6 +96,7 @@ function KudoForm() {
           href="/create-kudo"
           variant="contained"
           sx={{
+            m: '1rem',
             fontSize: 16,
             padding: 1,
             color: "white",
@@ -98,9 +112,7 @@ function KudoForm() {
         >
           POST KUDO
         </Button>
-      </CardContent>
+      {/* </CardContent> */}
     </form>
   );
 }
-
-export default KudoForm;
