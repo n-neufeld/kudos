@@ -7,7 +7,7 @@ import {
 import React from "react";
 
 export default function Select(props) {
-  const { name, label, value, onChange, option } = props;
+  const { name, label, value, onChange, options } = props;
 
   return (
     <FormControl 
@@ -20,7 +20,7 @@ export default function Select(props) {
         onChange={onChange}>
           <MenuItem value="">None</MenuItem>
           {
-            option.map(
+            options.map(
             item => (<MenuItem key={item.id} value={item.id}>{item.title}</MenuItem>)
             )
         }

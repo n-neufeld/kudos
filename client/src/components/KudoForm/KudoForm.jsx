@@ -22,15 +22,14 @@ export default function KudoForm() {
   const { values, setValues, handleInputChange } = useForm(initialFValues);
 
   return (
-    <Form>
-      <CardContent
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+    <Form sx={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      width: '100%'
+    }}>
+      {/* <CardContent> */}
         {/* <====================> FORM CONTAINER <====================> */}
         <Grid
           container
@@ -39,6 +38,7 @@ export default function KudoForm() {
             flexDirection: "column",
             alignItems: "center",
             margin: ".5rem",
+            width: '100%'
           }}
         >
           {/* <==========> RECIPIENT <==========> */}
@@ -56,6 +56,7 @@ export default function KudoForm() {
               value={values.fullName}
               onChange={handleInputChange}
               options={[employees.getEmployees]}
+              style={{ width: 200 }}
             />
 
 
@@ -108,7 +109,7 @@ export default function KudoForm() {
         >
           POST KUDO
         </Button>
-      </CardContent>
+      {/* </CardContent> */}
     </Form>
   );
 }

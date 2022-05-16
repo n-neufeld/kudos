@@ -55,7 +55,7 @@ function CreateKudo() {
       {/* <====================> KUDO CARD <====================> */}
       <Card
         sx={{
-          maxWidth: 345,
+          maxWidth: 350,
           minWidth: 300,
           my: 2,
           mx: 2,
