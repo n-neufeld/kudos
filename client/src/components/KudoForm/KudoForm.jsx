@@ -1,8 +1,10 @@
-import React, { useState, } from "react";
+import React from "react";
 import {  Grid, TextField, } from "@mui/material";
 import CardMedia from "@mui/material/CardMedia";
 import placeholder from "../../assets/image-placeholder.jpeg";
 import { Button } from "@mui/material";
+import { useForm, Form } from "../useForm";
+import { CardContent } from "@mui/material";
 
 /* <====================> DEFINED FORM PROPERTIES <====================> */
 const initialFValues = {
@@ -15,22 +17,19 @@ const initialFValues = {
 
 export default function KudoForm() {
   
-  {/* <====================> SET STATE <====================> */}
-  const [values, setValues] = useState({ initialFValues });
-  {/* <====================> INPUT CHANGE HANDLER <====================> */}
-  const handleInputChange = e => {
-    const { name, value } = e.target;
-    setValues({
-      ...values,
-      [name]: value,
-    });
-  };
+  const{
+    values,
+    setValues,
+    handleInputChange,
+  }=useForm(initialFValues);
+  
+  
   
   
 
   return (
-    <form>
-      {/* <CardContent
+    <Form>
+      <CardContent
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -39,7 +38,7 @@ export default function KudoForm() {
           maxWidth: 280,
           minWidth: 280,
         }} 
-       > */}
+       >
         {/* <====================> FORM <====================> */}
         <Grid
           container
@@ -112,7 +111,7 @@ export default function KudoForm() {
         >
           POST KUDO
         </Button>
-      {/* </CardContent> */}
-    </form>
+      </CardContent>
+    </Form>
   );
 }
