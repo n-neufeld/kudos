@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Grid, Autocomplete, Box, TextField, FormControl } from "@mui/material";
 import CardMedia from "@mui/material/CardMedia";
-import placeholder from "../../assets/image-placeholder.jpeg";
+import placeholder from "../assets/image-placeholder.jpeg";
 import { Button } from "@mui/material";
-import { useForm, Form } from "../useForm";
+import { useForm, Form } from "./useForm";
 import { CardContent } from "@mui/material";
-import Input from "../controls/Input";
-import * as employees from "../../employees/employees";
+import Input from "./controls/Input";
+import * as employees from "../employees/employees";
 import axios from "axios";
-import { API_URL } from "../../App";
+import { API_URL } from "../App";
 
 /* <====================> DEFINED FORM PROPERTIES <====================> */
 const initialFValues = {

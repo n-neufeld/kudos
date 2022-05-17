@@ -1,9 +1,8 @@
 import Card from "@mui/material/Card";
 import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
-import CardContent from "@mui/material/CardContent";
-import KudoForm from "../../components/KudoForm/KudoForm";
-import Header from "../../components/Header/Header";
+import KudoForm from "../components/KudoForm";
+import Header from "../components/Header";
 
 // const ExpandMore = styled((props) => {
 //   const { expand, ...other } = props;

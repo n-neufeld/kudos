@@ -6,8 +6,8 @@ import React from "react";
 // import kudoId from "./pages/kudoId/kudoId";
 // import commentKudo from "./pages/commentKudo/commentKudo";
 // import createKudo from "./pages/createKudo/createKudo";
-import KudosPage from "./pages/KudosPage/KudosPage";
-import CreateKudo from './pages/CreateKudo/CreateKudo';
+import KudosPage from "./pages/KudosPage";
+import CreateKudo from './pages/CreateKudo';
 
 export const API_KEY = "8805a904-196b-4285-8a8c-50e4dedaed47";
 export const API_URL = 'http://localhost:8080';

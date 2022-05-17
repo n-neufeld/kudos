@@ -12,24 +12,9 @@ import SentimentVerySatisfiedSharpIcon from "@mui/icons-material/SentimentVerySa
 import CommentIcon from "@mui/icons-material/Comment";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import axios from "axios";
-import { API_URL } from "../../App";
-import Header from "../../components/Header/Header";
+import { API_URL } from "../App";
+import Header from "../components/Header";
 
-// import { styled } from "@mui/material/styles";
-// import Collapse from "@mui/material/Collapse";
-// import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-// import { getData } from "../../api/getData";
-
-// const ExpandMore = styled((props) => {
-//   const { expand, ...other } = props;
-//   return <IconButton {...other} />;
-// })(({ theme, expand }) => ({
-//   transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
-//   marginLeft: "auto",
-//   transition: theme.transitions.create("transform", {
-//     duration: theme.transitions.duration.shortest,
-//   }),
-// }));
 
 function KudosPage() {
   const [expanded, setExpanded] = React.useState(false);

@@ -12,8 +12,6 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import CelebrationIcon from "@mui/icons-material/Celebration";
 import { Button } from "@mui/material";
-// import createKudo from "../../pages/createKudo/createKudo";
-// import MenuIcon from '@mui/icons-material/Menu';
 
 const settings = ["Dashboard", "Logout"];
 // const creates = [];
@@ -54,9 +52,7 @@ const Header = () => {
         }}
       >
         <Toolbar disableGutters>
-          {/* <====================> MOBILE ICON & TITLE <====================> */}
-
-          {/* <====================> TABLET ICON & TITLE + <====================> */}
+          {/* <====================> ICON & TITLE + <====================> */}
           <Box
             component="a"
             href="/"
@@ -89,7 +85,7 @@ const Header = () => {
             sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
           >
             <Box sx={{ flexGrow: 0, md: "flex" }}>
-              {/* <==========> PROFILE ICON <==========> */}
+              {/* <==========> AVATAR ICON <==========> */}
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar
@@ -101,17 +97,17 @@ const Header = () => {
               </Tooltip>
               {/* <==========> PROFILE MENU DROPDOWN <==========> */}
               <Menu
-                sx={{ mt: "45px" }}
+                sx={{ mt: "50px", mr: "50px" }}
                 id="menu-appbar"
                 anchorEl={anchorElUser}
                 anchorOrigin={{
                   vertical: "top",
-                  horizontal: "right",
+                  horizontal: "left",
                 }}
                 keepMounted
                 transformOrigin={{
                   vertical: "top",
-                  horizontal: "right",
+                  horizontal: "left",
                 }}
                 open={Boolean(anchorElUser)}
                 onClose={handleCloseUserMenu}
@@ -140,7 +136,12 @@ const Header = () => {
                   backgroundColor: "white",
                   "& .MuiSvgIcon-root": {
                     color: "#37cd7b",
-                    transition: "all 0.2s ease",
+                    transitions: {
+                      easing: {
+                        easeIn: "1s",
+                        easeOut: "1s",
+                      },
+                    },
                   },
                 },
                 bgcolor: "#37cd7b",
