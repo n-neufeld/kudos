@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const util = require("../util/util");
-const kudosFile = "../data/kudos.json";
-const kudos = require(kudosFile);
+// const kudosFile = "../data/kudos.json";
+// const kudos = require(kudosFile);
 
 // router.use((req, res, next) => {
 //   console.log('kudoRoutes');
@@ -27,8 +27,10 @@ router.get("/:id", (req, res) => {
   const kudos = readJSONFile();
   let kudo = kudos.find((kudo) => kudo.id === req.params.id);
   if (kudo) {
+    console.log('success ');
     return res.json(kudo);
   } else {
+    console.log('fail ');
     res.status(404).json({
       error: `Kudo ID${req.params.id} is not found`,
     });

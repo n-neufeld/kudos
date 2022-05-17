@@ -14,7 +14,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import axios from "axios";
 import { API_URL } from "../App";
 import Header from "../components/Header";
-
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 function KudosPage() {
   const [expanded, setExpanded] = React.useState(false);
@@ -44,62 +44,64 @@ function KudosPage() {
     kudosCards = data.map((k) => {
       return (
         // <====================> KUDO CARD <====================>
-        <Card
-          sx={{
-            maxWidth: 345,
-            // minWidth: 300,
-            my: 2,
-            mx: 2,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            borderRadius: "1rem",
-            borderTopRightRadius: "0",
-            boxShadow: "2px -5px 10px #ccc, -20px -20px 100px #fff",
-            borderRight: "1px solid #ccc",
-            borderTop: "1px solid #ccc",
-          }}
-        >
-          {/* <==========> CARD HEADER <==========> */}
-          <CardHeader
-            avatar={
-              <Avatar sx={{ bgcolor: "#008996" }} aria-label="recipe">
-                {k.name[0]}
-              </Avatar>
-            }
-            action={
-              <IconButton aria-label="settings">
-                <MoreVertIcon />
-              </IconButton>
-            }
-            title={`${k.name} recognized ${k.recipient.name}`}
-            subheader={new Date(k.timestamp).toLocaleDateString()}
-          />
-          {/* <==========> CARD IMAGE <==========> */}
-          <CardMedia
-            sx={{ width: "90%" }}
-            component="img"
-            height="194"
-            image={k.image}
-            alt="Paella dish"
-          />
-          {/* <==========> CARD COMMENT <==========> */}
-          <CardContent>
-            <Typography variant="body2" color="text.secondary">
-              {k.text}
-            </Typography>
-          </CardContent>
-          <CardActions
-            sx={{ display: "flex", justifyContent: "space-between" }}
+        <Link to={`/kudos/${k.id}`}>
+          <Card
+            sx={{
+              maxWidth: 345,
+              // minWidth: 300,
+              my: 2,
+              mx: 2,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              borderRadius: "1rem",
+              borderTopRightRadius: "0",
+              boxShadow: "2px -5px 10px #ccc, -20px -20px 100px #fff",
+              borderRight: "1px solid #ccc",
+              borderTop: "1px solid #ccc",
+            }}
           >
-            <IconButton aria-label="like">
-              <SentimentVerySatisfiedSharpIcon />
-            </IconButton>
-            <IconButton aria-label="comment">
-              <CommentIcon sx={{}} />
-            </IconButton>
-          </CardActions>
-        </Card>
+            {/* <==========> CARD HEADER <==========> */}
+            <CardHeader
+              avatar={
+                <Avatar sx={{ bgcolor: "#008996" }} aria-label="recipe">
+                  {k.name[0]}
+                </Avatar>
+              }
+              action={
+                <IconButton aria-label="settings">
+                  <MoreVertIcon />
+                </IconButton>
+              }
+              title={`${k.name} recognized ${k.recipient.name}`}
+              subheader={new Date(k.timestamp).toLocaleDateString()}
+            />
+            {/* <==========> CARD IMAGE <==========> */}
+            <CardMedia
+              sx={{ width: "90%" }}
+              component="img"
+              height="194"
+              image={k.image}
+              alt="Paella dish"
+            />
+            {/* <==========> CARD COMMENT <==========> */}
+            <CardContent>
+              <Typography variant="body2" color="text.secondary">
+                {k.text}
+              </Typography>
+            </CardContent>
+            <CardActions
+              sx={{ display: "flex", justifyContent: "space-between" }}
+            >
+              <IconButton aria-label="like">
+                <SentimentVerySatisfiedSharpIcon />
+              </IconButton>
+              <IconButton aria-label="comment">
+                <CommentIcon sx={{}} />
+              </IconButton>
+            </CardActions>
+          </Card>
+        </Link>
       );
     });
   }
