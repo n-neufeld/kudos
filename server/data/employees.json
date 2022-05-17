@@ -1,0 +1,50 @@
+[
+    {
+        "userId": 10,
+        "name": "Amy Schumer",
+        "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+        "position": "CEO",
+        "department": "Executive",
+        "email": "aschumer@kudo.com"
+      },
+      {
+        "userId": 10,
+        "name": "Tom Cruise",
+        "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+        "position": "Regional Manager",
+        "department": "Marketing",
+        "email": "tcruise@kudo.com"
+      },
+      {
+        "userId": 10,
+        "name": "Adele Laurie Blue Adkins",
+        "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+        "position": "CEO",
+        "department": "Executive",
+        "email": "alaurie@kudo.com"
+      },
+      {
+        "userId": 10,
+        "name": "Benedict Cumberbatch",
+        "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+        "position": "CEO",
+        "department": "Executive",
+        "email": "bcumberbatchaschumer@kudo.com"
+      },
+      {
+        "userId": 10,
+        "name": "Amy Schumer",
+        "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+        "position": "HR Generalist",
+        "department": "HR",
+        "email": "aschumer@kudo.com"
+      },
+      {
+        "userId": 10,
+        "name": "Paul Meany",
+        "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+        "position": "Driver",
+        "department": "Shipping",
+        "email": "pmeany@kudo.com"
+      }
+]
