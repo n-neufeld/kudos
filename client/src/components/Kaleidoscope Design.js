@@ -2,9 +2,9 @@ let symmetry = 6;
 let angle = 360 / symmetry;
 let saveButton;
 let clearButton;
+let xoff = 0;
 
 function setup() {
-  
   createCanvas(300, 300);
   angleMode(DEGREES);
   background(250);
@@ -12,6 +12,7 @@ function setup() {
   saveButton.mousePressed(saveSnowflake);
   clearButton = createButton('clear');
   clearButton.mousePressed(clearCanvas);
+  colorMode(HSB, 255, 255, 255);
 }
 
 function saveSnowflake() {
@@ -23,9 +24,9 @@ function clearCanvas() {
 }
 
 function draw() {
-
   translate(width / 2, height / 2);
   
+  if(mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height){
   let mx = mouseX - width / 2;
   let my = mouseY - height / 2;
   let pmx = pmouseX - width / 2;
@@ -33,9 +34,10 @@ function draw() {
   
   
   if (mouseIsPressed) {
-    stroke(0, 100);
+    let hu = map(sin(xoff), -1,1,0,360);
+    xoff += 0.1;
+    stroke(hu, 255, 255, 100);
     let angle = 360 / symmetry;
-    
     for(let i = 0; i < symmetry; i++) {  
       rotate(angle);
       let d = dist(mx, my, pmx, pmy);
@@ -50,6 +52,6 @@ function draw() {
       pop();
     }
   }
-
+  }
 
 }
