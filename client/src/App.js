@@ -3,7 +3,7 @@ import "./App.css";
 import React from "react";
 // import loginPage from "./pages/loginPage/loginPage";
 // import createAccount from "./pages/createAccount/createAccount";
-// import kudoId from "./pages/kudoId/kudoId";
+import KudoId from "./pages/KudoId";
 // import commentKudo from "./pages/commentKudo/commentKudo";
 // import createKudo from "./pages/createKudo/createKudo";
 import KudosPage from "./pages/KudosPage";
@@ -23,7 +23,7 @@ function App() {
         
         <Route path="/" exact component={KudosPage}></Route> 
         {/* {kudoId} */}
-        <Route path="/id" exact component="/:id"></Route> 
+        <Route path="/kudos/:id" exact component={KudoId}></Route> 
         {/* {commentKudo} */}
         <Route path="/comment" exact component="/comment"></Route>
         {/* {createKudo} */}
