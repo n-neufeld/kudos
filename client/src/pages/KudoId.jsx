@@ -39,8 +39,10 @@ function CreateKudo() {
           borderTop: "1px solid #ccc",
         }}
       >
+
+          
         {/* <==========> CARD FORM <==========> */}
-        <KudoForm />
+        
       </Card>
     </Box>
   );

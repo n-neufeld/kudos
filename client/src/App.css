@@ -1,3 +1,4 @@
 body {
     background: linear-gradient(rgb(245, 245, 245),rgb(229, 229, 229));
+    background-repeat: no-repeat;
 }
