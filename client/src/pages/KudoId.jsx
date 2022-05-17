@@ -38,7 +38,6 @@ export default function KudosId() {
     });
   }, [id]);
 
-  let kudosCards = [];
 
   // <====================> POST THE DATA FROM THE SERVER <====================>
 
@@ -80,7 +79,7 @@ export default function KudosId() {
           <CardHeader
             avatar={
               <Avatar sx={{ bgcolor: "#008996" }} aria-label="recipe">
-                {data.name}
+                {data.name} {/* <========================================== Doesn't accecpt the array `[0]`  */}
               </Avatar>
             }
             action={
@@ -88,7 +87,7 @@ export default function KudosId() {
                 <MoreVertIcon />
               </IconButton>
             }
-            // title={`${data.name} recognized ${data.recipient.name}`}
+            //title={`${data.name} recognized ${data.recipient.name}`} // <======================= 'name' is undefined?
             subheader={new Date(data.timestamp).toLocaleDateString()}
           />
           {/* <==========> CARD IMAGE <==========> */}
