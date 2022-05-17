@@ -70,7 +70,7 @@ function KudosPage() {
             alignItems: "center",
             borderRadius: "1rem",
             borderTopRightRadius: "0",
-            boxShadow: "10px -5px 10px #ccc, -20px -20px 100px #fff",
+            boxShadow: "2px -5px 10px #ccc, -20px -20px 100px #fff",
             borderRight: "1px solid #ccc",
             borderTop: "1px solid #ccc",
           }}
