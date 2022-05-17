@@ -14,7 +14,7 @@
 // import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 // import { getData } from "../../api/getData";
 import Card from "@mui/material/Card";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import CardContent from "@mui/material/CardContent";
 import KudoForm from "../../components/KudoForm/KudoForm";
@@ -37,8 +37,6 @@ function CreateKudo() {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
-  const [data, setData] = useState([]);
 
   let kudosCard = [];
 
@@ -71,7 +69,7 @@ function CreateKudo() {
       >
         {/* <==========> CARD COMMENT <==========> */}
         {/* <CardContent> */}
-          <KudoForm />
+        <KudoForm />
         {/* </CardContent> */}
       </Card>
     </Box>

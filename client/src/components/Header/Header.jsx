@@ -55,32 +55,6 @@ const Header = () => {
       >
         <Toolbar disableGutters>
           {/* <====================> MOBILE ICON & TITLE <====================> */}
-          <Box
-            component="a"
-            href="/"
-            variant="h6"
-            noWrap
-            sx={{
-              justifyContent: "space-between",
-              display: { xs: "none", md: "flex", lg: "flex" },
-              fontFamily: "Titillium Web",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "#008996",
-              textDecoration: "none",
-            }}
-          >
-            {/* <==========> HEADER ICON <==========> */}
-            <CelebrationIcon
-              sx={{
-                display: { xs: "none", md: "flex" },
-                mr: 1,
-                color: "#FF8B53",
-              }}
-            />
-            {/* <==========> HEADER TITLE <==========> */}
-            <Typography>KUDOS</Typography>
-          </Box>
 
           {/* <====================> TABLET ICON & TITLE + <====================> */}
           <Box
@@ -90,7 +64,7 @@ const Header = () => {
             noWrap
             sx={{
               mr: 2,
-              display: { xs: "flex", md: "none" },
+              display: { xs: "flex", md: "flex" },
               flexGrow: 1,
               fontFamily: "Titillium Web",
               fontWeight: 700,
@@ -102,7 +76,6 @@ const Header = () => {
             {/* <==========> HEADER ICON <==========> */}
             <CelebrationIcon
               sx={{
-                display: { xs: "flex", md: "none" },
                 mr: 1,
                 color: "#FF8B53",
               }}
@@ -165,7 +138,10 @@ const Header = () => {
                 "&:hover": {
                   color: "#37cd7b",
                   backgroundColor: "white",
-                  
+                  "& .MuiSvgIcon-root": {
+                    color: "#37cd7b",
+                    transition: "all 0.2s ease",
+                  },
                 },
                 bgcolor: "#37cd7b",
                 borderTopLeftRadius: "5rem",

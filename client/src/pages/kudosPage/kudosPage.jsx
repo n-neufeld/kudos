@@ -8,8 +8,8 @@ import CardActions from "@mui/material/CardActions";
 import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import SentimentVerySatisfiedSharpIcon from '@mui/icons-material/SentimentVerySatisfiedSharp';
-import CommentIcon from '@mui/icons-material/Comment';
+import SentimentVerySatisfiedSharpIcon from "@mui/icons-material/SentimentVerySatisfiedSharp";
+import CommentIcon from "@mui/icons-material/Comment";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import axios from "axios";
 import { API_URL } from "../../App";
@@ -53,6 +53,8 @@ function KudosPage() {
 
   let kudosCards = [];
 
+  // <====================> POST THE DATA FROM THE SERVER <====================>
+
   if (data) {
     kudosCards = data.map((k) => {
       return (
@@ -60,23 +62,23 @@ function KudosPage() {
         <Card
           sx={{
             maxWidth: 345,
+            // minWidth: 300,
             my: 2,
             mx: 2,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            borderRadius: '1rem',
-            borderTopRightRadius: '0',
-            boxShadow: '10px -5px 10px #ccc, -20px -20px 100px #fff',
-            borderRight:'1px solid #ccc',
-            borderTop:'1px solid #ccc',
-            
+            borderRadius: "1rem",
+            borderTopRightRadius: "0",
+            boxShadow: "10px -5px 10px #ccc, -20px -20px 100px #fff",
+            borderRight: "1px solid #ccc",
+            borderTop: "1px solid #ccc",
           }}
         >
           {/* <==========> CARD HEADER <==========> */}
           <CardHeader
             avatar={
-              <Avatar sx={{ bgcolor: '#008996' }} aria-label="recipe">
+              <Avatar sx={{ bgcolor: "#008996" }} aria-label="recipe">
                 {k.name[0]}
               </Avatar>
             }
@@ -85,7 +87,7 @@ function KudosPage() {
                 <MoreVertIcon />
               </IconButton>
             }
-            title={k.name}
+            title={`${k.name} recognized ${k.recipient.name}`}
             subheader={new Date(k.timestamp).toLocaleDateString()}
           />
           {/* <==========> CARD IMAGE <==========> */}
@@ -102,12 +104,14 @@ function KudosPage() {
               {k.text}
             </Typography>
           </CardContent>
-          <CardActions sx={{ display:'flex', justifyContent:'space-between' }}>
+          <CardActions
+            sx={{ display: "flex", justifyContent: "space-between" }}
+          >
             <IconButton aria-label="like">
               <SentimentVerySatisfiedSharpIcon />
             </IconButton>
             <IconButton aria-label="comment">
-              <CommentIcon sx={{  }} />
+              <CommentIcon sx={{}} />
             </IconButton>
           </CardActions>
         </Card>
@@ -116,12 +120,14 @@ function KudosPage() {
   }
 
   return (
-    <Box sx={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      }} >
-        {/* <====================> HEADER <====================> */}
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      {/* <====================> HEADER <====================> */}
       <Header />
       {/* <====================> CARDS <====================> */}
       <Box
