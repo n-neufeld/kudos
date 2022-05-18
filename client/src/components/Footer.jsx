@@ -35,13 +35,13 @@ const Header = () => {
       position="relative"
       color="grey"
       sx={{
-        width: "95%",
+        width: "10rem",
         mx: ".5rem",
         my: ".5rem",
         borderRadius: ".25rem",
         boxShadow: "10px -5px 10px #ccc, -20px -20px 100px #fff",
         background:
-          "linear-gradient(90deg, rgba(255,255,255,1) 20%, rgba(183,203,231,1) 40%, rgba(166,210,208,1) 65%, rgba(236,188,171,1) 95%)",
+          "white",
       }}
     >
       <Container
@@ -61,7 +61,7 @@ const Header = () => {
             sx={{
               mr: 2,
               display: { xs: "flex", md: "flex", lg: "flex"},
-              justifyContent:'right',
+              justifyContent:'center',
               flexGrow: 1,
               fontFamily: "Titillium Web",
               fontWeight: 700,
