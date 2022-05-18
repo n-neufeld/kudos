@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import KudoForm from "../components/KudoForm";
 import Header from "../components/Header";
+import Footer from '../components/Footer'
 
 // const ExpandMore = styled((props) => {
 //   const { expand, ...other } = props;
@@ -52,6 +53,7 @@ function CreateKudo() {
         {/* <==========> CARD FORM <==========> */}
         <KudoForm />
       </Card>
+      <Footer />
     </Box>
   );
 }

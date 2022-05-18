@@ -15,6 +15,7 @@ import axios from "axios";
 import { API_URL } from "../App";
 import Header from "../components/Header";
 import { useParams } from "react-router-dom";
+import Footer from '../components/Footer'
 
 export default function Kudo() {
   const [expanded, setExpanded] = useState(false);
@@ -120,6 +121,7 @@ export default function Kudo() {
           </Card>
         )}
       </Box>
+        <Footer />
     </Box>
   );
 }
