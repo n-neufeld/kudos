@@ -24,13 +24,23 @@ router.get("/", (_req, res) => {
 
 // <====================> ROUTE FOR GETTING SPECIFIC KUDO BY ID <====================>
 router.get("/:id", (req, res) => {
-  const kudos = readJSONFile();
-  let kudo = kudos.find((kudo) => kudo.id === req.params.id);
+  const users = readJSONFile();
+
+  const kudos = [];
+
+  users.forEach((u) => {
+    if (u.kudos) {
+      u.kudos.forEach((k) => kudos.push(k));
+    }
+  });
+
+  let kudo = kudos.find((k) => k.id === req.params.id);
+
   if (kudo) {
-    console.log('success ');
+    console.log("success ");
     return res.json(kudo);
   } else {
-    console.log('fail ');
+    console.log("fail ");
     res.status(404).json({
       error: `Kudo ID${req.params.id} is not found`,
     });

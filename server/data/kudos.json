@@ -1,46 +1,90 @@
 [
   {
-    "id": "3658145b-5494-4db8-85b9-37a6576943f7",
-    "text": "Nice",
-    "image": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
-    "likes": 0,
-    "timestamp": "2022-05-17T02:38:01.579Z",
-    "comments": [],
-    "recipient": { "id": 2, "name": "Jon Doe" },
     "userId": 1,
-    "name": "Nathaniel Neufeld"
+    "name": "Amy Schumer",
+    "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+    "position": "CEO",
+    "department": "Executive",
+    "email": "aschumer@kudo.com",
+    "kudos": [
+      {
+        "id": "3658145b-5494-4db8-85b9-37a6576943f7",
+        "text": "Nice",
+        "image": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+        "likes": 0,
+        "timestamp": "2022-05-17T02:38:01.579Z",
+        "author": 2,
+        "comments": []
+      },
+      {
+        "id": "3658145b-5494-4db8-85b9-37a6576943f7",
+        "text": "Nice",
+        "image": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+        "likes": 0,
+        "timestamp": "2022-05-17T02:38:01.579Z",
+        "author": 3,
+        "comments": []
+      }
+    ]
   },
   {
-    "id": "3658145b-5494-4db8-85b9-37a6576943f7",
-    "text": "Nice",
-    "image": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
-    "likes": 0,
-    "timestamp": "2022-05-17T02:38:01.579Z",
-    "comments": [],
-    "recipient": { "id": 1, "name": "Nathaniel Neufeld" },
     "userId": 2,
-    "name": "John Doe"
+    "name": "Tom Cruise",
+    "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+    "position": "Regional Manager",
+    "department": "Marketing",
+    "email": "tcruise@kudo.com",
+    "kudos": [
+      {
+        "id": "12f2ae32-c089-4ceb-91e6-e8bd86cdf66b",
+        "text": "Bro!",
+        "image": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+        "likes": 0,
+        "timestamp": "2022-05-17T02:40:09.989Z",
+        "author": 1,
+        "comments": []
+      },
+      {
+        "id": "d681ea5e-3a66-4ce2-aebc-550057d075df",
+        "text": "bfdgafdvfagdfgdf",
+        "image": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+        "likes": 0,
+        "timestamp": "2022-05-17T16:22:18.032Z",
+        "author": 3,
+        "comments": []
+      }
+    ]
   },
   {
-    "id": "12f2ae32-c089-4ceb-91e6-e8bd86cdf66b",
-    "text": "Bro!",
-    "image": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
-    "likes": 0,
-    "timestamp": "2022-05-17T02:40:09.989Z",
-    "comments": [],
-    "recipient": { "id": 2, "name": "John Doe" },
-    "userId": 1,
-    "name": "Nathaniel Neufeld"
+    "userId": 3,
+    "name": "Adele Laurie Blue Adkins",
+    "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+    "position": "CEO",
+    "department": "Executive",
+    "email": "alaurie@kudo.com"
   },
   {
-    "id": "d681ea5e-3a66-4ce2-aebc-550057d075df",
-    "text": "bfdgafdvfagdfgdf",
-    "image": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
-    "likes": 0,
-    "timestamp": "2022-05-17T16:22:18.032Z",
-    "comments": [],
-    "recipient": { "id": 1, "name": "Nathaniel Neufeld" },
-    "userId": 1,
-    "name": "Nathaniel Neufeld"
+    "userId": 4,
+    "name": "Benedict Cumberbatch",
+    "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+    "position": "CEO",
+    "department": "Executive",
+    "email": "bcumberbatchaschumer@kudo.com"
+  },
+  {
+    "userId": 5,
+    "name": "Amy Schumer",
+    "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+    "position": "HR Generalist",
+    "department": "HR",
+    "email": "aschumer@kudo.com"
+  },
+  {
+    "userId": 6,
+    "name": "Paul Meany",
+    "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+    "position": "Driver",
+    "department": "Shipping",
+    "email": "pmeany@kudo.com"
   }
 ]

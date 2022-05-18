@@ -3,7 +3,7 @@ import "./App.css";
 import React from "react";
 // import loginPage from "./pages/loginPage/loginPage";
 // import createAccount from "./pages/createAccount/createAccount";
-import KudoId from "./pages/KudoId";
+import KudoId from "./pages/Kudo";
 // import commentKudo from "./pages/commentKudo/commentKudo";
 // import createKudo from "./pages/createKudo/createKudo";
 import KudosPage from "./pages/KudosPage";
