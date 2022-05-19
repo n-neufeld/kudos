@@ -10,7 +10,6 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import SentimentVerySatisfiedSharpIcon from "@mui/icons-material/SentimentVerySatisfiedSharp";
 import CommentIcon from "@mui/icons-material/Comment";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import axios from "axios";
 import { API_URL } from "../App";
 import Header from "../components/Header";
@@ -89,11 +88,6 @@ export default function Kudo() {
                   {/* {data.name.charAt(0)} */}
                   {/* <========================================== Doesn't accecpt the array `[0]`  */}
                 </Avatar>
-              }
-              action={
-                <IconButton aria-label="settings">
-                  <MoreVertIcon />
-                </IconButton>
               }
               // title={`${data.name} recognized ${data.recipient.name}`} // <======================= 'name' is undefined?
               subheader={new Date(data.timestamp).toLocaleDateString()}

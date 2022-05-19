@@ -6,16 +6,12 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Avatar from "@mui/material/Avatar";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import SentimentVerySatisfiedSharpIcon from "@mui/icons-material/SentimentVerySatisfiedSharp";
-import CommentIcon from "@mui/icons-material/Comment";
 import axios from "axios";
 import { API_URL } from "../App";
 import Header from "../components/Header";
 import { CardActionArea } from "@mui/material";
 import Footer from '../components/Footer'
-import Modal from "../components/Modal";
 
 function KudosPage() {
   const [expanded, setExpanded] = React.useState(false);
@@ -125,16 +121,6 @@ function KudosPage() {
                     <CardActions
                       sx={{ display: "flex", justifyContent: "space-between" }}
                     >
-                      {/* <==========> LIKE ICON <==========> */}
-                      {/* <IconButton aria-label="like">
-                        <SentimentVerySatisfiedSharpIcon />
-                      </IconButton> */}
-                      {/* <==========> COMMENT ICON <==========> */}
-                      
-                      {/* <IconButton aria-label="comment" onClick={()=> setIsOpen(true)}>
-                        <CommentIcon sx={{}}>
-                        </CommentIcon>
-                      </IconButton> */}
                     </CardActions>
                   </CardActionArea>
                 </Card>

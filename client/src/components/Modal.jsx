@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "@mui/material";
 
 const MODAL_STYLES = {
   position: "fixed",
@@ -29,10 +30,29 @@ export default function modal({ open, children, onClose }) {
 
   return (
     <>
-      <div style={OVERLAY_STYLES} />
-      <div style={MODAL_STYLES}>
-        <button onClick={onClose}>CLOSE</button>
+      <div style={OVERLAY_STYLES} sx={{
+          display: "flex",
+          flexDirection: "column",
+          padding:'50rem'
+        }} />
+      <div
+        style={MODAL_STYLES}
+        
+      >
         {children}
+        <Button
+          onClick={onClose}
+          sx={{
+            ml: ".5rem",
+            color: "white",
+            bgcolor: "#FF8B53",
+            borderTopLeftRadius: "5rem",
+            borderBottomLeftRadius: "5rem",
+            borderBottomRightRadius: "5rem",
+          }}
+        >
+          CLOSE
+        </Button>
       </div>
     </>
   );
