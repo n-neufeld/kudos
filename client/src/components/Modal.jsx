@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "@mui/material";
 import Box from "@mui/material/Box";
 import { IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
@@ -11,13 +10,13 @@ const MODAL_STYLES = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  backgroundColor: "white",
+  backgroundColor: "rgba(0,0,0,0)",
   padding: "1rem",
   zIndex: 1000,
-  borderRadius: "1rem",
-  borderTopRightRadius: "0",
-  boxShadow: "20px 20px 50px #2a2a2a",
-  border: "1px solid #ccc",
+  // borderRadius: "1rem",
+  // borderTopRightRadius: "0",
+  // boxShadow: "20px 20px 50px #2a2a2a",
+  // border: "1px solid #ccc",
   display: "flex",
   flexDirection: "column",
 };
