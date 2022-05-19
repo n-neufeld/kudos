@@ -16,6 +16,13 @@ import Header from "../components/Header";
 import { useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import Modal from "../components/Modal";
+import {
+  List,
+  ListItem,
+  ListItemText,
+  Paper,
+  ListItemAvatar,
+} from "@mui/material";
 
 export default function Kudo() {
   const [expanded, setExpanded] = useState(false);
@@ -24,12 +31,24 @@ export default function Kudo() {
   // <====================> MODAL <====================>
   const [modelOpen, setModalOpen] = useState(false);
 
+  const [users, setUsers] = useState([]);
+
   // const handleExpandClick = () => {
   //   setExpanded(!expanded);
   // };
 
   const [data, setData] = useState([]);
   const { id } = useParams();
+
+  const getAuthor = (users) => {
+    const author = users.find((u) => u.userId === data.author);
+    return author.name;
+  };
+
+  const getRecipient = (users) => {
+    const recipient = users.find((u) => u.userId === data.recipient);
+    return recipient.name;
+  };
 
   // <====================> RETRIEVE THE DATA FROM THE SERVER <====================>
   useEffect(() => {
@@ -40,6 +59,14 @@ export default function Kudo() {
     }).then((res) => {
       console.log(res.data);
       setData(res.data);
+    });
+
+    axios({
+      method: "get",
+      url: `${API_URL}/kudos`,
+      headers: { "Access-Control-Allow-Origin": "*" },
+    }).then((res) => {
+      setUsers(res.data);
       setIsLoading(false);
     });
   }, [id]);
@@ -64,62 +91,63 @@ export default function Kudo() {
         }}
       >
         {!isLoading && (
-          <Card
-            sx={{
-              maxWidth: 345,
-              minWidth: 300,
-              my: 2,
-              mx: 2,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              borderRadius: "1rem",
-              borderTopRightRadius: "0",
-              boxShadow: "2px -5px 10px #ccc, -20px -20px 100px #fff",
-              borderRight: "1px solid #ccc",
-              borderTop: "1px solid #ccc",
-            }}
-          >
-            {/* <==========> CARD HEADER <==========> */}
-            <CardHeader
-              avatar={
-                <Avatar sx={{ bgcolor: "#008996" }} aria-label="recipe">
-                  {/* {data.name.charAt(0)} */}
-                  {/* <========================================== Doesn't accecpt the array `[0]`  */}
-                </Avatar>
-              }
-              // title={`${data.name} recognized ${data.recipient.name}`} // <======================= 'name' is undefined?
-              subheader={new Date(data.timestamp).toLocaleDateString()}
-            />
-            {/* <==========> CARD IMAGE <==========> */}
-            <CardMedia
-              sx={{ width: "90%" }}
-              component="img"
-              height="194"
-              image={data.image}
-              alt="Paella dish"
-            />
-            {/* <==========> CARD COMMENT <==========> */}
-            <CardContent>
-              <Typography variant="body2" color="text.secondary">
-                {data.text}
-              </Typography>
-            </CardContent>
-            <CardActions
-              sx={{ display: "flex", justifyContent: "space-between" }}
+          <>
+            <Card
+              sx={{
+                maxWidth: 345,
+                minWidth: 300,
+                my: 2,
+                mx: 2,
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                borderRadius: "1rem",
+                borderTopRightRadius: "0",
+                boxShadow: "2px -5px 10px #ccc, -20px -20px 100px #fff",
+                borderRight: "1px solid #ccc",
+                borderTop: "1px solid #ccc",
+              }}
             >
-              <IconButton aria-label="like">
-                <SentimentVerySatisfiedSharpIcon />
-              </IconButton>
-
-              <div>
-                <IconButton
-                  aria-label="comment"
-                  onClick={() => setModalOpen(true)}
-                >
-                  <CommentIcon sx={{}} />
+              {/* <==========> CARD HEADER <==========> */}
+              <CardHeader
+                avatar={
+                  <Avatar sx={{ bgcolor: "#008996" }} aria-label="recipe">
+                    {getAuthor(users).charAt(0)}
+                    {/* <========================================== Doesn't accecpt the array `[0]`  */}
+                  </Avatar>
+                }
+                title={`${getAuthor(users)} recognized ${getRecipient(users)}`} // <======================= 'name' is undefined?
+                subheader={new Date(data.timestamp).toLocaleDateString()}
+              />
+              {/* <==========> CARD IMAGE <==========> */}
+              <CardMedia
+                sx={{ width: "90%" }}
+                component="img"
+                height="194"
+                image={data.image}
+                alt="Paella dish"
+              />
+              {/* <==========> CARD COMMENT <==========> */}
+              <CardContent>
+                <Typography variant="body2" color="text.secondary">
+                  {data.text}
+                </Typography>
+              </CardContent>
+              <CardActions
+                sx={{ display: "flex", justifyContent: "space-between" }}
+              >
+                <IconButton aria-label="like">
+                  <SentimentVerySatisfiedSharpIcon />
                 </IconButton>
-                <Modal open={modelOpen} onClose={() => setModalOpen(false)}>
+
+                <div>
+                  <IconButton
+                    aria-label="comment"
+                    onClick={() => setModalOpen(true)}
+                  >
+                    <CommentIcon sx={{}} />
+                  </IconButton>
+                  {/* <Modal open={modelOpen} onClose={() => setModalOpen(false)}>
                   <Card
                     sx={{
                       maxWidth: 345,
@@ -140,10 +168,30 @@ export default function Kudo() {
                     />
                     <CardContent>{data.text}</CardContent>
                   </Card>
-                </Modal>
-              </div>
-            </CardActions>
-          </Card>
+                </Modal> */}
+                </div>
+              </CardActions>
+            </Card>
+            <Paper>
+              <List>
+                {data.comments.map((c) => (
+                  <ListItem>
+                    <ListItemAvatar>
+                      <Avatar sx={{ bgcolor: "#008996" }} aria-label="recipe">
+                        {getAuthor(users).charAt(0)}
+                        {/* <========================================== Doesn't accecpt the array `[0]`  */}
+                      </Avatar>
+                    </ListItemAvatar>
+
+                    <ListItemText
+                      primary={users.find((u) => u.userId === c.author).name}
+                      secondary={c.text}
+                    />
+                  </ListItem>
+                ))}
+              </List>
+            </Paper>
+          </>
         )}
       </Box>
       <Footer />
