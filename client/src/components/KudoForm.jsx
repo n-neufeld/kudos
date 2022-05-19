@@ -73,6 +73,7 @@ export default function KudoForm() {
     });
   };
 
+// <====================> CANVAS <====================>
   let symmetry = 6;
   let angle = 360 / symmetry;
   let saveButton;
@@ -155,7 +156,6 @@ export default function KudoForm() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        // width: "100%",
       }}
     >
       <FormControl>
@@ -186,11 +186,11 @@ export default function KudoForm() {
           )}
         />
 
-        {/* <==========> KUDO <==========> */}
+        {/* <==========> SAY SOMETHING NICE <==========> */}
 
         <TextField
           id="outlined-multiline-flexible"
-          label="Say something nice"
+          label="Say Something Nice!"
           multiline
           maxRows={4}
           value={textValue}
@@ -198,7 +198,7 @@ export default function KudoForm() {
           sx={{ mb: 2 }}
         />
 
-        {/* <====================> IMAGE <====================> */}
+        {/* <====================> CANVAS IMAGE <====================> */}
         <Grid width="300" height="300">
           {/* <CardMedia
             component="img"

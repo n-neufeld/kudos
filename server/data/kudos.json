@@ -32,7 +32,7 @@
       },
       {
         "id": "3658145b-5494-4db8-85b9-37a6576943f7",
-        "text": "Nice",
+        "text": "Lookin sharp!",
         "image": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
         "likes": 0,
         "timestamp": "2022-05-17T02:38:01.579Z",
@@ -52,7 +52,7 @@
     "kudos": [
       {
         "id": "12f2ae32-c089-4ceb-91e6-e8bd86cdf66b",
-        "text": "Bro!",
+        "text": "Bro, that was an amazing presentation!",
         "image": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
         "likes": 0,
         "timestamp": "2022-05-17T02:40:09.989Z",
@@ -61,7 +61,7 @@
       },
       {
         "id": "d681ea5e-3a66-4ce2-aebc-550057d075df",
-        "text": "bfdgafdvfagdfgdf",
+        "text": ". . . no words. . . ",
         "image": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
         "likes": 0,
         "timestamp": "2022-05-17T16:22:18.032Z",
@@ -101,5 +101,16 @@
     "position": "Driver",
     "department": "Shipping",
     "email": "pmeany@kudo.com"
+  },
+  {
+    "id": "a5bd7023-d8b9-429c-8a6d-b9e5c91a9cdc",
+    "text": "Thanks so much for your time yesterday!",
+    "image": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+    "likes": 0,
+    "timestamp": "2022-05-19T21:08:37.107Z",
+    "comments": [],
+    "recipient": { "id": 6, "name": "Paul Meany" },
+    "userId": 1,
+    "name": "Nathaniel Neufeld"
   }
 ]

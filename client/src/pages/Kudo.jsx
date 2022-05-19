@@ -210,17 +210,12 @@ export default function Kudo() {
                   alignItems:'center'
                 }}
               >
+                {/* <==========> EACH COMMENT <==========> */}
                 {data.comments.map((c) => (
                   <ListItem
                     sx={{
                       width: "90%",
-                      // minWidth: 300,
-                      // maxWidth: 320,
-                      my: 2,
-                      // mx: 2,
-                      // display: "flex",
-                      // flexDirection: "row",
-                      // alignItems: "center",
+                      my: 1,
                       borderRadius: "1rem",
                       borderTopRightRadius: "0",
                       boxShadow: "2px -5px 10px #ccc, -20px -20px 100px #fff",
@@ -229,6 +224,7 @@ export default function Kudo() {
                       backgroundColor: "white",
                     }}
                   >
+                    {/* <==========> AVATAR <==========> */}
                     <ListItemAvatar>
                       <Avatar sx={{ bgcolor: "#008996" }} aria-label="recipe">
                         {users
@@ -236,7 +232,7 @@ export default function Kudo() {
                           .name.charAt(0)}
                       </Avatar>
                     </ListItemAvatar>
-
+                    {/* <==========> TEXT <==========> */}
                     <ListItemText
                       primary={users.find((u) => u.userId === c.author).name}
                       secondary={c.text}
