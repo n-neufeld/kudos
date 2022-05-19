@@ -16,11 +16,6 @@ function App() {
   return (
     <Router className="App">
       <Switch>
-        {/* {loginPage} */}
-        <Route path="/login" exact component="/login"></Route> 
-        {/* {createAccount} */}
-        <Route path="/create-account" exact component="/create-acount"></Route>
-        
         <Route path="/" exact component={KudosPage}></Route> 
         {/* {kudoId} */}
         <Route path="/kudos/:id" exact component={KudoId}></Route> 

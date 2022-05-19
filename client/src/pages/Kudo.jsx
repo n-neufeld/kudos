@@ -85,6 +85,7 @@ export default function Kudo() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        minWidth:'20rem'
       }}
     >
       {/* <==========> HEADER <==========> */}

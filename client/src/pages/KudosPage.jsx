@@ -41,6 +41,7 @@ function KudosPage() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        minWidth:'20rem'
       }}
     >
       {/* <====================> HEADER <====================> */}
