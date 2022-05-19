@@ -156,24 +156,22 @@ export default function KudoForm() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
+        width:'90%'
       }}
     >
-      <FormControl>
-        {/* <====================> FORM CONTAINER <====================> */}
-
-        {/* sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            my: ".5rem",
-          }} */}
+      <FormControl sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        width:'100%'
+      }}>
 
         {/* <==========> RECIPIENT <==========> */}
-
         <Autocomplete
           value={selectedUser}
           id="user-select"
-          sx={{ width: 300, mb: 2 }}
+          sx={{ width: '100%', mb: 2 }}
           options={users}
           autoHighlight
           getOptionLabel={(user) => user.name}
@@ -187,7 +185,6 @@ export default function KudoForm() {
         />
 
         {/* <==========> SAY SOMETHING NICE <==========> */}
-
         <TextField
           id="outlined-multiline-flexible"
           label="Say Something Nice!"
@@ -195,11 +192,13 @@ export default function KudoForm() {
           maxRows={4}
           value={textValue}
           onChange={handleChange}
-          sx={{ mb: 2 }}
+          sx={{ width: '100%', mb: 2 }}
         />
 
         {/* <====================> CANVAS IMAGE <====================> */}
-        <Grid width="300" height="300">
+        <Box sx={{
+          width:'100%'
+        }}>
           {/* <CardMedia
             component="img"
             height="194"
@@ -207,7 +206,7 @@ export default function KudoForm() {
             alt="placeholder image"
           /> */}
           <Sketch setup={setup} draw={draw} />
-        </Grid>
+        </Box>
 
         {/* <====================> SUBMIT KUDO <====================> */}
         <Button

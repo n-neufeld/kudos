@@ -38,8 +38,8 @@ function CreateKudo() {
       {/* <====================> KUDO CARD <====================> */}
       <Card
         sx={{
-          maxWidth: 350,
-          minWidth: 300,
+          maxWidth: 320,
+          width: '90%',
           mt: 2,
           mb: 10,
           mx: 2,
