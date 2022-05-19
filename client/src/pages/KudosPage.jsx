@@ -15,6 +15,7 @@ import { API_URL } from "../App";
 import Header from "../components/Header";
 import { CardActionArea } from "@mui/material";
 import Footer from '../components/Footer'
+import Modal from "../components/Modal";
 
 function KudosPage() {
   const [expanded, setExpanded] = React.useState(false);
@@ -25,6 +26,7 @@ function KudosPage() {
 
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   // <====================> RETRIEVE THE DATA FROM THE SERVER <====================>
   useEffect(() => {
@@ -79,8 +81,9 @@ function KudosPage() {
                 }}
                   
                 >
-                  <CardActionArea href={`/kudos/${k.id}`
-                }sx={{
+                  <CardActionArea 
+                  // href={`/kudos/${k.id}`}
+                  sx={{
                   // maxWidth: 345,
                   // minWidth: 300,
                   // my: 2,
@@ -119,7 +122,7 @@ function KudosPage() {
                       image={k.image}
                       alt="Paella dish"
                     />
-                    {/* <==========> CARD COMMENT <==========> */}
+                    {/* <==========> CARD KUDO TEXT <==========> */}
                     <CardContent>
                       <Typography variant="body2" color="text.secondary">
                         {k.text}
@@ -128,12 +131,20 @@ function KudosPage() {
                     <CardActions
                       sx={{ display: "flex", justifyContent: "space-between" }}
                     >
+                      {/* <==========> LIKE ICON <==========> */}
                       <IconButton aria-label="like">
                         <SentimentVerySatisfiedSharpIcon />
                       </IconButton>
-                      <IconButton aria-label="comment">
-                        <CommentIcon sx={{}} />
+                      {/* <==========> COMMENT ICON <==========> */}
+                      <div>
+                      <IconButton aria-label="comment" onClick={()=> setIsOpen(true)}>
+                        <CommentIcon sx={{}}>
+                        </CommentIcon>
                       </IconButton>
+                          <Modal open={isOpen} onClose={()=>setIsOpen(false)}>
+                            Hello, this is Modal
+                          </Modal>
+                      </div>
                     </CardActions>
                   </CardActionArea>
                 </Card>
