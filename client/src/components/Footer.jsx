@@ -29,11 +29,11 @@ const Header = () => {
       color="grey"
       sx={{
         display: { xs: "flex", md: "flex", lg:'none'},
-        width: "10rem",
+        width: "95%",
         mx: ".5rem",
         my: ".5rem",
         borderRadius: ".25rem",
-        boxShadow: "10px -5px 10px #ccc, -20px -20px 100px #fff",
+        boxShadow: "0px 0px 10px #ccc, -0px -0px 10px #fff",
         background:
           "white",
       }}
@@ -50,9 +50,8 @@ const Header = () => {
             variant="h5"
             noWrap
             sx={{
-              mr: 2,
               display: { xs: "flex", md: "flex",},
-              justifyContent:'center',
+              justifyContent:'flex-end',
               flexGrow: 1,
               fontFamily: "Titillium Web",
               fontWeight: 700,
