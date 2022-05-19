@@ -15,11 +15,15 @@ import axios from "axios";
 import { API_URL } from "../App";
 import Header from "../components/Header";
 import { useParams } from "react-router-dom";
-import Footer from '../components/Footer'
+import Footer from "../components/Footer";
+import Modal from "../components/Modal";
 
 export default function Kudo() {
   const [expanded, setExpanded] = useState(false);
+  //<====================> CARD <====================>
   const [isLoading, setIsLoading] = useState(true);
+  // <====================> MODAL <====================>
+  const [isOpen, setIsOpen] = useState(false);
 
   // const handleExpandClick = () => {
   //   setExpanded(!expanded);
@@ -114,14 +118,20 @@ export default function Kudo() {
               <IconButton aria-label="like">
                 <SentimentVerySatisfiedSharpIcon />
               </IconButton>
-              <IconButton aria-label="comment">
-                <CommentIcon sx={{}} />
-              </IconButton>
+
+              <div>
+                <IconButton aria-label="comment" onClick={()=> setIsOpen(true)}>
+                  <CommentIcon sx={{}} />
+                </IconButton>
+                <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+                  Hello, this is Modal
+                </Modal>
+              </div>
             </CardActions>
           </Card>
         )}
       </Box>
-        <Footer />
+      <Footer />
     </Box>
   );
 }
