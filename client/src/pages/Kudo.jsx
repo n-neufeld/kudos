@@ -23,15 +23,19 @@ import {
   Paper,
   ListItemAvatar,
 } from "@mui/material";
+import { width } from "@mui/system";
 
 export default function Kudo() {
   const [expanded, setExpanded] = useState(false);
   //<====================> CARD <====================>
   const [isLoading, setIsLoading] = useState(true);
-  // <====================> MODAL <====================>
-  const [modelOpen, setModalOpen] = useState(false);
-
+  // <====================> COMMENTS <====================>
   const [users, setUsers] = useState([]);
+  // <====================> COMMENTS DISPLAY <====================>
+  // const [commentsOpen, setCommentsOpen] = useState(false);
+
+  // <====================> MODAL <====================>
+  // const [modelOpen, setModalOpen] = useState(false);
 
   // const handleExpandClick = () => {
   //   setExpanded(!expanded);
@@ -40,11 +44,13 @@ export default function Kudo() {
   const [data, setData] = useState([]);
   const { id } = useParams();
 
+  // <====================> GET AUTHOR FOR COMMENTS <====================>
   const getAuthor = (users) => {
     const author = users.find((u) => u.userId === data.author);
     return author.name;
   };
 
+  // <====================> GET RECIPIENT FOR COMMENTS <====================>
   const getRecipient = (users) => {
     const recipient = users.find((u) => u.userId === data.recipient);
     return recipient.name;
@@ -52,6 +58,7 @@ export default function Kudo() {
 
   // <====================> RETRIEVE THE DATA FROM THE SERVER <====================>
   useEffect(() => {
+    // <==========> CALL FOR INDIVIDUAL ID <==========>
     axios({
       method: "get",
       url: `${API_URL}/kudos/${id}`,
@@ -60,7 +67,7 @@ export default function Kudo() {
       console.log(res.data);
       setData(res.data);
     });
-
+    // <==========> CALL FOR ALL DATA <==========>
     axios({
       method: "get",
       url: `${API_URL}/kudos`,
@@ -80,9 +87,9 @@ export default function Kudo() {
         alignItems: "center",
       }}
     >
-      {/* <====================> HEADER <====================> */}
+      {/* <==========> HEADER <==========> */}
       <Header />
-      {/* <====================> KUDO CARD <====================> */}
+      {/* <==========> KUDO CARD <==========> */}
       <Box
         sx={{
           justifyContent: "center",
@@ -91,7 +98,12 @@ export default function Kudo() {
         }}
       >
         {!isLoading && (
-          <>
+          <Box
+            SX={{
+              display: { xs: "flex", md: "flex", lg: "none" },
+              flexDirection: "column",
+            }}
+          >
             <Card
               sx={{
                 maxWidth: 345,
@@ -113,7 +125,6 @@ export default function Kudo() {
                 avatar={
                   <Avatar sx={{ bgcolor: "#008996" }} aria-label="recipe">
                     {getAuthor(users).charAt(0)}
-                    {/* <========================================== Doesn't accecpt the array `[0]`  */}
                   </Avatar>
                 }
                 title={`${getAuthor(users)} recognized ${getRecipient(users)}`} // <======================= 'name' is undefined?
@@ -136,14 +147,25 @@ export default function Kudo() {
               <CardActions
                 sx={{ display: "flex", justifyContent: "space-between" }}
               >
+                {/* <==========> ICONS <==========> */}
                 <IconButton aria-label="like">
                   <SentimentVerySatisfiedSharpIcon />
                 </IconButton>
 
                 <div>
+                  {/* <IconButton aria-label="give a star" onClick={submitStar}>
+                    <Badge
+                      badgeContent={recognition.stars.length}
+                      color="secondary"
+                    >
+                      <Star
+                        color={recognition.stars.length ? "primary" : "action"}
+                      />
+                    </Badge>
+                  </IconButton> */}
                   <IconButton
                     aria-label="comment"
-                    onClick={() => setModalOpen(true)}
+                    // onClick={() => setCommentsOpen(true)}
                   >
                     <CommentIcon sx={{}} />
                   </IconButton>
@@ -172,14 +194,46 @@ export default function Kudo() {
                 </div>
               </CardActions>
             </Card>
-            <Paper>
-              <List>
+            {/* <====================> COMMENTS SECTION <====================> */}
+            <Paper
+              sx={{
+                backgroundColor: "rgba(0,0,0,0)",
+                boxShadow: "none",
+                width: "100%",
+              }}
+            >
+              <List
+                sx={{
+                  display: "flex",
+                  flexDirection:'column',
+                  justifyContent: "center",
+                  alignItems:'center'
+                }}
+              >
                 {data.comments.map((c) => (
-                  <ListItem>
+                  <ListItem
+                    sx={{
+                      width: "90%",
+                      // minWidth: 300,
+                      // maxWidth: 320,
+                      my: 2,
+                      // mx: 2,
+                      // display: "flex",
+                      // flexDirection: "row",
+                      // alignItems: "center",
+                      borderRadius: "1rem",
+                      borderTopRightRadius: "0",
+                      boxShadow: "2px -5px 10px #ccc, -20px -20px 100px #fff",
+                      borderRight: "1px solid #ccc",
+                      borderTop: "1px solid #ccc",
+                      backgroundColor: "white",
+                    }}
+                  >
                     <ListItemAvatar>
                       <Avatar sx={{ bgcolor: "#008996" }} aria-label="recipe">
-                        {getAuthor(users).charAt(0)}
-                        {/* <========================================== Doesn't accecpt the array `[0]`  */}
+                        {users
+                          .find((u) => u.userId === c.author)
+                          .name.charAt(0)}
                       </Avatar>
                     </ListItemAvatar>
 
@@ -191,7 +245,7 @@ export default function Kudo() {
                 ))}
               </List>
             </Paper>
-          </>
+          </Box>
         )}
       </Box>
       <Footer />
