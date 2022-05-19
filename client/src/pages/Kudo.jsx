@@ -22,7 +22,7 @@ export default function Kudo() {
   //<====================> CARD <====================>
   const [isLoading, setIsLoading] = useState(true);
   // <====================> MODAL <====================>
-  const [isOpen, setIsOpen] = useState(false);
+  const [modelOpen, setModalOpen] = useState(false);
 
   // const handleExpandClick = () => {
   //   setExpanded(!expanded);
@@ -45,7 +45,6 @@ export default function Kudo() {
   }, [id]);
 
   // <====================> POST THE DATA FROM THE SERVER <====================>
-
   return (
     <Box
       sx={{
@@ -114,11 +113,16 @@ export default function Kudo() {
               </IconButton>
 
               <div>
-                <IconButton aria-label="comment" onClick={()=> setIsOpen(true)}>
+                <IconButton
+                  aria-label="comment"
+                  onClick={() => setModalOpen(true)}
+                >
                   <CommentIcon sx={{}} />
                 </IconButton>
-                <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-                  Hello, this is Modal
+                <Modal open={modelOpen} onClose={() => setModalOpen(false)}>
+                  <p>Sender DATE <br />COMMENT</p>
+                  <p>Sender DATE <br />COMMENT</p>
+                  <p>Sender DATE <br />COMMENT</p>
                 </Modal>
               </div>
             </CardActions>

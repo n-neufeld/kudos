@@ -1,18 +1,25 @@
 import React from "react";
 import { Button } from "@mui/material";
+import Box from "@mui/material/Box";
+import { IconButton } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 
 const MODAL_STYLES = {
+  maxWidth:'20rem',
+  width: '70%',
   position: "fixed",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
   backgroundColor: "white",
-  padding: "2rem",
+  padding: "1rem",
   zIndex: 1000,
   borderRadius: "1rem",
   borderTopRightRadius: "0",
   boxShadow: "20px 20px 50px #2a2a2a",
   border: "1px solid #ccc",
+  display: "flex",
+  flexDirection: "column",
 };
 
 const OVERLAY_STYLES = {
@@ -30,30 +37,37 @@ export default function modal({ open, children, onClose }) {
 
   return (
     <>
-      <div style={OVERLAY_STYLES} sx={{
-          display: "flex",
-          flexDirection: "column",
-          padding:'50rem'
-        }} />
-      <div
-        style={MODAL_STYLES}
-        
-      >
-        {children}
-        <Button
-          onClick={onClose}
+      <div style={OVERLAY_STYLES} />
+      <Box style={MODAL_STYLES}>
+        <Box
           sx={{
-            ml: ".5rem",
-            color: "white",
-            bgcolor: "#FF8B53",
-            borderTopLeftRadius: "5rem",
-            borderBottomLeftRadius: "5rem",
-            borderBottomRightRadius: "5rem",
+            display: "flex",
+            justifyContent: "flex-end",
           }}
         >
-          CLOSE
-        </Button>
-      </div>
+          <IconButton
+            onClick={onClose}
+            sx={{
+              width: "2rem",
+              p: "0",
+              mb: "1rem",
+              color: "white",
+              bgcolor: "#FF8B53",
+              borderRadius: ".5rem",
+            }}
+          >
+            <CloseIcon />
+          </IconButton>
+        </Box>
+        <Box sx={{
+          display:'flex',
+          flexDirection:'column',
+          justifyContent:'center',
+          alignItems:'center',
+        }}>
+        {children}
+        </Box>
+      </Box>
     </>
   );
 }

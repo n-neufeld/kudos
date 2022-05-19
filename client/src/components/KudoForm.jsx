@@ -9,17 +9,17 @@ import { CardContent } from "@mui/material";
 // import * as employees from "../employees/employees";
 import axios from "axios";
 import { API_URL } from "../App";
-
+import Sketch from "react-p5";
 import {
-  // createCanvas,
-  // angleMode,
+  createCanvas,
+  angleMode,
   DEGREES,
-  // background,
-  // createButton,
-  // colorMode,
+  background,
+  createButton,
+  colorMode,
   HSB,
   save,
-  // translate,
+  translate,
   width,
   height,
   mouseX,
@@ -40,7 +40,6 @@ import {
   p5,
 } from "react-p5";
 
-import Sketch from "react-p5";
 
 /* <====================> DEFINED FORM PROPERTIES <====================> */
 const initialFValues = {
@@ -133,7 +132,7 @@ export default function KudoForm() {
       }
     }
   };
-  // <====================> RETRIEVE THE DATA FROM THE SERVER <====================>
+  // <====================> RETRIEVE KUDO DATA FROM SERVER <====================>
   useEffect(() => {
     axios({
       method: "get",
