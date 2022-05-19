@@ -10,11 +10,9 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import SentimentVerySatisfiedSharpIcon from "@mui/icons-material/SentimentVerySatisfiedSharp";
 import CommentIcon from "@mui/icons-material/Comment";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import axios from "axios";
 import { API_URL } from "../App";
 import Header from "../components/Header";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { CardActionArea } from "@mui/material";
 import Footer from '../components/Footer'
 

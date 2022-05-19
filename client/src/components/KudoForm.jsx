@@ -11,15 +11,15 @@ import axios from "axios";
 import { API_URL } from "../App";
 
 import {
-  createCanvas,
-  angleMode,
+  // createCanvas,
+  // angleMode,
   DEGREES,
-  background,
-  createButton,
-  colorMode,
+  // background,
+  // createButton,
+  // colorMode,
   HSB,
   save,
-  translate,
+  // translate,
   width,
   height,
   mouseX,

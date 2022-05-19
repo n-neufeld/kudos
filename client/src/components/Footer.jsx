@@ -2,39 +2,33 @@ import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import AddBoxIcon from "@mui/icons-material/AddBox";
 import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
 import CelebrationIcon from "@mui/icons-material/Celebration";
-import { Button } from "@mui/material";
 
 const settings = ["Dashboard", "Logout"];
 // const creates = [];
 
 const Header = () => {
   // const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
+//   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  // <====================> OPEN MENU <====================>
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
+//   // <====================> OPEN MENU <====================>
+//   const handleOpenUserMenu = (event) => {
+//     setAnchorElUser(event.currentTarget);
+//   };
 
-  //  <====================> CLOSE MENU <====================>
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+//   //  <====================> CLOSE MENU <====================>
+//   const handleCloseUserMenu = () => {
+//     setAnchorElUser(null);
+//   };
 
   return (
     <AppBar
       position="relative"
       color="grey"
       sx={{
+        display: { xs: "flex", md: "flex", lg:'none'},
         width: "10rem",
         mx: ".5rem",
         my: ".5rem",
@@ -47,9 +41,6 @@ const Header = () => {
       <Container
         variant="contained"
         maxWidth="xl"
-        sx={{
-          p: "0.5rem",
-        }}
       >
         <Toolbar disableGutters>
           {/* <====================> ICON & TITLE + <====================> */}
@@ -60,7 +51,7 @@ const Header = () => {
             noWrap
             sx={{
               mr: 2,
-              display: { xs: "flex", md: "flex", lg: "flex"},
+              display: { xs: "flex", md: "flex",},
               justifyContent:'center',
               flexGrow: 1,
               fontFamily: "Titillium Web",
@@ -81,85 +72,6 @@ const Header = () => {
             <Typography>KUDOS</Typography>
             {/* <==========> HEADER ICON <==========> */}
           </Box>
-
-          {/* <====================> PROFILE / CREATE KUDO CONTAINER <====================> */}
-          {/* <Box
-            sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
-          > */}
-            {/* <Box sx={{ flexGrow: 0, md: "flex" }}> */}
-              {/* <==========> AVATAR ICON <==========> */}
-              {/* <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar
-                    alt="Nathaniel Neufeld"
-                    src="/static/images/avatar/2.jpg"
-                    sx={{ bgcolor: "#FF8B53" }}
-                  />
-                </IconButton>
-              </Tooltip> */}
-              {/* <==========> PROFILE MENU DROPDOWN <==========> */}
-              {/* <Menu
-                sx={{ mt: "50px", mr: "50px" }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "left",
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    <Typography textAlign="center">{setting}</Typography>
-                  </MenuItem>
-                ))}
-              </Menu> */}
-            {/* </Box> */}
-
-            {/* <====================> CREATE KUDO BUTTON <====================> */}
-            {/* <Button
-              href="/create-kudo"
-              variant="contained"
-              sx={{
-                fontSize: 16,
-                padding: 1,
-                ml: ".5rem",
-                md: "flex",
-                lg: "flex",
-                color: "white",
-                "&:hover": {
-                  color: "#37cd7b",
-                  backgroundColor: "white",
-                  "& .MuiSvgIcon-root": {
-                    color: "#37cd7b",
-                    transitions: {
-                      easing: {
-                        easeIn: "1s",
-                        easeOut: "1s",
-                      },
-                    },
-                  },
-                },
-                bgcolor: "#37cd7b",
-                borderTopLeftRadius: "5rem",
-                borderBottomLeftRadius: "5rem",
-                borderBottomRightRadius: "5rem",
-              }}
-              startIcon={
-                <AddBoxIcon
-                  sx={{ size: "large", m: "0", padding: 0, color: "white" }}
-                ></AddBoxIcon>
-              }
-            >
-              KUDO!
-            </Button> */}
-          {/* </Box> */}
         </Toolbar>
       </Container>
     </AppBar>
