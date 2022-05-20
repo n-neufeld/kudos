@@ -44,6 +44,7 @@ function KudosPage() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        justifyContent: 'center',
         minWidth: "20rem",
       }}
     >
@@ -66,7 +67,7 @@ function KudosPage() {
                   href={`/kudos/${k.id}`}
                   key={k.id}
                   sx={{
-                    width:'22rem'
+                    width:'20rem'
                   }}
                 >
                   <Card

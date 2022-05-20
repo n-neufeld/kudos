@@ -212,7 +212,13 @@ export default function Kudo() {
           </Box>
         )}
       </Box>
+      <Box sx={{
+        display:'flex',
+        justifyContent:'center',
+        width:'90%'
+      }}>
       <CommentForm/>
+      </Box>
       <Footer />
     </Box>
   );

@@ -34,7 +34,8 @@ export default function CommentForm() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          width: "90%",
+          width :'20rem',
+        //   minWidth: "90%",÷
           my: 2,
           borderRadius: "1rem",
           borderTopRightRadius: "0",
