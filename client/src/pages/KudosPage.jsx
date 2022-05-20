@@ -12,12 +12,12 @@ import { API_URL } from "../App";
 import Header from "../components/Header";
 import { CardActionArea } from "@mui/material";
 import Footer from "../components/Footer";
-import { IconButton, Badge, Star } from "@mui/material";
+import { IconButton, Badge } from "@mui/material";
 import CommentIcon from "@mui/icons-material/Comment";
 import placeholder from "../assets/kaleidoscopeCanvas/kc3.png";
 
 function KudosPage() {
-  const [expanded, setExpanded] = React.useState(false);
+  // const [expanded, setExpanded] = React.useState(false);
 
   // const handleExpandClick = () => {
   //   setExpanded(!expanded);
@@ -63,14 +63,14 @@ function KudosPage() {
             if (u.kudos) {
               return u.kudos.map((k) => (
                 // <====================> KUDO CARD <====================>
-                <CardActionArea
+                // <CardActionArea
+                // sx={{
+                  //   width:'20rem'
+                  // }}
+                  // >
+                  <CardActionArea
                   href={`/kudos/${k.id}`}
                   key={k.id}
-                  sx={{
-                    width:'20rem'
-                  }}
-                >
-                  <Card
                     sx={{
                       display: "flex",
                       flexDirection: "column",
@@ -138,8 +138,8 @@ function KudosPage() {
                         </Badge>
                       </IconButton>
                     </CardActions>
-                  </Card>
-                </CardActionArea>
+                  </CardActionArea>
+                /* </CardActionArea> */
               ));
             }
           })}

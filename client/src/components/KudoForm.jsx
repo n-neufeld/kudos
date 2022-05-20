@@ -91,7 +91,7 @@ export default function KudoForm() {
             console.log(selectedUser);
           }}
           renderInput={(params) => (
-            <TextField {...params} label="Choose a recipient" />
+            <TextField {...params} label="Choose a Recipient" />
           )}
         />
 
@@ -100,7 +100,7 @@ export default function KudoForm() {
           id="outlined-multiline-flexible"
           label="Say Something Nice!"
           multiline
-          maxRows={4}
+          maxRows={2}
           value={textValue}
           onChange={handleChange}
           sx={{ width: '100%', mb: 2 }}

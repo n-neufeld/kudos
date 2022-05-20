@@ -80,7 +80,7 @@ export default (props) => {
       if (mouseIsPressed) {
         let hu = map(sin(xoff), -1, 1, 0, 360);
         xoff += 0.1;
-        stroke(hu, 255, 255, 100);
+        p5.stroke(hu, 255, 255, 100);
         let angle = 360 / symmetry;
         for (let i = 0; i < symmetry; i++) {
           rotate(angle);

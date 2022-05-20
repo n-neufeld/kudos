@@ -131,7 +131,7 @@ export default function Kudo() {
               <CardMedia
                 sx={{ width: "90%" }}
                 component="img"
-                height="194"
+                width="180"
                 image={data.image}
                 alt="Kaleidoscope Image"
               />
