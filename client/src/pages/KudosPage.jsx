@@ -14,7 +14,7 @@ import { CardActionArea } from "@mui/material";
 import Footer from "../components/Footer";
 import { IconButton, Badge, Star } from "@mui/material";
 import CommentIcon from "@mui/icons-material/Comment";
-import placeholder from '../assets/kaleidoscopeCanvas/kc3.png'
+import placeholder from "../assets/kaleidoscopeCanvas/kc3.png";
 
 function KudosPage() {
   const [expanded, setExpanded] = React.useState(false);
@@ -51,21 +51,24 @@ function KudosPage() {
       <Header />
       {/* <====================> KUDO CARDS POSTED <====================> */}
       <Box
-        sx={
-          {
-            // justifyContent: "center",
-            // display: "flex",
-            // flexWrap: "wrap",
-            // flexDirection:'column'
-          }
-        }
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          flexWrap: "wrap",
+        }}
       >
         {!isLoading &&
           data.map((u) => {
             if (u.kudos) {
               return u.kudos.map((k) => (
                 // <====================> KUDO CARD <====================>
-                <CardActionArea href={`/kudos/${k.id}`}>
+                <CardActionArea
+                  href={`/kudos/${k.id}`}
+                  key={k.id}
+                  sx={{
+                    width:'22rem'
+                  }}
+                >
                   <Card
                     sx={{
                       display: "flex",
@@ -99,7 +102,7 @@ function KudosPage() {
                     />
                     {/* <==========> CARD IMAGE <==========> */}
                     <CardMedia
-                      sx={{ width: "90%", borderRadius:'1rem' }}
+                      sx={{ width: "90%", borderRadius: "1rem" }}
                       component="img"
                       width="180"
                       image={placeholder}
