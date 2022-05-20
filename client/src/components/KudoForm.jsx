@@ -9,36 +9,9 @@ import { CardContent } from "@mui/material";
 // import * as employees from "../employees/employees";
 import axios from "axios";
 import { API_URL } from "../App";
-import Sketch from "react-p5";
-import {
-  createCanvas,
-  angleMode,
-  DEGREES,
-  background,
-  createButton,
-  colorMode,
-  HSB,
-  save,
-  translate,
-  width,
-  height,
-  mouseX,
-  mouseY,
-  pmouseX,
-  pmouseY,
-  mouseIsPressed,
-  map,
-  sin,
-  stroke,
-  pop,
-  push,
-  rotate,
-  dist,
-  strokeWeight,
-  line,
-  scale,
-  p5,
-} from "react-p5";
+import KaleidoscopeDesign from "./KaleidoscopeDesign";
+import { CardMedia } from "@mui/material";
+import placeholder from '../assets/kaleidoscopeC/CK.png'
 
 
 /* <====================> DEFINED FORM PROPERTIES <====================> */
@@ -75,65 +48,7 @@ export default function KudoForm() {
   };
 
 // <====================> CANVAS <====================> //
-  let symmetry = 6;
-  let angle = 360 / symmetry;
-  let saveButton;
-  let clearButton;
-  let xoff = 0;
-
-  const setup = (p5, parentRef) => {
-    p5.createCanvas(300, 300).parent(parentRef);
-    p5.angleMode(p5.DEGREES);
-    p5.background(250);
-    // saveButton = p5.createButton("save");
-    // saveButton.mousePressed(saveSnowflake);
-    clearButton = p5.createButton("clear");
-    clearButton.mousePressed(clearCanvas);
-    p5.colorMode(HSB, 255, 255, 255);
-  };
-
-  function saveKaleidoscope() {
-    save("saveKaleidoscope.png");
-  }
-
-  function clearCanvas(p5) {
-    p5.background(250);
-  }
-
-  const draw = (p5) => {
-    p5.translate(p5.width / 2, p5.height / 2);
-    if (
-      p5.mouseX > 0 &&
-      p5.mouseX < p5.width &&
-      p5.mouseY > 0 &&
-      p5.mouseY < height
-    ) {
-      let mx = mouseX - width / 2;
-      let my = mouseY - height / 2;
-      let pmx = pmouseX - width / 2;
-      let pmy = pmouseY - height / 2;
-
-      if (mouseIsPressed) {
-        let hu = map(sin(xoff), -1, 1, 0, 360);
-        xoff += 0.1;
-        stroke(hu, 255, 255, 100);
-        let angle = 360 / symmetry;
-        for (let i = 0; i < symmetry; i++) {
-          rotate(angle);
-          let d = dist(mx, my, pmx, pmy);
-          let sw = map(d, 0, 8, 8, 1);
-          strokeWeight(sw);
-          push();
-          line(mx, my, pmx, pmy);
-          pop();
-          push();
-          scale(-1, 1);
-          line(mx, my, pmx, pmy);
-          pop();
-        }
-      }
-    }
-  };
+  
   // <====================> RETRIEVE KUDO DATA FROM SERVER <====================>
   useEffect(() => {
     axios({
@@ -200,13 +115,13 @@ export default function KudoForm() {
         <Box sx={{
           width:'100%'
         }}>
-          {/* <CardMedia
+          <CardMedia
             component="img"
-            height="194"
+            width='180'
             image={placeholder}
             alt="placeholder image"
-          /> */}
-          <Sketch setup={setup} draw={draw} />
+          />
+          {/* <KaleidoscopeDesign /> */}
         </Box>
 
         {/* <====================> SUBMIT KUDO <====================> */}

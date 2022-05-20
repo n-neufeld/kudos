@@ -1,4 +1,5 @@
 import React from "react";
+import { Sketch, p5 } from "react-p5";
 
 import {
   createCanvas,
@@ -29,7 +30,7 @@ import {
   scale,
 } from "p5";
 
-import { Sketch, p5 } from "react-p5";
+
 
 export default function KaleidoscopeDesign() {
   let symmetry = 6;

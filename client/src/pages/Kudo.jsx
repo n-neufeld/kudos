@@ -15,7 +15,7 @@ import { API_URL } from "../App";
 import Header from "../components/Header";
 import { useParams } from "react-router-dom";
 import Footer from "../components/Footer";
-// import Modal from "../components/Modal";
+
 import {
   List,
   ListItem,
@@ -32,15 +32,8 @@ export default function Kudo() {
   const [isLoading, setIsLoading] = useState(true);
   // <====================> COMMENTS <====================>
   const [users, setUsers] = useState([]);
-  // <====================> COMMENTS DISPLAY <====================>
-  // const [commentsOpen, setCommentsOpen] = useState(false);
-
-  // <====================> MODAL <====================>
-  // const [modelOpen, setModalOpen] = useState(false);
-
-  // const handleExpandClick = () => {
-  //   setExpanded(!expanded);
-  // };
+  
+  
   // <====================> ID FOR EACH KUDO <====================>
   const { id } = useParams();
 
@@ -158,44 +151,13 @@ export default function Kudo() {
                 </IconButton>
 
                 <div>
-                  {/* <IconButton aria-label="give a star" onClick={submitStar}>
-                    <Badge
-                      badgeContent={recognition.stars.length}
-                      color="secondary"
-                    >
-                      <Star
-                        color={recognition.stars.length ? "primary" : "action"}
-                      />
-                    </Badge>
-                  </IconButton> */}
                   <IconButton
                     aria-label="comment"
-                    // onClick={() => setCommentsOpen(true)}
+                    
                   >
                     <CommentIcon sx={{}} />
                   </IconButton>
-                  {/* <Modal open={modelOpen} onClose={() => setModalOpen(false)}>
-                  <Card
-                    sx={{
-                      maxWidth: 345,
-                      minWidth: 300,
-
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      borderRadius: "1rem",
-                      borderTopRightRadius: "0",
-                      boxShadow: "20px 20px 50px #2a2a2a",
-                      borderRight: "1px solid #ccc",
-                      borderTop: "1px solid #ccc",
-                    }}
-                  >
-                    <CardHeader
-                      subheader={new Date(data.timestamp).toLocaleDateString()}
-                    />
-                    <CardContent>{data.text}</CardContent>
-                  </Card>
-                </Modal> */}
+                  
                 </div>
               </CardActions>
             </Card>
