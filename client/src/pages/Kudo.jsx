@@ -140,7 +140,7 @@ export default function Kudo() {
                 component="img"
                 height="194"
                 image={data.image}
-                alt="Paella dish"
+                alt="Kaleidoscope Image"
               />
               {/* <==========> CARD COMMENT <==========> */}
               <CardContent>
@@ -151,6 +151,7 @@ export default function Kudo() {
               <CardActions
                 sx={{ display: "flex", justifyContent: "space-between" }}
               >
+
                 {/* <==========> ICONS <==========> */}
                 <IconButton aria-label="like">
                   <SentimentVerySatisfiedSharpIcon />
@@ -198,6 +199,7 @@ export default function Kudo() {
                 </div>
               </CardActions>
             </Card>
+
             {/* <====================> COMMENTS SECTION <====================> */}
             <Paper
               sx={{

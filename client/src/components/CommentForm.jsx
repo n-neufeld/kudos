@@ -5,8 +5,8 @@ import { API_URL } from "../App";
 import React, { useState } from "react";
 
 export default function CommentForm() {
-// <====================> SELLECT RECIPIENT <====================>
-    const [selectedUser, setSelectedUser] = useState({});
+  // <====================> SELLECT RECIPIENT <====================>
+  const [selectedUser, setSelectedUser] = useState({});
   const [textValue, setTextValue] = React.useState("");
 
   const handleChange = (event) => {
@@ -17,7 +17,7 @@ export default function CommentForm() {
     //Make a network call somewhere
     event.preventDefault();
     axios({
-      method: "post", 
+      method: "post",
       url: `${API_URL}/kudos/create`,
       data: {
         kudo: textValue,
@@ -52,7 +52,10 @@ export default function CommentForm() {
           maxRows={4}
           value={textValue}
           onChange={handleChange}
-          sx={{ width: "80%", m: "1" }}
+          sx={{
+            width: "80%",
+            m: "1rem",
+          }}
         />
         <Button
           variant="contained"

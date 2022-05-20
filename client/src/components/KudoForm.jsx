@@ -83,17 +83,17 @@ export default function KudoForm() {
 
   const setup = (p5, parentRef) => {
     p5.createCanvas(300, 300).parent(parentRef);
-    p5.angleMode(DEGREES);
+    p5.angleMode(p5.DEGREES);
     p5.background(250);
     // saveButton = p5.createButton("save");
     // saveButton.mousePressed(saveSnowflake);
-    // clearButton = p5.createButton("clear");
-    // clearButton.mousePressed(clearCanvas);
+    clearButton = p5.createButton("clear");
+    clearButton.mousePressed(clearCanvas);
     p5.colorMode(HSB, 255, 255, 255);
   };
 
-  function saveSnowflake() {
-    save("snowflake.png");
+  function saveKaleidoscope() {
+    save("saveKaleidoscope.png");
   }
 
   function clearCanvas(p5) {

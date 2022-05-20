@@ -11,7 +11,9 @@ import axios from "axios";
 import { API_URL } from "../App";
 import Header from "../components/Header";
 import { CardActionArea } from "@mui/material";
-import Footer from '../components/Footer'
+import Footer from "../components/Footer";
+import { IconButton, Badge, Star } from "@mui/material";
+import CommentIcon from "@mui/icons-material/Comment";
 
 function KudosPage() {
   const [expanded, setExpanded] = React.useState(false);
@@ -41,17 +43,18 @@ function KudosPage() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        minWidth:'20rem'
+        minWidth: "20rem",
       }}
     >
       {/* <====================> HEADER <====================> */}
       <Header />
-      {/* <====================> CARDS <====================> */}
+      {/* <====================> CARDS SECTION <====================> */}
       <Box
         sx={{
-          justifyContent: "center",
-          display: "flex",
-          flexWrap: "wrap",
+          // justifyContent: "center",
+          // display: "flex",
+          // flexWrap: "wrap",
+          // flexDirection:'column'
         }}
       >
         {!isLoading &&
@@ -59,72 +62,86 @@ function KudosPage() {
             if (u.kudos) {
               return u.kudos.map((k) => (
                 // <====================> KUDO CARD <====================>
-
-                <Card 
-                sx={{
-                  maxWidth: 345,
-                  // minWidth: 300,
-                  my: 2,
-                  mx: 2,
-                  // display: "flex",
-                  // flexDirection: "column",
-                  // alignItems: "center",
-                  borderRadius: "1rem",
-                  borderTopRightRadius: "0",
-                  boxShadow: "2px -5px 10px #ccc, -20px -20px 100px #fff",
-                  borderRight: "1px solid #ccc",
-                  borderTop: "1px solid #ccc",
-                }}
-                  
-                >
-                  <CardActionArea 
+                <CardActionArea
                   href={`/kudos/${k.id}`}
-                  sx={{
-                  // maxWidth: 345,
-                  // minWidth: 300,
-                  // my: 2,
-                  // mx: 2,
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  // borderRadius: "1rem",
-                  // borderTopRightRadius: "0",
-                  // boxShadow: "2px -5px 10px #ccc, -20px -20px 100px #fff",
-                  // borderRight: "1px solid #ccc",
-                  // borderTop: "1px solid #ccc",
-                }}>
-                    {/* <==========> CARD HEADER <==========> */}
-                    <CardHeader
-                      avatar={
-                        <Avatar sx={{ bgcolor: "#008996" }} aria-label="recipe">
-                          {u.name.charAt(0)}
-                        </Avatar>
-                      }
-                      title={`${
-                        data.find((u) => u.userId === k.author).name
-                      } recognized ${u.name}`}
-                      subheader={new Date(k.timestamp).toLocaleDateString()}
-                    />
-                    {/* <==========> CARD IMAGE <==========> */}
-                    <CardMedia
-                      sx={{ width: "90%" }}
-                      component="img"
-                      height="194"
-                      image={k.image}
-                      alt="Paella dish"
-                    />
-                    {/* <==========> CARD KUDO TEXT <==========> */}
-                    <CardContent>
-                      <Typography variant="body2" color="text.secondary">
-                        {k.text}
-                      </Typography>
-                    </CardContent>
+                >
+                  <Card
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      maxWidth: 345,
+                      my: 2,
+                      mx: 2,
+                      borderRadius: "1rem",
+                      borderTopRightRadius: "0",
+                      boxShadow: "2px -5px 10px #ccc, -20px -20px 100px #fff",
+                      borderRight: "1px solid #ccc",
+                      borderTop: "1px solid #ccc",
+                    }}
+                  >
+                    {/* <CardActionArea
+                      sx={{
+                      }}
+                    > */}
+                      {/* <==========> CARD HEADER <==========> */}
+                      <CardHeader
+                        avatar={
+                          <Avatar
+                            sx={{ bgcolor: "#008996" }}
+                            aria-label="recipe"
+                          >
+                            {u.name.charAt(0)}
+                          </Avatar>
+                        }
+                        title={`${
+                          data.find((u) => u.userId === k.author).name
+                        } recognized ${u.name}`}
+                        subheader={new Date(k.timestamp).toLocaleDateString()}
+                      />
+                      {/* <==========> CARD IMAGE <==========> */}
+                      <CardMedia
+                        sx={{ width: "90%" }}
+                        component="img"
+                        height="194"
+                        image={k.image}
+                        alt="Kaleidoscope Image"
+                      />
+                      {/* <==========> CARD KUDO TEXT <==========> */}
+                      <CardContent>
+                        <Typography variant="body2" color="text.secondary">
+                          {k.text}
+                        </Typography>
+                      </CardContent>
+                      <CardActions
+                        sx={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        
+                      </CardActions>
+                    {/* </CardActionArea> */}
                     <CardActions
-                      sx={{ display: "flex", justifyContent: "space-between" }}
+                      sx={{
+                        display: "flex",
+                        justifyContent: "center",
+                      }}
                     >
+                      <IconButton aria-label="comments">
+                        <Badge
+                          badgeContent={k.comments.length}
+                          color="secondary"
+                          sx={{
+                            size: "-2px",
+                          }}
+                        >
+                          <CommentIcon />
+                        </Badge>
+                      </IconButton>
                     </CardActions>
-                  </CardActionArea>
-                </Card>
+                  </Card>
+                </CardActionArea>
               ));
             }
           })}
