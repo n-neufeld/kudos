@@ -110,13 +110,13 @@ export default function KudoForm() {
         <Box sx={{
           width:'100%'
         }}>
-          <CardMedia
+          {/* <CardMedia
             component="img"
             width='180'
             image={placeholder}
             alt="placeholder image"
-          />
-          {/* <KaleidoscopeDesign /> */}
+          /> */}
+          <KaleidoscopeDesign />
         </Box>
 
         {/* <====================> SUBMIT KUDO <====================> */}

@@ -1,6 +1,5 @@
 import React from "react";
-import { Sketch, p5 } from "react-p5";
-
+import Sketch from "react-p5";
 import {
   createCanvas,
   angleMode,
@@ -30,37 +29,48 @@ import {
   scale,
 } from "p5";
 
-
-
-export default function KaleidoscopeDesign() {
+let x = 50;
+let y = 50;
+export default (props) => {
   let symmetry = 6;
   let angle = 360 / symmetry;
-  let saveButton;
-  let clearButton;
+  // let saveButton;
+  // let clearButton;
   let xoff = 0;
 
-  function setup(p5, parent) {
-    p5.createCanvas(300, 300).parent(parent);
+  // <====================> SAVE <====================>
+  function saveKaleidoscope () {
+    save("kaleidoscope.png");
+  };
+
+  // <====================> CLEAR <====================>
+  function clearCanvas () {
+    background(250);
+  };
+
+  // <====================> SETUP <====================>
+  function setup (p5, canvasParentRef) {
+    // use parent to render the canvas in this ref
+    // (without that p5 will render the canvas outside of your component)
+    // p5.createCanvas(280, 280).parent(canvasParentRef);
+    p5.createCanvas(280, 280).parent(canvasParentRef);
     p5.angleMode(DEGREES);
     p5.background(250);
-    saveButton = p5.createButton("save");
-    p5.saveButton.mousePressed(saveSnowflake);
-    clearButton = p5.createButton("clear");
-    clearButton.mousePressed(clearCanvas);
+    // p5.saveButton = createButton("save");
+    // p5.saveButton.mousePressed(saveKaleidoscope);
+    // p5.clearButton = createButton("clear");
+    // p5.clearButton.mousePressed(clearCanvas);
     p5.colorMode(HSB, 255, 255, 255);
-  }
+  };
 
-  function saveSnowflake() {
-    save("snowflake.png");
-  }
-
-  function clearCanvas(p5) {
-    p5.background(250);
-  }
-
-  function draw() {
+  function draw (p5) {
     p5.translate(width / 2, height / 2);
-
+    // p5.background(0);
+    // p5.ellipse(x, y, 70, 70);
+    // NOTE: Do not use setState in the draw function or in functions that are executed
+    // in the draw function...
+    // please use normal variables or class properties for these purposes
+    x++;
     if (mouseX > 0 && mouseX < width && mouseY > 0 && mouseY < height) {
       let mx = mouseX - width / 2;
       let my = mouseY - height / 2;
@@ -87,7 +97,7 @@ export default function KaleidoscopeDesign() {
         }
       }
     }
-  }
+  };
 
   return <Sketch setup={setup} draw={draw} />;
-}
+};
