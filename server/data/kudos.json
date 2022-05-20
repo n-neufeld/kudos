@@ -1,6 +1,6 @@
 [
   {
-    "userId": 1,
+    "userId": "f9846451-87e7-4a04-aa03-3dd0aa3e2610",
     "name": "Amy Schumer",
     "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
     "position": "CEO",
@@ -13,20 +13,20 @@
         "image": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
         "likes": 0,
         "timestamp": "2022-05-17T02:38:01.579Z",
-        "author": 2,
-        "recipient": 1,
+        "author": "68e01fd3-817d-49fb-9fdf-a3bd812744cb",
+        "recipient": "f9846451-87e7-4a04-aa03-3dd0aa3e2610",
         "comments": [
           {
             "id": "3658145b-5494-4db8-85b9-37a6512343f7",
             "text": "Absolutely!",
             "timestamp": "2022-05-17T02:38:01.579Z",
-            "author": 2
+            "author": "68e01fd3-817d-49fb-9fdf-a3bd812744cb"
           },
           {
             "id": "3658145b-5494-4dai8-85b9-37a6512343f7",
             "text": "I think so too",
             "timestamp": "2022-11-17T02:38:01.579Z",
-            "author": 1
+            "author": "f9846451-87e7-4a04-aa03-3dd0aa3e2610"
           }
         ]
       },
@@ -36,14 +36,14 @@
         "image": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
         "likes": 0,
         "timestamp": "2022-05-17T02:38:01.579Z",
-        "author": 3,
-        "recipient": 1,
+        "author": "a2a46aa6-4424-47ed-b29c-55adc3c7f1df",
+        "recipient": "f9846451-87e7-4a04-aa03-3dd0aa3e2610",
         "comments": []
       }
     ]
   },
   {
-    "userId": 2,
+    "userId": "68e01fd3-817d-49fb-9fdf-a3bd812744cb",
     "name": "Tom Cruise",
     "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
     "position": "Regional Manager",
@@ -56,7 +56,7 @@
         "image": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
         "likes": 0,
         "timestamp": "2022-05-17T02:40:09.989Z",
-        "author": 1,
+        "author": "f9846451-87e7-4a04-aa03-3dd0aa3e2610",
         "comments": []
       },
       {
@@ -65,13 +65,13 @@
         "image": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
         "likes": 0,
         "timestamp": "2022-05-17T16:22:18.032Z",
-        "author": 3,
+        "author": "a2a46aa6-4424-47ed-b29c-55adc3c7f1df",
         "comments": []
       }
     ]
   },
   {
-    "userId": 3,
+    "userId": "a2a46aa6-4424-47ed-b29c-55adc3c7f1df",
     "name": "Adele Laurie Blue Adkins",
     "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
     "position": "CEO",
@@ -79,7 +79,7 @@
     "email": "alaurie@kudo.com"
   },
   {
-    "userId": 4,
+    "userId": "0dff70fb-650a-456d-8603-d752c1e4a8ed",
     "name": "Benedict Cumberbatch",
     "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
     "position": "CEO",
@@ -87,15 +87,7 @@
     "email": "bcumberbatchaschumer@kudo.com"
   },
   {
-    "userId": 5,
-    "name": "Amy Schumer",
-    "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
-    "position": "HR Generalist",
-    "department": "HR",
-    "email": "aschumer@kudo.com"
-  },
-  {
-    "userId": 6,
+    "userId": "c23e7b0c-a487-466a-bade-d19a316f275f",
     "name": "Paul Meany",
     "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
     "position": "Driver",
@@ -109,8 +101,8 @@
     "likes": 0,
     "timestamp": "2022-05-19T21:08:37.107Z",
     "comments": [],
-    "recipient": { "id": 6, "name": "Paul Meany" },
-    "userId": 1,
+    "recipient": { "id": "c23e7b0c-a487-466a-bade-d19a316f275f", "name": "Paul Meany" },
+    "userId": "f9846451-87e7-4a04-aa03-3dd0aa3e2610",
     "name": "Nathaniel Neufeld"
   }
 ]

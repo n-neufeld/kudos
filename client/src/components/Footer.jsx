@@ -6,9 +6,6 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import CelebrationIcon from "@mui/icons-material/Celebration";
 
-const settings = ["Dashboard", "Logout"];
-// const creates = [];
-
 const Header = () => {
   // const [anchorElNav, setAnchorElNav] = React.useState(null);
 //   const [anchorElUser, setAnchorElUser] = React.useState(null);

@@ -15,7 +15,7 @@ import { API_URL } from "../App";
 import Header from "../components/Header";
 import { useParams } from "react-router-dom";
 import Footer from "../components/Footer";
-import Modal from "../components/Modal";
+// import Modal from "../components/Modal";
 import {
   List,
   ListItem,
@@ -24,6 +24,7 @@ import {
   ListItemAvatar,
 } from "@mui/material";
 import { width } from "@mui/system";
+import CommentForm from "../components/CommentForm";
 
 export default function Kudo() {
   const [expanded, setExpanded] = useState(false);
@@ -40,9 +41,11 @@ export default function Kudo() {
   // const handleExpandClick = () => {
   //   setExpanded(!expanded);
   // };
-
-  const [data, setData] = useState([]);
+  // <====================> ID FOR EACH KUDO <====================>
   const { id } = useParams();
+
+  // <====================> GET THE DATA <====================>
+  const [data, setData] = useState([]);
 
   // <====================> GET AUTHOR FOR COMMENTS <====================>
   const getAuthor = (users) => {
@@ -208,7 +211,7 @@ export default function Kudo() {
                   display: "flex",
                   flexDirection:'column',
                   justifyContent: "center",
-                  alignItems:'center'
+                  alignItems:'center',
                 }}
               >
                 {/* <==========> EACH COMMENT <==========> */}
@@ -245,6 +248,7 @@ export default function Kudo() {
           </Box>
         )}
       </Box>
+      <CommentForm/>
       <Footer />
     </Box>
   );

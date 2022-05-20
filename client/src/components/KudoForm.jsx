@@ -42,16 +42,17 @@ import {
 
 
 /* <====================> DEFINED FORM PROPERTIES <====================> */
-const initialFValues = {
-  name: "",
-  id: 0,
-  fullName: "",
-  comment: "",
-  postDate: new Date(),
-};
+// const initialFValues = {
+//   name: "",
+//   id: 0,
+//   fullName: "",
+//   comment: "",
+//   postDate: new Date(),
+// };
 
 export default function KudoForm() {
   const [users, setUsers] = useState([]);
+  // <====================> SELLECT RECIPIENT <====================>
   const [selectedUser, setSelectedUser] = useState({});
 
   const [textValue, setTextValue] = React.useState("");
@@ -73,7 +74,7 @@ export default function KudoForm() {
     });
   };
 
-// <====================> CANVAS <====================>
+// <====================> CANVAS <====================> //
   let symmetry = 6;
   let angle = 360 / symmetry;
   let saveButton;

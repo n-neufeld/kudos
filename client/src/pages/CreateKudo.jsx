@@ -1,5 +1,5 @@
 import Card from "@mui/material/Card";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import KudoForm from "../components/KudoForm";
 import Header from "../components/Header";
