@@ -14,6 +14,7 @@ import { CardActionArea } from "@mui/material";
 import Footer from "../components/Footer";
 import { IconButton, Badge, Star } from "@mui/material";
 import CommentIcon from "@mui/icons-material/Comment";
+import placeholder from '../assets/kaleidoscopeCanvas/kc3.png'
 
 function KudosPage() {
   const [expanded, setExpanded] = React.useState(false);
@@ -46,25 +47,25 @@ function KudosPage() {
         minWidth: "20rem",
       }}
     >
-      {/* <====================> HEADER <====================> */}
+      {/* <====================> PAGE HEADER <====================> */}
       <Header />
-      {/* <====================> CARDS SECTION <====================> */}
+      {/* <====================> KUDO CARDS POSTED <====================> */}
       <Box
-        sx={{
-          // justifyContent: "center",
-          // display: "flex",
-          // flexWrap: "wrap",
-          // flexDirection:'column'
-        }}
+        sx={
+          {
+            // justifyContent: "center",
+            // display: "flex",
+            // flexWrap: "wrap",
+            // flexDirection:'column'
+          }
+        }
       >
         {!isLoading &&
           data.map((u) => {
             if (u.kudos) {
               return u.kudos.map((k) => (
                 // <====================> KUDO CARD <====================>
-                <CardActionArea
-                  href={`/kudos/${k.id}`}
-                >
+                <CardActionArea href={`/kudos/${k.id}`}>
                   <Card
                     sx={{
                       display: "flex",
@@ -84,44 +85,40 @@ function KudosPage() {
                       sx={{
                       }}
                     > */}
-                      {/* <==========> CARD HEADER <==========> */}
-                      <CardHeader
-                        avatar={
-                          <Avatar
-                            sx={{ bgcolor: "#008996" }}
-                            aria-label="recipe"
-                          >
-                            {u.name.charAt(0)}
-                          </Avatar>
-                        }
-                        title={`${
-                          data.find((u) => u.userId === k.author).name
-                        } recognized ${u.name}`}
-                        subheader={new Date(k.timestamp).toLocaleDateString()}
-                      />
-                      {/* <==========> CARD IMAGE <==========> */}
-                      <CardMedia
-                        sx={{ width: "90%" }}
-                        component="img"
-                        height="194"
-                        image={k.image}
-                        alt="Kaleidoscope Image"
-                      />
-                      {/* <==========> CARD KUDO TEXT <==========> */}
-                      <CardContent>
-                        <Typography variant="body2" color="text.secondary">
-                          {k.text}
-                        </Typography>
-                      </CardContent>
-                      <CardActions
-                        sx={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        
-                      </CardActions>
+                    {/* <==========> CARD HEADER <==========> */}
+                    <CardHeader
+                      avatar={
+                        <Avatar sx={{ bgcolor: "#008996" }} aria-label="recipe">
+                          {u.name.charAt(0)}
+                        </Avatar>
+                      }
+                      title={`${
+                        data.find((u) => u.userId === k.author).name
+                      } recognized ${u.name}`}
+                      subheader={new Date(k.timestamp).toLocaleDateString()}
+                    />
+                    {/* <==========> CARD IMAGE <==========> */}
+                    <CardMedia
+                      sx={{ width: "90%", borderRadius:'1rem' }}
+                      component="img"
+                      width="180"
+                      image={placeholder}
+                      alt="Kaleidoscope Image"
+                    />
+                    {/* <==========> CARD TEXT <==========> */}
+                    <CardContent>
+                      <Typography variant="body2" color="text.secondary">
+                        {k.text}
+                      </Typography>
+                    </CardContent>
+                    <CardActions
+                      sx={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    ></CardActions>
                     {/* </CardActionArea> */}
+                    {/* <==========> CARD COMMENT ICON <==========> */}
                     <CardActions
                       sx={{
                         display: "flex",
@@ -132,9 +129,6 @@ function KudosPage() {
                         <Badge
                           badgeContent={k.comments.length}
                           color="secondary"
-                          sx={{
-                            size: "-2px",
-                          }}
                         >
                           <CommentIcon />
                         </Badge>

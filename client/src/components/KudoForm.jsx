@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Grid, Autocomplete, Box, TextField, FormControl } from "@mui/material";
-// import CardMedia from "@mui/material/CardMedia";
-// import placeholder from "../assets/image-placeholder.jpeg";
 import { Button } from "@mui/material";
-// import { useForm, Form } from "./useForm";
 import { CardContent } from "@mui/material";
-// import Input from "./controls/Input";
-// import * as employees from "../employees/employees";
 import axios from "axios";
 import { API_URL } from "../App";
 import KaleidoscopeDesign from "./KaleidoscopeDesign";
 import { CardMedia } from "@mui/material";
-import placeholder from '../assets/kaleidoscopeC/CK.png'
+import placeholder from '../assets/kaleidoscopeCanvas/kc5.png'
 
 
 /* <====================> DEFINED FORM PROPERTIES <====================> */
