@@ -23,11 +23,10 @@ import {
   Paper,
   ListItemAvatar,
 } from "@mui/material";
-import { width } from "@mui/system";
 import CommentForm from "../components/CommentForm";
 
 export default function Kudo() {
-  const [expanded, setExpanded] = useState(false);
+  
   //<====================> CARD <====================>
   const [isLoading, setIsLoading] = useState(true);
   // <====================> COMMENTS <====================>

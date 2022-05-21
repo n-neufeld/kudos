@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Card from "@mui/material/Card";
+// import Card from "@mui/material/Card";
 import Box from "@mui/material/Box";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
@@ -14,7 +14,7 @@ import { CardActionArea } from "@mui/material";
 import Footer from "../components/Footer";
 import { IconButton, Badge } from "@mui/material";
 import CommentIcon from "@mui/icons-material/Comment";
-import placeholder from "../assets/kaleidoscopeCanvas/kc3.png";
+// import placeholder from "../assets/kaleidoscopeCanvas/kc3.png";
 
 function KudosPage() {
   // const [expanded, setExpanded] = React.useState(false);
@@ -59,7 +59,7 @@ function KudosPage() {
         }}
       >
         {!isLoading &&
-          data.map((u) => {
+          data.map(u => {
             if (u.kudos) {
               return u.kudos.map((k) => (
                 // <====================> KUDO CARD <====================>

@@ -37,7 +37,7 @@ export default function Footer() {
             }}>
               {/* <==========> FOOTER ICON <==========> */}
               <Button
-              scrollTop='800'
+              
               // component="a"
               // href="/"
               sx={{
