@@ -2,4 +2,5 @@ body {
     background: linear-gradient(rgb(245, 245, 245),rgb(229, 229, 229));
     background-repeat: no-repeat;
     background-size: 200vh;
+    min-width: 320px;
 }

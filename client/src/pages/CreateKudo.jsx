@@ -21,6 +21,7 @@ function CreateKudo() {
       <Card
         sx={{
           maxWidth: 320,
+          // minWidth: 320,
           width: '90%',
           mt: 2,
           mb: 2,

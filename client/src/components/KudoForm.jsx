@@ -108,13 +108,14 @@ export default function KudoForm() {
 
         {/* <====================> CANVAS IMAGE <====================> */}
         <Box sx={{
+          placeholder:'draw',
           display:'flex',
           justifyContent:'center',
-          alignItems:'center',
-          width:'100%',
-          pt:'0.3rem',
-          pb:'-5rem',
-          border: '1px solid lightgrey',
+          // alignItems:'center',
+          width:'280',
+          height:'280',
+          pt:'0.2rem',
+          border: '1px solid lightgrey', //<==================== alignment off with mobile
           borderRadius:'.5rem'
         }}>
           {/* <CardMedia

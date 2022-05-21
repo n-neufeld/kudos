@@ -20,7 +20,7 @@ export default (props) => {
 
   // <====================> SETUP <====================>
   function setup(p5, canvasParentRef) {
-    p5.createCanvas(280, 280).parent(canvasParentRef);
+    p5.createCanvas(260, 260).parent(canvasParentRef);
     p5.angleMode(p5.DEGREES);
     p5.background(255);
     // p5.saveButton = p5.createButton("save");
