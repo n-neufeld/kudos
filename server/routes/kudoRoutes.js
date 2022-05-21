@@ -58,18 +58,19 @@ router.post("/create", (req, res) => {
   //   return res.status(400);
   // }
   const newKudo = {
-    id: util.setNewId(),
+    id: req.body.id,
     text: req.body.kudo,
+    recipient: req.body.recipient,
+    author: req.body.author,
     image:
       "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
     likes: 0,
     timestamp: new Date(),
     comments: [],
-    recipient: req.body.recipient,
-    userId: 1,
-    name: "Nathaniel Neufeld",
   };
-  kudosList.push(newKudo); //pushes new kudo into an existing array
+
+  kudosList.find((u) => u.userId === newKudo.recipient).kudos.push(newKudo);
+  //pushes new kudo into an existing array
   util.writeJSONFile(kudosList); //writes new array of kudos to JSON
   res.status(200).json(newKudo); //return a new array of kudos
 });

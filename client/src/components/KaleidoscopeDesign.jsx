@@ -1,22 +1,28 @@
 import React from "react";
 import Sketch from "react-p5";
+// import p5 from "react-p5";
 
-export default (props) => {
+export default function KaleidoscopeDesign(props) {
   let symmetry = 6;
   let angle = 360 / symmetry;
   let xoff = 0;
+
   // let saveButton;
   // let clearButton;
 
   // <====================> SAVE <====================>
   // function saveKaleidoscope(p5) {
-  //   p5.save("kaleidoscope.png");
+  //   p5.save(`${props.id}.png`);
+  // }
+
+  // if (props.saving === true) {
+  //   p5.save(`${props.id}.png`);
   // }
 
   // <====================> CLEAR <====================>
-  // function clearCanvas(p5) {
-  //   p5.background(250);
-  // }
+  function clearCanvas(p5) {
+    p5.background(250);
+  }
 
   // <====================> SETUP <====================>
   function setup(p5, canvasParentRef) {
@@ -28,12 +34,15 @@ export default (props) => {
     // p5.clearButton = p5.createButton("clear");
     // p5.clearButton.mousePressed(clearCanvas);
     p5.colorMode(p5.HSB, 255, 255, 255);
+    // if (props.saving === true) {
+    //   p5.save(`${props.id}.png`);
+    // }
   }
 
   // <====================> DRAW <====================>
   function draw(p5) {
     p5.translate(p5.width / 2, p5.height / 2);
-  
+
     if (
       p5.mouseX > 0 &&
       p5.mouseX < p5.width &&
@@ -64,7 +73,12 @@ export default (props) => {
         }
       }
     }
+
+    // if (props.saving == true) {
+    //   p5.save(`${props.id}.png`);
+    //   // saveKaleidoscope(p5);
+    // }
   }
 
   return <Sketch setup={setup} draw={draw} />;
-};
+}

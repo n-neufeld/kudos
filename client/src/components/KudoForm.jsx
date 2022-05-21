@@ -8,7 +8,6 @@ import KaleidoscopeDesign from "./KaleidoscopeDesign";
 // import { CardMedia } from "@mui/material";
 // import placeholder from '../assets/kaleidoscopeCanvas/kc5.png'
 
-
 /* <====================> DEFINED FORM PROPERTIES <====================> */
 // const initialFValues = {
 //   name: "",
@@ -29,21 +28,29 @@ export default function KudoForm() {
     setTextValue(event.target.value);
   };
 
+  const [triggerSave, setTriggerSave] = useState(false);
+  const { v4: uuidv4 } = require("uuid");
+  const newKudoId = uuidv4();
+
   const handleSubmit = (event) => {
     //Make a network call somewhere
     event.preventDefault();
+
     axios({
-      method: "post", 
+      method: "post",
       url: `${API_URL}/kudos/create`,
       data: {
         kudo: textValue,
-        recipient: selectedUser,
+        recipient: selectedUser.id,
+        id: newKudoId,
+        author: 1,
       },
     });
+    setTriggerSave(true);
   };
 
-// <====================> CANVAS <====================> //
-  
+  // <====================> CANVAS <====================> //
+
   // <====================> RETRIEVE KUDO DATA FROM SERVER <====================>
   useEffect(() => {
     axios({
@@ -67,22 +74,23 @@ export default function KudoForm() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        width:'90%'
+        width: "90%",
       }}
     >
-      <FormControl sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        width:'100%'
-      }}>
-
+      <FormControl
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "100%",
+        }}
+      >
         {/* <==========> RECIPIENT <==========> */}
         <Autocomplete
           value={selectedUser}
           id="user-select"
-          sx={{ width: '100%', mb: 2 }}
+          sx={{ width: "100%", mb: 2 }}
           options={users}
           autoHighlight
           getOptionLabel={(user) => user.name}
@@ -103,21 +111,23 @@ export default function KudoForm() {
           maxRows={2}
           value={textValue}
           onChange={handleChange}
-          sx={{ width: '100%', mb: 2 }}
+          sx={{ width: "100%", mb: 2 }}
         />
 
-        {/* <====================> CANVAS IMAGE <====================> */}
-        <Box sx={{
-          placeholder:'draw',
-          display:'flex',
-          justifyContent:'center',
-          // alignItems:'center',
-          width:'280',
-          height:'280',
-          pt:'0.2rem',
-          border: '1px solid lightgrey', //<==================== alignment off with mobile
-          borderRadius:'.5rem'
-        }}>
+        {/* <====================> KALEIDOSCOPE DESIGN <====================> */}
+        <Box
+          sx={{
+            placeholder: "draw",
+            display: "flex",
+            justifyContent: "center",
+            // alignItems:'center',
+            width: "280",
+            height: "280",
+            pt: "0.2rem",
+            border: "1px solid lightgrey",
+            borderRadius: ".5rem",
+          }}
+        >
           {/* <CardMedia
             component="img"
             width='180'
