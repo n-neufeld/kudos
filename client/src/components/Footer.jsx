@@ -2,75 +2,66 @@ import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
-import CelebrationIcon from "@mui/icons-material/Celebration";
+import { Button } from "@mui/material";
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 
-const Header = () => {
-  // const [anchorElNav, setAnchorElNav] = React.useState(null);
-//   const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-//   // <====================> OPEN MENU <====================>
-//   const handleOpenUserMenu = (event) => {
-//     setAnchorElUser(event.currentTarget);
-//   };
-
-//   //  <====================> CLOSE MENU <====================>
-//   const handleCloseUserMenu = () => {
-//     setAnchorElUser(null);
-//   };
+export default function Footer() {
 
   return (
     <AppBar
       position="relative"
       color="grey"
       sx={{
-        display: { xs: "flex", md: "flex", lg:'none'},
+        display: 'flex',
+        justifyContent:"flex-end",
+        alignItems:'center',
         width: "95%",
         mx: ".5rem",
         my: ".5rem",
         borderRadius: ".25rem",
-        boxShadow: "0px 0px 10px #ccc, -0px -0px 10px #fff",
-        background:
-          "white",
+        boxShadow: "none",
+        background: "rgba(0,0,0,0)",
       }}
     >
-      <Container
-        variant="contained"
-        maxWidth="xl"
-      >
+      <Container variant="contained" maxWidth="xl">
         <Toolbar disableGutters>
           {/* <====================> ICON & TITLE + <====================> */}
-          <Box
-            component="a"
-            href="/"
-            variant="h5"
-            noWrap
+            <Box 
             sx={{
-              display: { xs: "flex", md: "flex",},
+              display: 'flex',
               justifyContent:'flex-end',
               flexGrow: 1,
-              fontFamily: "Titillium Web",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "#008996",
-              textDecoration: "none",
-            }}
-          >
-
-            <CelebrationIcon
+              background: "rgba(0,0,0,0)",
+              
+            }}>
+              {/* <==========> FOOTER ICON <==========> */}
+              <Button
+              scrollTop='800'
+              // component="a"
+              // href="/"
               sx={{
-                mr: 1,
-                color: "#FF8B53",
+                display: 'flex',
+                justifyContent:'center',
+                p:'1rem',
+                borderRadius: "50rem",
+                minWidth:'0',
+                textDecoration: "none",
+                boxShadow: "0px 0px 10px #ccc, -0px -0px 10px #fff",
+                background: "#fff",
               }}
-            />
-            {/* <==========> HEADER TITLE <==========> */}
-            <Typography>KUDOS</Typography>
-            {/* <==========> HEADER ICON <==========> */}
-          </Box>
+              >
+              <ArrowUpwardIcon
+                sx={{
+                  p:'0',
+                  m:'0',
+                  color: "#008996",
+                }}
+              />
+              </Button>
+            </Box>
         </Toolbar>
       </Container>
     </AppBar>
   );
 };
-export default Header;

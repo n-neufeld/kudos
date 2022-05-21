@@ -114,7 +114,8 @@ export default function KudoForm() {
           width:'100%',
           pt:'0.3rem',
           pb:'-5rem',
-          border: '2px solid lightgrey'
+          border: '1px solid lightgrey',
+          borderRadius:'.5rem'
         }}>
           {/* <CardMedia
             component="img"
