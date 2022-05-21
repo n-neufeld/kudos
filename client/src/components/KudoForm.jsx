@@ -108,7 +108,13 @@ export default function KudoForm() {
 
         {/* <====================> CANVAS IMAGE <====================> */}
         <Box sx={{
-          width:'100%'
+          display:'flex',
+          justifyContent:'center',
+          alignItems:'center',
+          width:'100%',
+          pt:'0.3rem',
+          pb:'-5rem',
+          border: '2px solid lightgrey'
         }}>
           {/* <CardMedia
             component="img"
