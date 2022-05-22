@@ -16,7 +16,7 @@ import Header from "../components/Header";
 import { useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import { Badge } from "@mui/material";
-
+import CommentForm from "../components/CommentForm";
 import {
   List,
   ListItem,
@@ -24,44 +24,42 @@ import {
   Paper,
   ListItemAvatar,
 } from "@mui/material";
-import CommentForm from "../components/CommentForm";
 
 export default function Kudo() {
-  //<====================> CARD <====================>
+  //==============================> CARD <==============================//
   const [isLoading, setIsLoading] = useState(true);
-  // <====================> COMMENTS <====================>
+  //===========> COMMENTS <===========//
   const [users, setUsers] = useState([]);
 
-  // <====================> ID FOR EACH KUDO <====================>
+  //===========> ID FOR EACH KUDO <===========//
   const { id } = useParams();
 
-  // <====================> GET THE DATA <====================>
+  //===========> GET THE DATA <===========//
   const [data, setData] = useState([]);
 
-  // <====================> GET AUTHOR FOR COMMENTS <====================>
+  //===========> GET AUTHOR FOR COMMENTS <===========//
   const getAuthor = (users) => {
     const author = users.find((u) => u.userId === data.author);
     return author.name;
   };
 
-  // <====================> GET RECIPIENT FOR COMMENTS <====================>
+  //===========> GET RECIPIENT FOR COMMENTS <===========//
   const getRecipient = (users) => {
     const recipient = users.find((u) => u.userId === data.recipient);
     return recipient.name;
   };
-
-  // <====================> RETRIEVE THE DATA FROM THE SERVER <====================>
+  
+  //===========> RETRIEVE THE DATA FROM THE SERVER <===========//
   useEffect(() => {
-    // <==========> CALL FOR INDIVIDUAL ID <==========>
+    //===========> CALL FOR INDIVIDUAL ID <===========//
     axios({
       method: "get",
       url: `${API_URL}/kudos/${id}`,
       headers: { "Access-Control-Allow-Origin": "*" },
     }).then((res) => {
-      console.log(res.data);
       setData(res.data);
     });
-    // <==========> CALL FOR ALL DATA <==========>
+    //===========> CALL FOR ALL DATA <===========//
     axios({
       method: "get",
       url: `${API_URL}/kudos`,
@@ -72,6 +70,7 @@ export default function Kudo() {
     });
   }, [isLoading]);
 
+  //===========> HANDLE LIKE COUNT <===========//
   const handleLikes = (event) => {
     event.preventDefault();
     axios({
@@ -82,8 +81,9 @@ export default function Kudo() {
       setIsLoading(true);
     });
   };
+  //====================================================================//
 
-  // <====================> POST THE DATA FROM THE SERVER <====================>
+  //====================> RETURN DATA FROM THE SERVER <====================//
   return (
     <Box
       sx={{
@@ -93,9 +93,9 @@ export default function Kudo() {
         minWidth: "20rem",
       }}
     >
-      {/* <==========> HEADER <==========> */}
+      {/*===========> PAGE HEADER <===========*/}
       <Header />
-      {/* <==========> KUDO CARD <==========> */}
+      {/*===========> KUDO CARD <===========*/}
       <Box
         sx={{
           justifyContent: "center",
@@ -126,14 +126,17 @@ export default function Kudo() {
                 borderTop: "1px solid #ccc",
               }}
             >
-              {/* <==========> CARD HEADER <==========> */}
+              {/*===========> KUDO CARD HEADER <===========*/}
               <CardHeader
+                //===========> KUDO CARD AVATAR <===========//
                 avatar={
                   <Avatar sx={{ bgcolor: "#008996" }} aria-label="recipe">
                     {getAuthor(users).charAt(0)}
                   </Avatar>
                 }
-                title={`${getAuthor(users)} recognized ${getRecipient(users)}`} // <======================= 'name' is undefined?
+                //===========> KUDO CARD AUTHOR & RECIPIENT <===========//
+                title={`${getAuthor(users)} recognized ${getRecipient(users)}`}
+                //===========> KUDO CARD DATE <===========//
                 subheader={new Date(data.timestamp).toLocaleDateString(
                   "en-us",
                   {
@@ -143,7 +146,7 @@ export default function Kudo() {
                   }
                 )}
               />
-              {/* <==========> CARD IMAGE <==========> */}
+              {/*===========> KUDO CARD CANVAS KALEIDOSCOPE <===========*/}
               <CardMedia
                 sx={{ width: "90%" }}
                 component="img"
@@ -151,23 +154,23 @@ export default function Kudo() {
                 image={data.image}
                 alt="Kaleidoscope Image"
               />
-              {/* <==========> CARD COMMENT <==========> */}
+              {/*===========> KUDO CARD COMMENT <===========*/}
               <CardContent>
                 <Typography variant="body2" color="text.secondary">
                   {data.text}
                 </Typography>
               </CardContent>
+              {/*===========> KUDO CARD ICONS <===========*/}
               <CardActions
                 sx={{ display: "flex", justifyContent: "space-between" }}
               >
-                {/* <==========> ICONS <==========> */}
+                {/*===========> KUDO CARD LIKES ICON <===========*/}
                 <IconButton aria-label="like" onClick={handleLikes}>
                   <Badge badgeContent={data.likes} color="primary">
                     <SentimentVerySatisfiedSharpIcon />
                   </Badge>
                 </IconButton>
-
-                <div>
+                {/*===========> KUDO CARD COMMENTS ICON <===========*/}
                   <IconButton aria-label="comment">
                     <Badge
                       badgeContent={data.comments.length}
@@ -176,11 +179,11 @@ export default function Kudo() {
                       <CommentIcon />
                     </Badge>
                   </IconButton>
-                </div>
+                
               </CardActions>
             </Card>
 
-            {/* <====================> COMMENTS SECTION <====================> */}
+            {/*=====================> COMMENTS SECTION <=====================*/}
             <Paper
               sx={{
                 backgroundColor: "rgba(0,0,0,0)",
@@ -196,7 +199,7 @@ export default function Kudo() {
                   alignItems: "center",
                 }}
               >
-                {/* <==========> EACH COMMENT <==========> */}
+                {/*===========> EACH COMMENT <===========*/}
                 {data.comments.map((c) => (
                   <ListItem
                     sx={{
@@ -210,7 +213,7 @@ export default function Kudo() {
                       backgroundColor: "white",
                     }}
                   >
-                    {/* <==========> AVATAR <==========> */}
+                    {/*===========> COMMENT AVATAR <===========*/}
                     <ListItemAvatar>
                       <Avatar sx={{ bgcolor: "#008996" }} aria-label="recipe">
                         {users
@@ -218,10 +221,20 @@ export default function Kudo() {
                           .name.charAt(0)}
                       </Avatar>
                     </ListItemAvatar>
-                    {/* <==========> TEXT <==========> */}
+                    {/*===========> COMMENT TEXT <===========*/}
                     <ListItemText
+                    //===========> COMMENT AUTHOR <===========// 
                       primary={users.find((u) => u.userId === c.author).name}
+                      //===========> COMMENT TEXT <===========//
                       secondary={c.text}
+                      subheader={new Date(data.timestamp).toLocaleDateString(
+                        "en-us",
+                        {
+                          year: "numeric",
+                          month: "short",
+                          day: "numeric",
+                        }
+                      )}
                     />
                   </ListItem>
                 ))}
