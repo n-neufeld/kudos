@@ -14,6 +14,7 @@ import { CardActionArea } from "@mui/material";
 import Footer from "../components/Footer";
 import { IconButton, Badge } from "@mui/material";
 import CommentIcon from "@mui/icons-material/Comment";
+import SentimentVerySatisfiedSharpIcon from "@mui/icons-material/SentimentVerySatisfiedSharp";
 // import placeholder from "../assets/kaleidoscopeCanvas/kc3.png";
 
 function KudosPage() {
@@ -103,7 +104,15 @@ function KudosPage() {
                       </Avatar>
                     }
                     title={`${getAuthor(data, k)} recognized ${u.name}`}
-                    subheader={new Date(k.timestamp).toLocaleDateString()}
+                    subheader={new Date(k.timestamp).toLocaleDateString(
+                      "en-us",
+                      {
+                        weekday: "long",
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                      }
+                    )}
                   />
                   {/* <==========> CARD IMAGE <==========> */}
                   <CardMedia
@@ -133,6 +142,12 @@ function KudosPage() {
                       justifyContent: "center",
                     }}
                   >
+                    <IconButton aria-label="like">
+                      <Badge badgeContent={k.likes} color="primary">
+                        <SentimentVerySatisfiedSharpIcon />
+                      </Badge>
+                    </IconButton>
+
                     <IconButton aria-label="comments">
                       <Badge badgeContent={k.comments.length} color="secondary">
                         <CommentIcon />

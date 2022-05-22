@@ -3,8 +3,9 @@ import { Button } from "@mui/material";
 import axios from "axios";
 import { API_URL } from "../App";
 import React, { useState } from "react";
+import { useTabsList } from "@mui/base";
 
-export default function CommentForm() {
+export default function CommentForm(props) {
   // <====================> SELLECT RECIPIENT <====================>
   const [selectedUser, setSelectedUser] = useState({});
   const [textValue, setTextValue] = React.useState("");
@@ -17,13 +18,15 @@ export default function CommentForm() {
     //Make a network call somewhere
     event.preventDefault();
     axios({
-      method: "post",
-      url: `${API_URL}/kudos/create`,
+      method: "put",
+      url: `${API_URL}/kudos/${props.id}`,
       data: {
-        kudo: textValue,
-        recipient: selectedUser,
+        text: textValue,
+        author: 1,
       },
     });
+    setTextValue("");
+    props.setIsLoading(true);
   };
 
   return (
@@ -34,8 +37,8 @@ export default function CommentForm() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          width :'20rem',
-        //   minWidth: "90%",÷
+          width: "20rem",
+          //   minWidth: "90%",÷
           my: 2,
           borderRadius: "1rem",
           borderTopRightRadius: "0",
@@ -79,7 +82,7 @@ export default function CommentForm() {
             borderBottomRightRadius: "5rem",
           }}
         >
-          POST KUDO
+          POST COMMENT
         </Button>
       </Paper>
     </>

@@ -15,6 +15,7 @@ import { API_URL } from "../App";
 import Header from "../components/Header";
 import { useParams } from "react-router-dom";
 import Footer from "../components/Footer";
+import { Badge } from "@mui/material";
 
 import {
   List,
@@ -26,13 +27,11 @@ import {
 import CommentForm from "../components/CommentForm";
 
 export default function Kudo() {
-  
   //<====================> CARD <====================>
   const [isLoading, setIsLoading] = useState(true);
   // <====================> COMMENTS <====================>
   const [users, setUsers] = useState([]);
-  
-  
+
   // <====================> ID FOR EACH KUDO <====================>
   const { id } = useParams();
 
@@ -71,7 +70,18 @@ export default function Kudo() {
       setUsers(res.data);
       setIsLoading(false);
     });
-  }, [id]);
+  }, [isLoading]);
+
+  const handleLikes = (event) => {
+    event.preventDefault();
+    axios({
+      method: "put",
+      url: `${API_URL}/kudos/${id}/likes`,
+    }).then((res) => {
+      console.log(res);
+      setIsLoading(true);
+    });
+  };
 
   // <====================> POST THE DATA FROM THE SERVER <====================>
   return (
@@ -80,7 +90,7 @@ export default function Kudo() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        minWidth:'20rem'
+        minWidth: "20rem",
       }}
     >
       {/* <==========> HEADER <==========> */}
@@ -124,7 +134,14 @@ export default function Kudo() {
                   </Avatar>
                 }
                 title={`${getAuthor(users)} recognized ${getRecipient(users)}`} // <======================= 'name' is undefined?
-                subheader={new Date(data.timestamp).toLocaleDateString()}
+                subheader={new Date(data.timestamp).toLocaleDateString(
+                  "en-us",
+                  {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  }
+                )}
               />
               {/* <==========> CARD IMAGE <==========> */}
               <CardMedia
@@ -143,20 +160,22 @@ export default function Kudo() {
               <CardActions
                 sx={{ display: "flex", justifyContent: "space-between" }}
               >
-
                 {/* <==========> ICONS <==========> */}
-                <IconButton aria-label="like">
-                  <SentimentVerySatisfiedSharpIcon />
+                <IconButton aria-label="like" onClick={handleLikes}>
+                  <Badge badgeContent={data.likes} color="primary">
+                    <SentimentVerySatisfiedSharpIcon />
+                  </Badge>
                 </IconButton>
 
                 <div>
-                  <IconButton
-                    aria-label="comment"
-                    
-                  >
-                    <CommentIcon sx={{}} />
+                  <IconButton aria-label="comment">
+                    <Badge
+                      badgeContent={data.comments.length}
+                      color="secondary"
+                    >
+                      <CommentIcon />
+                    </Badge>
                   </IconButton>
-                  
                 </div>
               </CardActions>
             </Card>
@@ -172,9 +191,9 @@ export default function Kudo() {
               <List
                 sx={{
                   display: "flex",
-                  flexDirection:'column',
+                  flexDirection: "column",
                   justifyContent: "center",
-                  alignItems:'center',
+                  alignItems: "center",
                 }}
               >
                 {/* <==========> EACH COMMENT <==========> */}
@@ -211,12 +230,14 @@ export default function Kudo() {
           </Box>
         )}
       </Box>
-      <Box sx={{
-        display:'flex',
-        justifyContent:'center',
-        width:'90%'
-      }}>
-      <CommentForm/>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          width: "90%",
+        }}
+      >
+        <CommentForm id={data.id} setIsLoading={setIsLoading} />
       </Box>
       <Footer />
     </Box>

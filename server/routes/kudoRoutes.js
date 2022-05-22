@@ -47,6 +47,47 @@ router.get("/:id", (req, res) => {
   }
 });
 
+router.put("/:id", (req, res) => {
+  const comment = {
+    text: req.body.text,
+    author: req.body.author,
+    id: util.setNewId(),
+    timestamp: new Date(),
+  };
+
+  const kudosList = readJSONFile();
+
+  kudosList.forEach((u) => {
+    const found = u.kudos.find((k) => k.id === req.params.id);
+    if (u.kudos && found) {
+      u.kudos.find((k) => k.id === req.params.id).comments.push(comment);
+    }
+  });
+
+  util.writeJSONFile(kudosList); //writes new array of kudos to JSON
+
+  res.status(200).json({
+    succes: "Comment added",
+  });
+});
+
+router.put("/:id/likes", (req, res) => {
+  const kudosList = readJSONFile();
+
+  kudosList.forEach((u) => {
+    const found = u.kudos.find((k) => k.id === req.params.id);
+    if (u.kudos && found) {
+      u.kudos.find((k) => k.id === req.params.id).likes++;
+    }
+  });
+
+  util.writeJSONFile(kudosList); //writes new array of kudos to JSON
+
+  res.status(200).json({
+    success: "Like added",
+  });
+});
+
 // <====================> ROUTE FOR POSTING KUDO <====================>
 router.post("/create", (req, res) => {
   const kudosList = readJSONFile();
