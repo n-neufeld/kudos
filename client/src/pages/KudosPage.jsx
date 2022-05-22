@@ -110,7 +110,7 @@ function KudosPage() {
                     sx={{ width: "90%", borderRadius: "1rem" }}
                     component="img"
                     width="180"
-                    image={k.image}
+                    image={`${k.image}`}
                     alt="Kaleidoscope Image"
                   />
                   {/* <==========> CARD TEXT <==========> */}

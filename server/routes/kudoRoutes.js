@@ -63,7 +63,7 @@ router.post("/create", (req, res) => {
     recipient: req.body.recipient,
     author: req.body.author,
     image:
-      "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+      "",
     likes: 0,
     timestamp: new Date(),
     comments: [],
