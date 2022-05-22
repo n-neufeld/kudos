@@ -57,13 +57,23 @@ router.post("/create", (req, res) => {
   // if (!req.body.recipient) {
   //   return res.status(400);
   // }
+
+  const imageArray = [
+    "/kodoImages/kc0.png",
+    "/kodoImages/kc1.png",
+    "/kodoImages/kc2.png",
+    "/kodoImages/kc3.png",
+    "/kodoImages/kc4.png",
+    "/kodoImages/kc5.png",
+    "/kodoImages/kc6.png",
+  ];
+
   const newKudo = {
     id: req.body.id,
     text: req.body.kudo,
     recipient: req.body.recipient,
     author: req.body.author,
-    image:
-      "",
+    image: imageArray[Math.floor(Math.random() * imageArray.length)],
     likes: 0,
     timestamp: new Date(),
     comments: [],

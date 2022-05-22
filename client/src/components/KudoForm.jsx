@@ -5,6 +5,7 @@ import { CardContent } from "@mui/material";
 import axios from "axios";
 import { API_URL } from "../App";
 import KaleidoscopeDesign from "./KaleidoscopeDesign";
+import { useHistory } from "react-router-dom";
 // import { CardMedia } from "@mui/material";
 // import placeholder from '../assets/kaleidoscopeCanvas/kc5.png'
 
@@ -23,6 +24,9 @@ export default function KudoForm() {
   const [selectedUser, setSelectedUser] = useState({});
 
   const [textValue, setTextValue] = React.useState("");
+
+  // handle post navigate
+  const history = useHistory();
 
   const handleChange = (event) => {
     setTextValue(event.target.value);
@@ -46,7 +50,7 @@ export default function KudoForm() {
         author: 1,
       },
     });
-    setTriggerSave(true);
+    history.push(`/kudos/${newKudoId}`);
   };
 
   // <====================> CANVAS <====================> //
