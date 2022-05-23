@@ -15,7 +15,21 @@ import Footer from "../components/Footer";
 import { IconButton, Badge } from "@mui/material";
 import CommentIcon from "@mui/icons-material/Comment";
 import SentimentVerySatisfiedSharpIcon from "@mui/icons-material/SentimentVerySatisfiedSharp";
-// import placeholder from "../assets/kaleidoscopeCanvas/kc3.png";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+//*====================> SET THEME COLORS FOR BADGES <====================*//
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#00bcd4",
+      contrastText: "#fff",
+    },
+    secondary: {
+      main: "#FF8B53",
+      contrastText: "#fff",
+    },
+  },
+});
 
 function KudosPage() {
   // const [expanded, setExpanded] = React.useState(false);
@@ -27,13 +41,13 @@ function KudosPage() {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // <====================> GET AUTHOR FOR COMMENTS <====================>
+  //*=====================> GET AUTHOR FOR COMMENTS <=====================*//
   const getAuthor = (users, kudo) => {
     const author = users.find((u) => u.userId === kudo.author);
     return author.name;
   };
-
-  // <====================> RETRIEVE THE DATA FROM THE SERVER <====================>
+  
+  //*=====================> RETRIEVE THE DATA FROM THE SERVER <=====================*//
   useEffect(() => {
     axios({
       method: "get",
@@ -44,7 +58,8 @@ function KudosPage() {
       setIsLoading(false);
     });
   }, []);
-
+  //*===============================================================================*//
+  //*=============================> RETURN <=============================*//
   return (
     <Box
       sx={{
@@ -55,9 +70,9 @@ function KudosPage() {
         minWidth: "20rem",
       }}
     >
-      {/* <====================> PAGE HEADER <====================> */}
+      {/*=====================> PAGE HEADER <=====================*/}
       <Header />
-      {/* <====================> KUDO CARDS POSTED <====================> */}
+      {/*=====================> KUDO CARDS POSTED <=====================*/}
       <Box
         sx={{
           display: "flex",
@@ -69,7 +84,7 @@ function KudosPage() {
           data.map((u) => {
             if (u.kudos) {
               return u.kudos.map((k) => (
-                // <====================> KUDO CARD <====================>
+                //*=====================> KUDO CARD <=====================*//
                 // <CardActionArea
                 // sx={{
                 //   width:'20rem'
@@ -96,7 +111,7 @@ function KudosPage() {
                       sx={{
                       }}
                     > */}
-                  {/* <==========> CARD HEADER <==========> */}
+                  {/*===========> CARD HEADER <===========*/}
                   <CardHeader
                     avatar={
                       <Avatar sx={{ bgcolor: "#008996" }} aria-label="recipe">
@@ -114,7 +129,7 @@ function KudosPage() {
                       }
                     )}
                   />
-                  {/* <==========> CARD IMAGE <==========> */}
+                  {/*===========> CARD CANVAS IMAGE <===========*/}
                   <CardMedia
                     sx={{ width: "90%", borderRadius: "1rem" }}
                     component="img"
@@ -122,7 +137,7 @@ function KudosPage() {
                     image={`${k.image}`}
                     alt="Kaleidoscope Image"
                   />
-                  {/* <==========> CARD TEXT <==========> */}
+                  {/*===========> CARD TEXT <===========*/}
                   <CardContent>
                     <Typography variant="body2" color="text.secondary">
                       {k.text}
@@ -134,28 +149,34 @@ function KudosPage() {
                       justifyContent: "space-between",
                     }}
                   ></CardActions>
-                  {/* </CardActionArea> */}
-                  {/* <==========> CARD COMMENT ICON <==========> */}
+                  {/*===========> CARD ICONS <===========*/}
                   <CardActions
                     sx={{
                       display: "flex",
                       justifyContent: "center",
                     }}
                   >
+                    {/*===========> CARD LIKE ICON <===========*/}
                     <IconButton aria-label="like">
-                      <Badge badgeContent={k.likes} color="primary">
-                        <SentimentVerySatisfiedSharpIcon />
-                      </Badge>
+                      <ThemeProvider theme={theme}>
+                        <Badge badgeContent={k.likes} color="primary">
+                          <SentimentVerySatisfiedSharpIcon />
+                        </Badge>
+                      </ThemeProvider>
                     </IconButton>
-
+                    {/*===========> CARD COMMENT ICON <===========*/}
                     <IconButton aria-label="comments">
-                      <Badge badgeContent={k.comments.length} color="secondary">
-                        <CommentIcon />
-                      </Badge>
+                      <ThemeProvider theme={theme}>
+                        <Badge
+                          badgeContent={k.comments.length}
+                          color="secondary"
+                        >
+                          <CommentIcon />
+                        </Badge>
+                      </ThemeProvider>
                     </IconButton>
                   </CardActions>
                 </CardActionArea>
-                /* </CardActionArea> */
               ));
             }
           })}

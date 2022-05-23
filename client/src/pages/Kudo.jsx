@@ -17,6 +17,7 @@ import { useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import { Badge } from "@mui/material";
 import CommentForm from "../components/CommentForm";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import {
   List,
   ListItem,
@@ -25,34 +26,47 @@ import {
   ListItemAvatar,
 } from "@mui/material";
 
+//*====================> SET THEME COLORS FOR BADGES <====================*//
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#00bcd4",
+      contrastText: "#fff",
+    },
+    secondary: {
+      main: "#FF8B53",
+      contrastText: "#fff",
+    },
+  },
+});
 
 export default function Kudo() {
-  //==============================> CARD <==============================//
+  //*==============================> CARD <==============================*//
   const [isLoading, setIsLoading] = useState(true);
-  //===========> COMMENTS <===========//
+  //*===========> COMMENTS <===========*//
   const [users, setUsers] = useState([]);
 
-  //===========> ID FOR EACH KUDO <===========//
+  //*===========> ID FOR EACH KUDO <===========*//
   const { id } = useParams();
 
-  //===========> GET THE DATA <===========//
+  //*===========> GET THE DATA <===========*//
   const [data, setData] = useState([]);
 
-  //===========> GET AUTHOR FOR COMMENTS <===========//
+  //*===========> GET AUTHOR FOR COMMENTS <===========*//
   const getAuthor = (users) => {
     const author = users.find((u) => u.userId === data.author);
     return author.name;
   };
 
-  //===========> GET RECIPIENT FOR COMMENTS <===========//
+  //*===========> GET RECIPIENT FOR COMMENTS <===========*//
   const getRecipient = (users) => {
     const recipient = users.find((u) => u.userId === data.recipient);
     return recipient.name;
   };
-  
-  //===========> RETRIEVE THE DATA FROM THE SERVER <===========//
+
+  //*===========> RETRIEVE THE DATA FROM THE SERVER <===========*//
   useEffect(() => {
-    //===========> CALL FOR INDIVIDUAL ID <===========//
+    //*===========> CALL FOR INDIVIDUAL ID <===========*//
     axios({
       method: "get",
       url: `${API_URL}/kudos/${id}`,
@@ -60,7 +74,7 @@ export default function Kudo() {
     }).then((res) => {
       setData(res.data);
     });
-    //===========> CALL FOR ALL DATA <===========//
+    //*===========> CALL FOR ALL DATA <===========*//
     axios({
       method: "get",
       url: `${API_URL}/kudos`,
@@ -71,7 +85,7 @@ export default function Kudo() {
     });
   }, [isLoading]);
 
-  //===========> HANDLE LIKE COUNT <===========//
+  //*===========> HANDLE LIKE COUNT <===========*//
   const handleLikes = (event) => {
     event.preventDefault();
     axios({
@@ -82,9 +96,9 @@ export default function Kudo() {
       setIsLoading(true);
     });
   };
-  //====================================================================//
+  //*====================================================================*//
 
-  //====================> RETURN DATA FROM THE SERVER <====================//
+  //*=============================> RETURN <=============================*//
   return (
     <Box
       sx={{
@@ -129,15 +143,15 @@ export default function Kudo() {
             >
               {/*===========> KUDO CARD HEADER <===========*/}
               <CardHeader
-                //===========> KUDO CARD AVATAR <===========//
+                //*===========> KUDO CARD AVATAR <===========/*/
                 avatar={
                   <Avatar sx={{ bgcolor: "#008996" }} aria-label="recipe">
                     {getAuthor(users).charAt(0)}
                   </Avatar>
                 }
-                //===========> KUDO CARD AUTHOR & RECIPIENT <===========//
+                //*===========> KUDO CARD AUTHOR & RECIPIENT <===========*//
                 title={`${getAuthor(users)} recognized ${getRecipient(users)}`}
-                //===========> KUDO CARD DATE <===========//
+                //*===========> KUDO CARD DATE <===========*//
                 subheader={new Date(data.timestamp).toLocaleDateString(
                   "en-us",
                   {
@@ -167,20 +181,20 @@ export default function Kudo() {
               >
                 {/*===========> KUDO CARD LIKES ICON <===========*/}
                 <IconButton aria-label="like" onClick={handleLikes}>
-                  <Badge badgeContent={data.likes} color="primary">
-                    <SentimentVerySatisfiedSharpIcon />
-                  </Badge>
+                  <ThemeProvider theme={theme}>
+                    <Badge badgeContent={data.likes} color="primary">
+                      <SentimentVerySatisfiedSharpIcon />
+                    </Badge>
+                  </ThemeProvider>
                 </IconButton>
                 {/*===========> KUDO CARD COMMENTS ICON <===========*/}
-                  <IconButton aria-label="comment">
-                    <Badge
-                      badgeContent={data.comments.length}
-                      color="secondary"
-                    >
-                      <CommentIcon />
-                    </Badge>
-                  </IconButton>
-                
+                <IconButton aria-label="comment">
+                  <ThemeProvider theme={theme}>
+                  <Badge badgeContent={data.comments.length} color="secondary">
+                    <CommentIcon />
+                  </Badge>
+                  </ThemeProvider>
+                </IconButton>
               </CardActions>
             </Card>
             {/*=======================================================================*/}
@@ -205,7 +219,7 @@ export default function Kudo() {
                   <ListItem
                     sx={{
                       width: "90%",
-                      maxWidth:'23rem',
+                      maxWidth: "23rem",
                       my: 1,
                       borderRadius: "1rem",
                       borderTopRightRadius: "0",
@@ -225,28 +239,27 @@ export default function Kudo() {
                     </ListItemAvatar>
                     {/*===========> COMMENT TEXT <===========*/}
                     <Box>
-                    <ListItemText
-                    //*===========> COMMENT AUTHOR <===========*// 
-                      primary={users.find((u) => u.userId === c.author).name}
-                      //*===========> COMMENT TEXT <===========*//
-                      secondary={c.text}
-                    />
-                    {/*===========> COMMENT TIMESTAMP <===========*/}
-                    <Typography variant="body2" sx={{
-                      fontSize:'.65rem',
-                      color:'#888181',
-                    }}>
-                      {new Date(data.timestamp).toLocaleDateString(
-                        "en-us",
-                        {
+                      <ListItemText
+                        //*===========> COMMENT AUTHOR <===========*//
+                        primary={users.find((u) => u.userId === c.author).name}
+                        //*===========> COMMENT TEXT <===========*//
+                        secondary={c.text}
+                      />
+                      {/*===========> COMMENT TIMESTAMP <===========*/}
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          fontSize: ".65rem",
+                          color: "#888181",
+                        }}
+                      >
+                        {new Date(data.timestamp).toLocaleDateString("en-us", {
                           year: "numeric",
                           month: "short",
                           day: "numeric",
-                        }
-                      )}
-                    </Typography>
+                        })}
+                      </Typography>
                     </Box>
-                    
                   </ListItem>
                 ))}
               </List>
