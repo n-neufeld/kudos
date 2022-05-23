@@ -8,11 +8,18 @@ const setNewId = () => {
 
 // <=====> FUNCTION SET TO WRITE NEW FILES WITH AN ERROR CONDITION <=====>
 function writeJSONFile(content) {
-  console.log(content);
   fs.writeFileSync("./data/kudos.json", JSON.stringify(content));
 }
 
+//*====================> READ THE JSON DATA <====================*//
+function readJSONFile() {
+  const fileData = fs.readFileSync("./data/kudos.json");
+  const parsedFileData = JSON.parse(fileData);
+  return parsedFileData;
+}
+
 module.exports = {
+  readJSONFile,
   writeJSONFile,
   setNewId,
 };

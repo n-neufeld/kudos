@@ -12,16 +12,6 @@ const PORT = process.env.PORT || 8080;
 app.use(express.json());
 app.use(cors());
 
-// app.use(express.static("public"));
-
-// app.use((req, res, next) => {
-//   next();
-// });
-
-// app.get("/", (req, res) => {
-//   res.send("This is the API documentation");
-// });
-
 app.use("/kudos", kudoRoutes);
 
 // <=====> start the server <=====>

@@ -7,7 +7,6 @@ import { API_URL } from "../App";
 import KaleidoscopeDesign from "./KaleidoscopeDesign";
 import { useHistory } from "react-router-dom";
 
-
 export default function KudoForm() {
   const [users, setUsers] = useState([]);
   //*=====================> SELLECT RECIPIENT <=====================*//
@@ -27,7 +26,6 @@ export default function KudoForm() {
   const newKudoId = uuidv4();
 
   const handleSubmit = (event) => {
-    
     event.preventDefault();
 
     axios({
@@ -37,7 +35,7 @@ export default function KudoForm() {
         kudo: textValue,
         recipient: selectedUser.id,
         id: newKudoId,
-        author: 1,
+        author: 1, // for now using myself to post
       },
     });
     history.push(`/kudos/${newKudoId}`);
@@ -88,7 +86,6 @@ export default function KudoForm() {
           getOptionLabel={(user) => user.name}
           onChange={(event, user) => {
             setSelectedUser(user);
-            console.log(selectedUser);
           }}
           renderInput={(params) => (
             <TextField {...params} label="Choose a Recipient" />

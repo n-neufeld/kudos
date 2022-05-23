@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import Card from "@mui/material/Card";
 import Box from "@mui/material/Box";
 import CardHeader from "@mui/material/CardHeader";
 import CardMedia from "@mui/material/CardMedia";
@@ -17,15 +16,7 @@ import CommentIcon from "@mui/icons-material/Comment";
 import SentimentVerySatisfiedSharpIcon from "@mui/icons-material/SentimentVerySatisfiedSharp";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-
-// bgTheme[Math.floor(Math.random() * bgTheme.length)]
-// const bgTheme = createTheme({
-//   palette: {
-//     background: {
-//       paper: ['#80deea','#90caf9','#b39ddb','#ef9a9a','#fff59d','#bcaaa4','#a5d6a7','#f48fb1',]
-//     },
-//   },
-// });
+import { getAuthor, getRecipient } from "../helper/helper";
 
 //*====================> SET THEME COLORS FOR BADGES <====================*//
 const theme = createTheme({
@@ -42,21 +33,9 @@ const theme = createTheme({
 });
 
 function KudosPage() {
-  // const [expanded, setExpanded] = React.useState(false);
-
-  // const handleExpandClick = () => {
-  //   setExpanded(!expanded);
-  // };
-
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  //*=====================> GET AUTHOR FOR COMMENTS <=====================*//
-  const getAuthor = (users, kudo) => {
-    const author = users.find((u) => u.userId === kudo.author);
-    return author.name;
-  };
-  
   //*=====================> RETRIEVE THE DATA FROM THE SERVER <=====================*//
   useEffect(() => {
     axios({
@@ -68,7 +47,18 @@ function KudosPage() {
       setIsLoading(false);
     });
   }, []);
-  //*===============================================================================*//
+
+  let kudosObjects = []; //create an array to store objects, so we can sort
+
+  data.forEach((u) => {
+    //loop through data and for each user if user has kudos, push those kudos into the array we created
+    if (u.kudos) {
+      u.kudos.forEach((k) => {
+        kudosObjects.push(k);
+      });
+    }
+  });
+
   //*=============================> RETURN <=============================*//
   return (
     <Box
@@ -90,110 +80,99 @@ function KudosPage() {
           flexWrap: "wrap",
         }}
       >
-        {!isLoading &&
-          data.map((u) => {
-            if (u.kudos) {
-              return u.kudos.map((k) => (
-                //*=====================> KUDO CARD <=====================*//
-                // <CardActionArea
-                // sx={{
-                //   width:'20rem'
-                // }}
-                // >
-                <CardActionArea
-                  href={`/kudos/${k.id}`}
-                  key={k.id}
+        {!isLoading && //if data is fetched
+          kudosObjects
+            .sort((a, b) => {
+              //sort kudos by timestamp
+              return new Date(b.timestamp) - new Date(a.timestamp);
+            })
+            .map((k) => (
+              //map kudos into cards
+              <CardActionArea
+                href={`/kudos/${k.id}`}
+                key={k.id}
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  maxWidth: 345,
+                  my: 2,
+                  mx: 2,
+                  borderRadius: "1rem",
+                  borderTopRightRadius: "0",
+                  boxShadow: "2px -5px 10px #ccc, -20px -20px 100px #fff",
+                  borderRight: "1px solid #ccc",
+                  borderTop: "1px solid #ccc",
+                  backgroundColor: "#fff",
+                  "&:hover": {
+                    backgroundColor: "#fbe9e7",
+                  },
+                }}
+              >
+                {/*===========> CARD HEADER <===========*/}
+                <CardHeader
+                  avatar={
+                    <Avatar sx={{ bgcolor: "#008996" }} aria-label="recipe">
+                      {getRecipient(data, k).charAt(0)}
+                    </Avatar>
+                  }
+                  title={`${getAuthor(data, k)} recognized ${getRecipient(
+                    data,
+                    k
+                  )} `}
+                  subheader={new Date(k.timestamp).toLocaleDateString("en-us", {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  })}
+                />
+                {/*===========> CARD CANVAS IMAGE <===========*/}
+                <CardMedia
+                  sx={{ width: "90%", borderRadius: "1rem" }}
+                  component="img"
+                  width="180"
+                  image={`${k.image}`}
+                  alt="Kaleidoscope Image"
+                />
+                {/*===========> CARD TEXT <===========*/}
+                <CardContent>
+                  <Typography variant="body2" color="text.secondary">
+                    {k.text}
+                  </Typography>
+                </CardContent>
+                <CardActions
                   sx={{
                     display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    maxWidth: 345,
-                    my: 2,
-                    mx: 2,
-                    borderRadius: "1rem",
-                    borderTopRightRadius: "0",
-                    boxShadow: "2px -5px 10px #ccc, -20px -20px 100px #fff",
-                    borderRight: "1px solid #ccc",
-                    borderTop: "1px solid #ccc",
-                    backgroundColor:'#fff',
-                    '&:hover': {
-                      backgroundColor:'#fbe9e7'
-                    }
+                    justifyContent: "space-between",
+                  }}
+                ></CardActions>
+                {/*===========> CARD ICONS <===========*/}
+                <CardActions
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
                   }}
                 >
-                  {/* <CardActionArea
-                      sx={{
-                      }}
-                    > */}
-                  {/*===========> CARD HEADER <===========*/}
-                  <CardHeader
-                    avatar={
-                      <Avatar sx={{ bgcolor: "#008996" }} aria-label="recipe">
-                        {u.name.charAt(0)}
-                      </Avatar>
-                    }
-                    title={`${getAuthor(data, k)} recognized ${u.name}`}
-                    subheader={new Date(k.timestamp).toLocaleDateString(
-                      "en-us",
-                      {
-                        weekday: "long",
-                        year: "numeric",
-                        month: "short",
-                        day: "numeric",
-                      }
-                    )}
-                  />
-                  {/*===========> CARD CANVAS IMAGE <===========*/}
-                  <CardMedia
-                    sx={{ width: "90%", borderRadius: "1rem" }}
-                    component="img"
-                    width="180"
-                    image={`${k.image}`}
-                    alt="Kaleidoscope Image"
-                  />
-                  {/*===========> CARD TEXT <===========*/}
-                  <CardContent>
-                    <Typography variant="body2" color="text.secondary">
-                      {k.text}
-                    </Typography>
-                  </CardContent>
-                  <CardActions
-                    sx={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                    }}
-                  ></CardActions>
-                  {/*===========> CARD ICONS <===========*/}
-                  <CardActions
-                    sx={{
-                      display: "flex",
-                      justifyContent: "center",
-                    }}
-                  >
-                    {/*===========> CARD LIKE ICON <===========*/}
-                    <IconButton aria-label="like">
-                      <ThemeProvider theme={theme}>
-                        <Badge badgeContent={k.likes} color="primary">
-                          <SentimentVerySatisfiedSharpIcon />
-                        </Badge>
-                      </ThemeProvider>
-                    </IconButton>
-                    {/*===========> CARD COMMENT ICON <===========*/}
-                    <IconButton aria-label="comments">
-                      <ThemeProvider theme={theme}>
-                        <Badge
-                          badgeContent={k.comments.length}
-                          color="secondary"
-                        >
-                          <CommentIcon />
-                        </Badge>
-                      </ThemeProvider>
-                    </IconButton>
-                  </CardActions>
-                </CardActionArea>
-              ));
-            }
-          })}
+                  {/*===========> CARD LIKE ICON <===========*/}
+                  <IconButton aria-label="like">
+                    <ThemeProvider theme={theme}>
+                      <Badge badgeContent={k.likes} color="primary">
+                        <SentimentVerySatisfiedSharpIcon />
+                      </Badge>
+                    </ThemeProvider>
+                  </IconButton>
+                  {/*===========> CARD COMMENT ICON <===========*/}
+                  <IconButton aria-label="comments">
+                    <ThemeProvider theme={theme}>
+                      <Badge badgeContent={k.comments.length} color="secondary">
+                        <CommentIcon />
+                      </Badge>
+                    </ThemeProvider>
+                  </IconButton>
+                </CardActions>
+              </CardActionArea>
+            ))}
       </Box>
       <Footer />
     </Box>

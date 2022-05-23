@@ -25,6 +25,8 @@ import {
   Paper,
   ListItemAvatar,
 } from "@mui/material";
+import { formatDistance } from "date-fns";
+import { getAuthor, getRecipient } from "../helper/helper";
 
 //*====================> SET THEME COLORS FOR BADGES <====================*//
 const theme = createTheme({
@@ -51,18 +53,6 @@ export default function Kudo() {
 
   //*===========> GET THE DATA <===========*//
   const [data, setData] = useState([]);
-
-  //*===========> GET AUTHOR FOR COMMENTS <===========*//
-  const getAuthor = (users) => {
-    const author = users.find((u) => u.userId === data.author);
-    return author.name;
-  };
-
-  //*===========> GET RECIPIENT FOR COMMENTS <===========*//
-  const getRecipient = (users) => {
-    const recipient = users.find((u) => u.userId === data.recipient);
-    return recipient.name;
-  };
 
   //*===========> RETRIEVE THE DATA FROM THE SERVER <===========*//
   useEffect(() => {
@@ -92,7 +82,6 @@ export default function Kudo() {
       method: "put",
       url: `${API_URL}/kudos/${id}/likes`,
     }).then((res) => {
-      console.log(res);
       setIsLoading(true);
     });
   };
@@ -146,11 +135,14 @@ export default function Kudo() {
                 //*===========> KUDO CARD AVATAR <===========/*/
                 avatar={
                   <Avatar sx={{ bgcolor: "#008996" }} aria-label="recipe">
-                    {getAuthor(users).charAt(0)}
+                    {getAuthor(users, data).charAt(0)}
                   </Avatar>
                 }
                 //*===========> KUDO CARD AUTHOR & RECIPIENT <===========*//
-                title={`${getAuthor(users)} recognized ${getRecipient(users)}`}
+                title={`${getAuthor(users, data)} recognized ${getRecipient(
+                  users,
+                  data
+                )}`}
                 //*===========> KUDO CARD DATE <===========*//
                 subheader={new Date(data.timestamp).toLocaleDateString(
                   "en-us",
@@ -190,9 +182,12 @@ export default function Kudo() {
                 {/*===========> KUDO CARD COMMENTS ICON <===========*/}
                 <IconButton aria-label="comment">
                   <ThemeProvider theme={theme}>
-                  <Badge badgeContent={data.comments.length} color="secondary">
-                    <CommentIcon />
-                  </Badge>
+                    <Badge
+                      badgeContent={data.comments.length}
+                      color="secondary"
+                    >
+                      <CommentIcon />
+                    </Badge>
                   </ThemeProvider>
                 </IconButton>
               </CardActions>
@@ -217,6 +212,7 @@ export default function Kudo() {
                 {/*===========> EACH COMMENT <===========*/}
                 {data.comments.map((c) => (
                   <ListItem
+                    key={c.id}
                     sx={{
                       width: "90%",
                       maxWidth: "23rem",
@@ -232,16 +228,14 @@ export default function Kudo() {
                     {/*===========> COMMENT AVATAR <===========*/}
                     <ListItemAvatar>
                       <Avatar sx={{ bgcolor: "#008996" }} aria-label="recipe">
-                        {users
-                          .find((u) => u.userId === c.author)
-                          .name.charAt(0)}
+                        {getAuthor(users, c).charAt(0)}
                       </Avatar>
                     </ListItemAvatar>
                     {/*===========> COMMENT TEXT <===========*/}
                     <Box>
                       <ListItemText
                         //*===========> COMMENT AUTHOR <===========*//
-                        primary={users.find((u) => u.userId === c.author).name}
+                        primary={getAuthor(users, c)}
                         //*===========> COMMENT TEXT <===========*//
                         secondary={c.text}
                       />
@@ -253,10 +247,8 @@ export default function Kudo() {
                           color: "#888181",
                         }}
                       >
-                        {new Date(data.timestamp).toLocaleDateString("en-us", {
-                          year: "numeric",
-                          month: "short",
-                          day: "numeric",
+                        {formatDistance(new Date(c.timestamp), new Date(), {
+                          addSuffix: true,
                         })}
                       </Typography>
                     </Box>

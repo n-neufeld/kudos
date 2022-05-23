@@ -2,34 +2,19 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const util = require("../util/util");
-// const kudosFile = "../data/kudos.json";
-// const kudos = require(kudosFile);
-
-// router.use((req, res, next) => {
-//   console.log('kudoRoutes');
-//   next()
-// })
-
-//*====================> READ THE JSON DATA <====================*//
-function readJSONFile() {
-  const fileData = fs.readFileSync("./data/kudos.json");
-  const parsedFileData = JSON.parse(fileData);
-  return parsedFileData;
-}
+const kudosFile = "../data/kudos.json";
+const data = require(kudosFile);
 
 //*====================> ROUTE FOR GETTING ALL KUDOS <====================*//
 router.get("/", (_req, res) => {
-  const kudos = readJSONFile();
-  res.status(200).json(kudos);
+  res.status(200).json(data);
 });
 
 //*====================> ROUTE FOR GETTING SPECIFIC KUDO BY ID <====================*//
 router.get("/:id", (req, res) => {
-  const users = readJSONFile();
-
   const kudos = [];
 
-  users.forEach((u) => {
+  data.forEach((u) => {
     if (u.kudos) {
       u.kudos.forEach((k) => kudos.push(k));
     }
@@ -57,9 +42,7 @@ router.put("/:id", (req, res) => {
     timestamp: new Date(),
   };
 
-  const kudosList = readJSONFile();
-
-  kudosList.forEach((u) => {
+  data.forEach((u) => {
     const found = u.kudos.find((k) => k.id === req.params.id);
     if (u.kudos && found) {
       u.kudos.find((k) => k.id === req.params.id).comments.push(comment);
@@ -67,24 +50,23 @@ router.put("/:id", (req, res) => {
   });
 
   //*===============> WRITES NEW ARRAY OF KUDOS TO JSON <===============*//
-  util.writeJSONFile(kudosList); 
+  util.writeJSONFile(data);
 
   res.status(200).json({
     succes: "Comment added",
   });
 });
+
 //*====================> UPDATE THE LIKE COUNT <====================*//
 router.put("/:id/likes", (req, res) => {
-  const kudosList = readJSONFile();
-
-  kudosList.forEach((u) => {
+  data.forEach((u) => {
     const found = u.kudos.find((k) => k.id === req.params.id);
     if (u.kudos && found) {
       u.kudos.find((k) => k.id === req.params.id).likes++;
     }
   });
-//*===============> WRITES NEW ARRAY OF KUDOS TO JSON <===============*//
-  util.writeJSONFile(kudosList);
+  //*===============> WRITES NEW ARRAY OF KUDOS TO JSON <===============*//
+  util.writeJSONFile(data);
 
   res.status(200).json({
     success: "Like added",
@@ -93,15 +75,6 @@ router.put("/:id/likes", (req, res) => {
 
 //*=====================> POSTING KUDO TO KUDO PAGE <=====================*//
 router.post("/create", (req, res) => {
-  const kudosList = readJSONFile();
-
-  // if (!req.body.kudo) {
-  //   return res.status(400);
-  // }
-  // if (!req.body.recipient) {
-  //   return res.status(400);
-  // }
-
   //*=====================> ARRAY OF IMAGES FOR KUDOS POSTED <=====================*//
   const imageArray = [
     "/canvasImages/create/kc7.png",
@@ -125,9 +98,9 @@ router.post("/create", (req, res) => {
     comments: [],
   };
 
-  kudosList.find((u) => u.userId === newKudo.recipient).kudos.push(newKudo);
+  data.find((u) => u.userId === newKudo.recipient).kudos.push(newKudo);
   //pushes new kudo into an existing array
-  util.writeJSONFile(kudosList); //writes new array of kudos to JSON
+  util.writeJSONFile(data); //writes new array of kudos to JSON
   res.status(200).json(newKudo); //return a new array of kudos
 });
 

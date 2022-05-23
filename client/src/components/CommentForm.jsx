@@ -3,26 +3,23 @@ import { Button } from "@mui/material";
 import axios from "axios";
 import { API_URL } from "../App";
 import React, { useState } from "react";
-import { useTabsList } from "@mui/base";
 
 export default function CommentForm(props) {
   // <====================> SELLECT RECIPIENT <====================>
-  const [selectedUser, setSelectedUser] = useState({});
-  const [textValue, setTextValue] = React.useState("");
+  const [textValue, setTextValue] = useState("");
 
   const handleChange = (event) => {
     setTextValue(event.target.value);
   };
 
   const handleSubmit = (event) => {
-    //Make a network call somewhere
     event.preventDefault();
     axios({
       method: "put",
       url: `${API_URL}/kudos/${props.id}`,
       data: {
         text: textValue,
-        author: 1,
+        author: 1, // for now using myself to post
       },
     });
     setTextValue("");
