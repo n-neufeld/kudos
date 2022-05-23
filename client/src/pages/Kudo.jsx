@@ -25,6 +25,7 @@ import {
   ListItemAvatar,
 } from "@mui/material";
 
+
 export default function Kudo() {
   //==============================> CARD <==============================//
   const [isLoading, setIsLoading] = useState(true);
@@ -182,7 +183,7 @@ export default function Kudo() {
                 
               </CardActions>
             </Card>
-
+            {/*=======================================================================*/}
             {/*=====================> COMMENTS SECTION <=====================*/}
             <Paper
               sx={{
@@ -222,12 +223,19 @@ export default function Kudo() {
                       </Avatar>
                     </ListItemAvatar>
                     {/*===========> COMMENT TEXT <===========*/}
+                    <Box>
                     <ListItemText
-                    //===========> COMMENT AUTHOR <===========// 
+                    //*===========> COMMENT AUTHOR <===========*// 
                       primary={users.find((u) => u.userId === c.author).name}
-                      //===========> COMMENT TEXT <===========//
+                      //*===========> COMMENT TEXT <===========*//
                       secondary={c.text}
-                      subheader={new Date(data.timestamp).toLocaleDateString(
+                    />
+                    {/*===========> COMMENT TIMESTAMP <===========*/}
+                    <Typography variant="body2" sx={{
+                      fontSize:'.65rem',
+                      color:'#888181',
+                    }}>
+                      {new Date(data.timestamp).toLocaleDateString(
                         "en-us",
                         {
                           year: "numeric",
@@ -235,7 +243,9 @@ export default function Kudo() {
                           day: "numeric",
                         }
                       )}
-                    />
+                    </Typography>
+                    </Box>
+                    
                   </ListItem>
                 ))}
               </List>
