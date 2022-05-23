@@ -5,6 +5,7 @@ import KudoForm from "../components/KudoForm";
 import Header from "../components/Header";
 import Footer from '../components/Footer'
 
+
 function CreateKudo() {
 
   return (
@@ -21,7 +22,6 @@ function CreateKudo() {
       <Card
         sx={{
           maxWidth: 320,
-          // minWidth: 320,
           width: '90%',
           mt: 2,
           mb: 2,

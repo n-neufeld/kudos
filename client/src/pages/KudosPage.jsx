@@ -17,6 +17,16 @@ import CommentIcon from "@mui/icons-material/Comment";
 import SentimentVerySatisfiedSharpIcon from "@mui/icons-material/SentimentVerySatisfiedSharp";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+
+// bgTheme[Math.floor(Math.random() * bgTheme.length)]
+// const bgTheme = createTheme({
+//   palette: {
+//     background: {
+//       paper: ['#80deea','#90caf9','#b39ddb','#ef9a9a','#fff59d','#bcaaa4','#a5d6a7','#f48fb1',]
+//     },
+//   },
+// });
+
 //*====================> SET THEME COLORS FOR BADGES <====================*//
 const theme = createTheme({
   palette: {
@@ -105,6 +115,10 @@ function KudosPage() {
                     boxShadow: "2px -5px 10px #ccc, -20px -20px 100px #fff",
                     borderRight: "1px solid #ccc",
                     borderTop: "1px solid #ccc",
+                    backgroundColor:'#fff',
+                    '&:hover': {
+                      backgroundColor:'#fbe9e7'
+                    }
                   }}
                 >
                   {/* <CardActionArea

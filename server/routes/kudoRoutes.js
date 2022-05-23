@@ -10,19 +10,20 @@ const util = require("../util/util");
 //   next()
 // })
 
+//*====================> READ THE JSON DATA <====================*//
 function readJSONFile() {
   const fileData = fs.readFileSync("./data/kudos.json");
   const parsedFileData = JSON.parse(fileData);
   return parsedFileData;
 }
 
-// <====================> ROUTE FOR GETTING ALL KUDOS <====================>
+//*====================> ROUTE FOR GETTING ALL KUDOS <====================*//
 router.get("/", (_req, res) => {
   const kudos = readJSONFile();
   res.status(200).json(kudos);
 });
 
-// <====================> ROUTE FOR GETTING SPECIFIC KUDO BY ID <====================>
+//*====================> ROUTE FOR GETTING SPECIFIC KUDO BY ID <====================*//
 router.get("/:id", (req, res) => {
   const users = readJSONFile();
 
@@ -47,6 +48,7 @@ router.get("/:id", (req, res) => {
   }
 });
 
+//*====================> UPDATE ADDED COMMENT TO KUDO <====================*//
 router.put("/:id", (req, res) => {
   const comment = {
     text: req.body.text,
@@ -64,13 +66,14 @@ router.put("/:id", (req, res) => {
     }
   });
 
-  util.writeJSONFile(kudosList); //writes new array of kudos to JSON
+  //*===============> WRITES NEW ARRAY OF KUDOS TO JSON <===============*//
+  util.writeJSONFile(kudosList); 
 
   res.status(200).json({
     succes: "Comment added",
   });
 });
-
+//*====================> UPDATE THE LIKE COUNT <====================*//
 router.put("/:id/likes", (req, res) => {
   const kudosList = readJSONFile();
 
@@ -80,15 +83,15 @@ router.put("/:id/likes", (req, res) => {
       u.kudos.find((k) => k.id === req.params.id).likes++;
     }
   });
-
-  util.writeJSONFile(kudosList); //writes new array of kudos to JSON
+//*===============> WRITES NEW ARRAY OF KUDOS TO JSON <===============*//
+  util.writeJSONFile(kudosList);
 
   res.status(200).json({
     success: "Like added",
   });
 });
 
-// <====================> ROUTE FOR POSTING KUDO <====================>
+//*=====================> POSTING KUDO TO KUDO PAGE <=====================*//
 router.post("/create", (req, res) => {
   const kudosList = readJSONFile();
 
@@ -99,6 +102,7 @@ router.post("/create", (req, res) => {
   //   return res.status(400);
   // }
 
+  //*=====================> ARRAY OF IMAGES FOR KUDOS POSTED <=====================*//
   const imageArray = [
     "/canvasImages/create/kc7.png",
     "/canvasImages/create/kc8.png",
@@ -109,6 +113,7 @@ router.post("/create", (req, res) => {
     "/canvasImages/create/kc13.png",
   ];
 
+  //*=====================> VARIABLE FOR NEW KUDO FORMAT <=====================*//
   const newKudo = {
     id: req.body.id,
     text: req.body.kudo,
