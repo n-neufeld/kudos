@@ -100,13 +100,13 @@ router.post("/create", (req, res) => {
   // }
 
   const imageArray = [
-    "/kodoImages/kc0.png",
-    "/kodoImages/kc1.png",
-    "/kodoImages/kc2.png",
-    "/kodoImages/kc3.png",
-    "/kodoImages/kc4.png",
-    "/kodoImages/kc5.png",
-    "/kodoImages/kc6.png",
+    "/canvasImages/create/kc7.png",
+    "/canvasImages/create/kc8.png",
+    "/canvasImages/create/kc9.png",
+    "/canvasImages/create/kc10.png",
+    "/canvasImages/create/kc11.png",
+    "/canvasImages/create/kc12.png",
+    "/canvasImages/create/kc13.png",
   ];
 
   const newKudo = {

@@ -10,7 +10,7 @@ export default function KaleidoscopeDesign(props) {
   // let saveButton;
   // let clearButton;
 
-  // <====================> SAVE <====================>
+  //*=====================> SAVE <=====================*//
   // function saveKaleidoscope(p5) {
   //   p5.save(`${props.id}.png`);
   // }
@@ -19,12 +19,12 @@ export default function KaleidoscopeDesign(props) {
   //   p5.save(`${props.id}.png`);
   // }
 
-  // <====================> CLEAR <====================>
-  function clearCanvas(p5) {
-    p5.background(250);
-  }
+  //*=====================> CLEAR <=====================*//
+  // function clearCanvas(p5) {
+  //   p5.background(250);
+  // }
 
-  // <====================> SETUP <====================>
+  //*=====================> SETUP <=====================*//
   function setup(p5, canvasParentRef) {
     p5.createCanvas(260, 260).parent(canvasParentRef);
     p5.angleMode(p5.DEGREES);
@@ -39,7 +39,7 @@ export default function KaleidoscopeDesign(props) {
     // }
   }
 
-  // <====================> DRAW <====================>
+  //*=====================> DRAW <=====================*//
   function draw(p5) {
     p5.translate(p5.width / 2, p5.height / 2);
 
@@ -55,7 +55,7 @@ export default function KaleidoscopeDesign(props) {
       let pmy = p5.pmouseY - p5.height / 2;
 
       if (p5.mouseIsPressed) {
-        let hu = p5.map(p5.sin(xoff), -1, 1, 0, 400);
+        let hu = p5.map(p5.sin(xoff), -1, 1, 0, 200);
         xoff += 0.9;
         p5.stroke(hu, 255, 255, 255);
         for (let i = 0; i < symmetry; i++) {

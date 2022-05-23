@@ -6,38 +6,28 @@ import axios from "axios";
 import { API_URL } from "../App";
 import KaleidoscopeDesign from "./KaleidoscopeDesign";
 import { useHistory } from "react-router-dom";
-// import { CardMedia } from "@mui/material";
-// import placeholder from '../assets/kaleidoscopeCanvas/kc5.png'
 
-/* <====================> DEFINED FORM PROPERTIES <====================> */
-// const initialFValues = {
-//   name: "",
-//   id: 0,
-//   fullName: "",
-//   comment: "",
-//   postDate: new Date(),
-// };
 
 export default function KudoForm() {
   const [users, setUsers] = useState([]);
-  // <====================> SELLECT RECIPIENT <====================>
+  //*=====================> SELLECT RECIPIENT <=====================*//
   const [selectedUser, setSelectedUser] = useState({});
 
   const [textValue, setTextValue] = React.useState("");
 
-  // handle post navigate
+  //*=====================> HANDLE POST NAVIGATION FOLLOWING THE KUDO POST <=====================*//
   const history = useHistory();
 
   const handleChange = (event) => {
     setTextValue(event.target.value);
   };
 
-  const [triggerSave, setTriggerSave] = useState(false);
+  // const [triggerSave, setTriggerSave] = useState(false);
   const { v4: uuidv4 } = require("uuid");
   const newKudoId = uuidv4();
 
   const handleSubmit = (event) => {
-    //Make a network call somewhere
+    
     event.preventDefault();
 
     axios({
@@ -52,8 +42,6 @@ export default function KudoForm() {
     });
     history.push(`/kudos/${newKudoId}`);
   };
-
-  // <====================> CANVAS <====================> //
 
   // <====================> RETRIEVE KUDO DATA FROM SERVER <====================>
   useEffect(() => {

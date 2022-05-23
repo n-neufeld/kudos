@@ -205,6 +205,7 @@ export default function Kudo() {
                   <ListItem
                     sx={{
                       width: "90%",
+                      maxWidth:'23rem',
                       my: 1,
                       borderRadius: "1rem",
                       borderTopRightRadius: "0",
