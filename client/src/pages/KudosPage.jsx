@@ -5,17 +5,16 @@ import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Avatar from "@mui/material/Avatar";
+import { IconButton, Badge, CardActionArea } from "@mui/material";
 import Typography from "@mui/material/Typography";
-import axios from "axios";
-import { API_URL } from "../App";
-import Header from "../components/Header";
-import { CardActionArea } from "@mui/material";
-import Footer from "../components/Footer";
-import { IconButton, Badge } from "@mui/material";
 import CommentIcon from "@mui/icons-material/Comment";
 import SentimentVerySatisfiedSharpIcon from "@mui/icons-material/SentimentVerySatisfiedSharp";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-
+import axios from "axios";
+import { API_URL } from "../App";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Scroll from "../components/Scroll";
 import { getAuthor, getRecipient } from "../helper/helper";
 
 //*====================> SET THEME COLORS FOR BADGES <====================*//
@@ -70,6 +69,7 @@ function KudosPage() {
         minWidth: "20rem",
       }}
     >
+      <Scroll showBelow={250} />
       {/*=====================> PAGE HEADER <=====================*/}
       <Header />
       {/*=====================> KUDO CARDS POSTED <=====================*/}
