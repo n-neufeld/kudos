@@ -192,7 +192,7 @@ export default function Kudo() {
                 </IconButton>
               </CardActions>
             </Card>
-            {/*=======================================================================*/}
+            
             {/*=====================> COMMENTS SECTION <=====================*/}
             <Paper
               sx={{
@@ -219,7 +219,7 @@ export default function Kudo() {
                       my: 1,
                       borderRadius: "1rem",
                       borderTopRightRadius: "0",
-                      boxShadow: "2px -5px 10px #ccc, -20px -20px 100px #fff",
+                      boxShadow: "2px -2px 5px #ccc, -20px -20px 100px #fff",
                       borderRight: "1px solid #ccc",
                       borderTop: "1px solid #ccc",
                       backgroundColor: "white",

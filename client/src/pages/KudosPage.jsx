@@ -95,6 +95,7 @@ function KudosPage() {
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
+                  justifyContent:'space-between',
                   maxWidth: 345,
                   my: 2,
                   mx: 2,
