@@ -2,7 +2,7 @@
   {
     "userId": 1,
     "name": "Nathaniel Neufeld",
-    "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+    "avatar": "avatars/COF_20180128_160855_777.png",
     "position": "CEO",
     "department": "Executive",
     "email": "nneufeld@kudo.com",
@@ -21,18 +21,6 @@
             "text": "Thanks so much!",
             "timestamp": "2022-05-17T02:38:01.579Z",
             "author": 1
-          },
-          {
-            "text": "test",
-            "author": 1,
-            "id": "a1d05414-78c7-48f7-981e-b890a9b5626f",
-            "timestamp": "2022-05-23T17:35:31.282Z"
-          },
-          {
-            "text": "New One!",
-            "author": 1,
-            "id": "a48dcf66-61b5-45e1-a1f6-c24886f77ef8",
-            "timestamp": "2022-05-23T18:05:34.399Z"
           }
         ]
       },
@@ -107,7 +95,7 @@
   },
   {
     "userId": 3,
-    "name": "Adele Laurie Blue Adkins",
+    "name": "Adele Adkins",
     "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
     "position": "CEO",
     "department": "Executive",
@@ -121,7 +109,26 @@
         "image": "/canvasImages/kc4.png",
         "likes": 7,
         "timestamp": "2022-05-21T18:55:18.446Z",
-        "comments": []
+        "comments": [
+          {
+            "text": "You're so welcome, it was my pleasure! :)",
+            "author": 3,
+            "id": "d6f1ae8f-027c-42b6-bba4-bc0f91d50678",
+            "timestamp": "2022-05-22T19:03:58.042Z"
+          },
+          {
+            "text": "Thank you, thank you! This was a huge help for me.",
+            "author": 2,
+            "id": "d6f1ae8f-027c-42b6-bba4-bc0f91d50678",
+            "timestamp": "2022-05-22T19:03:58.042Z"
+          },
+          {
+            "text": "Such great material and ideas to take away from this. Thanks again!",
+            "author": 5,
+            "id": "d6f1ae8f-027c-42b6-bba4-bc0f91d50678",
+            "timestamp": "2022-05-22T19:03:58.042Z"
+          }
+        ]
       }
     ]
   },
@@ -139,9 +146,16 @@
         "recipient": 4,
         "author": 1,
         "image": "/canvasImages/create/kc8.png",
-        "likes": 1,
+        "likes": 2,
         "timestamp": "2022-05-23T18:07:14.219Z",
-        "comments": []
+        "comments": [
+          {
+            "text": "test",
+            "author": 1,
+            "id": "44993772-ca03-4202-9197-642f1e23ef33",
+            "timestamp": "2022-05-24T19:51:03.654Z"
+          }
+        ]
       }
     ]
   },

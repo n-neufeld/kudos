@@ -7,16 +7,15 @@ import { Box } from "@mui/system";
 
 
  const Scroll = (showBelow) => {
-    const [show, setShow] = useState(showBelow ? false : true);
+    // const [show, setShow] = useState(showBelow ? false : true);
     
     const handleScroll = () => {
-      if (window.pageYOffset > showBelow) {
-        if (!show) setShow(true);
-      } else {
-        if (show) setShow(false);
-      }
+    //   if (window.pageYOffset > showBelow) {
+    //     if (!show) setShow(true);
+    //   } else {
+    //     if (show) setShow(false);
+    //   }
     };
-    console.log(show);
     useEffect(() => {
       if (showBelow) {
         window.addEventListener("scroll", handleScroll);
@@ -31,22 +30,22 @@ import { Box } from "@mui/system";
 
   return (
     <Box>
-      {show && (
+      {/* {show && ( */}
         <IconButton onClick={handleClick} sx={{
             zIndex:'2',
             position:'fixed',
-            bottom: '2vh',
-            backgroundColor:'#DCDCDC',
-            color:'black',
+            bottom: '5vh',
+            backgroundColor:'#fff',
+            color:'#FF8B53',
             '&:hover, &.Mui-focusVisible': {
                 transition: '0.3s',
-                color:'#397BA6',
-                backgroundColor:'#DCDCDC'
+                color:'#fff',
+                backgroundColor:'#FF8B53'
             }
         }}>
           <ExpandLessIcon />
         </IconButton>
-      )}
+      {/* )} */}
     </Box>
   );
 }

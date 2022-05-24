@@ -1,3 +1,5 @@
+// FUNCTIONS TO SET THE AUTHOR AND RECIPIENT IN THE TITLE OF THE KUDO CARDS //
+
 //*=====================> GET AUTHOR <=====================*//
 export const getAuthor = (users, kudo) => {
   const author = users.find((u) => u.userId === kudo.author);

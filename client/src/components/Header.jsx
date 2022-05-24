@@ -90,7 +90,7 @@ const Header = () => {
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar
                     alt="Nathaniel Neufeld"
-                    src="/static/images/avatar/2.jpg"
+                    src="/client/src/assets/avatars/COF_20180128_160855_777.png"
                     sx={{ bgcolor: "#FF8B53" }}
                   />
                 </IconButton>

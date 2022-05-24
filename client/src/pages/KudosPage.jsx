@@ -69,7 +69,7 @@ function KudosPage() {
         minWidth: "20rem",
       }}
     >
-      <Scroll showBelow={250} />
+      
       {/*=====================> PAGE HEADER <=====================*/}
       <Header />
       {/*=====================> KUDO CARDS POSTED <=====================*/}
@@ -174,6 +174,7 @@ function KudosPage() {
                 </CardActions>
               </CardActionArea>
             ))}
+      <Scroll showBelow={250} />
       </Box>
       <Footer />
     </Box>
