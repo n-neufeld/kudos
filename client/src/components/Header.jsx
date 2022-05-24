@@ -69,23 +69,23 @@ const Header = () => {
               textDecoration: "none",
             }}
           >
-            {/* <==========> HEADER ICON <==========> */}
+            {/*===========> HEADER ICON <===========*/}
             <CelebrationIcon
               sx={{
                 mr: 1,
                 color: "#FF8B53",
               }}
             />
-            {/* <==========> HEADER TITLE <==========> */}
+            {/*===========> HEADER TITLE <===========*/}
             <Typography>KUDOS</Typography>
           </Box>
 
-          {/* <====================> PROFILE / CREATE KUDO CONTAINER <====================> */}
+          {/*=====================> PROFILE / CREATE KUDO CONTAINER <=====================*/}
           <Box
             sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
           >
             <Box sx={{ flexGrow: 0, md: "flex" }}>
-              {/* <==========> AVATAR ICON <==========> */}
+              {/*===========> AVATAR ICON <===========*/}
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                   <Avatar
@@ -95,7 +95,7 @@ const Header = () => {
                   />
                 </IconButton>
               </Tooltip>
-              {/* <==========> PROFILE MENU DROPDOWN <==========> */}
+              {/*===========> PROFILE MENU DROPDOWN <===========*/}
               <Menu
                 sx={{ mt: "50px", mr: "50px" }}
                 id="menu-appbar"
@@ -120,7 +120,7 @@ const Header = () => {
               </Menu>
             </Box>
 
-            {/* <====================> CREATE KUDO BUTTON <====================> */}
+            {/*=====================> CREATE KUDO BUTTON <=====================*/}
             <Button
               href="/create-kudo"
               variant="contained"
