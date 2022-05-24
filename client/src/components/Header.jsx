@@ -20,12 +20,12 @@ const Header = () => {
   // const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  // <====================> OPEN MENU <====================>
+  //*=====================> OPEN MENU <=====================*//
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
 
-  //  <====================> CLOSE MENU <====================>
+  //*=====================> CLOSE MENU <=====================*//
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
@@ -52,7 +52,7 @@ const Header = () => {
         }}
       >
         <Toolbar disableGutters>
-          {/* <====================> ICON & TITLE + <====================> */}
+          {/*=====================> ICON & TITLE <=====================*/}
           <Box
             component="a"
             href="/"
