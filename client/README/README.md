@@ -40,6 +40,4 @@ Run both server and client.
 
 ## Demo
 
-Insert gif or link to demo
-
-<img src="./kudos.gif">
+<img src="/README/kudos.gif" width="320">
