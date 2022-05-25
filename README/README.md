@@ -34,7 +34,7 @@ Run both server and client.
 
 ## Tech Stack
 
-**Client:** React, Redux, TailwindCSS
+**Client:** <img src="/README/tech-stack/react50.png"><img src="/README/tech-stack/mui60.png">
 
 **Server:** Node, Express
 
