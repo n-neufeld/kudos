@@ -176,5 +176,50 @@
     "department": "Shipping",
     "email": "pmeany@kudo.com",
     "kudos": []
+  },
+  {
+    "userId": 7,
+    "name": "Nicholas N.",
+    "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+    "position": "Driver",
+    "department": "Shipping",
+    "email": "pmeany@kudo.com",
+    "kudos": []
+  },
+  {
+    "userId": 8,
+    "name": "Daniil M.",
+    "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+    "position": "Driver",
+    "department": "Shipping",
+    "email": "pmeany@kudo.com",
+    "kudos": []
+  },
+  {
+    "userId": 9,
+    "name": "Michael D.",
+    "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+    "position": "Driver",
+    "department": "Shipping",
+    "email": "pmeany@kudo.com",
+    "kudos": []
+  },
+  {
+    "userId": 10,
+    "name": "Ryan O.",
+    "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+    "position": "Driver",
+    "department": "Shipping",
+    "email": "pmeany@kudo.com",
+    "kudos": []
+  },
+  {
+    "userId": 11,
+    "name": "Phoebe C.",
+    "avatar": "https://th.bing.com/th/id/R.9fe1988f83eeae24d16db131475d31b2?rik=Eq0UEK5i3b%2bfgg&riu=http%3a%2f%2fcohenwoodworking.com%2fwp-content%2fuploads%2f2016%2f09%2fimage-placeholder-500x500.jpg&ehk=6xxwN2hsF1pbhTTWWflHnkIka8Rxe3PZahhFfRQJIrY%3d&risl=&pid=ImgRaw&r=0",
+    "position": "Driver",
+    "department": "Shipping",
+    "email": "pmeany@kudo.com",
+    "kudos": []
   }
 ]
