@@ -1,10 +1,6 @@
-
 # 🎉 KUDOS!
 
 Kudos, a peer-to-peer social media celebration platform to praise those you work with!
-
-
-
 
 ## Installation
 
@@ -14,17 +10,21 @@ Install my-project with npm
   cd client
   npm install
 ```
+
 ```node
   cd server
   node install
-``` 
+```
+
 ## Run
 
 ```zsh
   cd server
   npm run dev
 ```
+
 Run both server and client.
+
 ## Features
 
 - Create a Kudo
@@ -32,16 +32,12 @@ Run both server and client.
 - Draw a unique canvas on create Kudo
 - Responsive design
 
-
 ## Tech Stack
 
 **Client:** React, Redux, TailwindCSS
 
 **Server:** Node, Express
 
-
 ## Demo
 
-Insert gif or link to demo
-
-<img src="./brainstation-kudos.gif">
+<img src="/README/kudos.gif" width="320">
