@@ -7,15 +7,8 @@ import { Box } from "@mui/system";
 
 
  const Scroll = (showBelow) => {
-    // const [show, setShow] = useState(showBelow ? false : true);
     
-    const handleScroll = () => {
-    //   if (window.pageYOffset > showBelow) {
-    //     if (!show) setShow(true);
-    //   } else {
-    //     if (show) setShow(false);
-    //   }
-    };
+    const handleScroll = () => {};
     useEffect(() => {
       if (showBelow) {
         window.addEventListener("scroll", handleScroll);
@@ -30,7 +23,6 @@ import { Box } from "@mui/system";
 
   return (
     <Box>
-      {/* {show && ( */}
         <IconButton onClick={handleClick} sx={{
             zIndex:'2',
             position:'fixed',
@@ -46,7 +38,6 @@ import { Box } from "@mui/system";
         }}>
           <ExpandLessIcon />
         </IconButton>
-      {/* )} */}
     </Box>
   );
 }
