@@ -1,3 +1,5 @@
+<body color="white">
+
 # 🎉 KUDOS!
 
 Kudos, a peer-to-peer social media celebration platform to praise those you work with!
@@ -34,9 +36,9 @@ Run both server and client.
 
 ## Tech Stack
 
-**Client:** <img src="/README/tech-stack/react50.png"><img src="/README/tech-stack/mui60.png">
+**Client:** <img src="/README/tech-stack/react60.png"><img src="/README/tech-stack/mui60.png"><img src="/README/tech-stack/p560.jpg"><img src="/README/tech-stack/axios60.jpg"><img src="/README/tech-stack/js60.jpg"><img src="/README/tech-stack/sass60.jpg"><img src="/README/tech-stack/html-css60.jpg">
 
-**Server:** Node, Express
+**Server:** <img src="/README/tech-stack/nodejs60.jpg"><img src="/README/tech-stack/express60.jpg">
 
 ## Demo
 
