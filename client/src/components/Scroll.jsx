@@ -34,7 +34,8 @@ import { Box } from "@mui/system";
         <IconButton onClick={handleClick} sx={{
             zIndex:'2',
             position:'fixed',
-            bottom: '5vh',
+            bottom: '2vh',
+            right: '4vh',
             backgroundColor:'#fff',
             color:'#FF8B53',
             '&:hover, &.Mui-focusVisible': {
