@@ -36,7 +36,7 @@ Run both server and client.
 
 ## Tech Stack
 
-**Client:**  <img src="/README/tech-stack/react60.jpg"> <img src="/README/tech-stack/mui60.jpg">  <img src="/README/tech-stack/p560.jpg">  <img src="/README/tech-stack/axios60.jpg">  <img src="/README/tech-stack/js60.jpg">  <img src="/README/tech-stack/sass60.jpg">  <img src="/README/tech-stack/html-css60.jpg">
+**Client:**  <img src="/README/tech-stack/react60.jpg"> <img src="/README/tech-stack/mui60.jpg">  <img src="/README/tech-stack/p560.jpg">  <img src="/README/tech-stack/axios70.jpg">  <img src="/README/tech-stack/js60.jpg">  <img src="/README/tech-stack/sass60.jpg">  <img src="/README/tech-stack/html-css60.jpg">
 
 **Server:**  <img src="/README/tech-stack/nodejs60.jpg">  <img src="/README/tech-stack/express60.jpg">
 
