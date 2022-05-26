@@ -78,7 +78,7 @@
         "id": "3653145b-5494-4db8-85b9-37a65ddgt76943f7",
         "text": "Way to go with that sale! You worked so hard and it paid off.",
         "image": "/canvasImages/kc3.png",
-        "likes": 10,
+        "likes":4,
         "timestamp": "2022-05-17T02:38:01.579Z",
         "author": 3,
         "recipient": 2,
@@ -148,14 +148,7 @@
         "image": "/canvasImages/create/kc8.png",
         "likes": 1,
         "timestamp": "2022-05-23T18:07:14.219Z",
-        "comments": [
-          {
-            "text": "awesome!",
-            "author": 1,
-            "id": "dee58da2-aea6-416d-b966-bdda6972aef2",
-            "timestamp": "2022-05-25T19:26:20.997Z"
-          }
-        ]
+        "comments": []
       }
     ]
   },
@@ -166,18 +159,7 @@
     "position": "Educator",
     "department": "Office",
     "email": "bstation@kudo.com",
-    "kudos": [
-      {
-        "id": "e816ac5a-c0cf-4c5c-a79c-9e45cc192832",
-        "text": "Thanks so much for everything!",
-        "recipient": 5,
-        "author": 1,
-        "image": "/canvasImages/create/kc13.png",
-        "likes": 0,
-        "timestamp": "2022-05-25T19:26:44.710Z",
-        "comments": []
-      }
-    ]
+    "kudos": []
   },
   {
     "userId": 6,

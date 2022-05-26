@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { IconButton } from "@mui/material";
 import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import { Box } from "@mui/system";
@@ -30,6 +30,7 @@ import { Box } from "@mui/system";
             right: '4vh',
             backgroundColor:'#fff',
             color:'#FF8B53',
+            boxShadow: "-5px 0px 10px #ccc, -20px -20px 100px #fff",
             '&:hover, &.Mui-focusVisible': {
                 transition: '0.3s',
                 color:'#fff',

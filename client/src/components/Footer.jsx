@@ -3,7 +3,6 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Container from "@mui/material/Container";
-import Scroll from "./Scroll";
 
 export default function Footer() {
   
