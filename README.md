@@ -1,5 +1,5 @@
 # 🎉 KUDOS!
-
+<img width="1280" alt="KUDOS" src="https://ibb.co/0ndLwHx">
 
 Kudos, a peer-to-peer social media celebration platform to praise those you work with!
 
@@ -12,9 +12,9 @@ Install my-project with npm
   npm install
 ```
 
-```node
+```zsh
   cd server
-  node install
+  npm install
 ```
 
 ## Run
