@@ -146,14 +146,14 @@
         "recipient": 4,
         "author": 1,
         "image": "/canvasImages/create/kc8.png",
-        "likes": 2,
+        "likes": 1,
         "timestamp": "2022-05-23T18:07:14.219Z",
         "comments": [
           {
-            "text": "test",
+            "text": "awesome!",
             "author": 1,
-            "id": "44993772-ca03-4202-9197-642f1e23ef33",
-            "timestamp": "2022-05-24T19:51:03.654Z"
+            "id": "dee58da2-aea6-416d-b966-bdda6972aef2",
+            "timestamp": "2022-05-25T19:26:20.997Z"
           }
         ]
       }
@@ -166,7 +166,18 @@
     "position": "Educator",
     "department": "Office",
     "email": "bstation@kudo.com",
-    "kudos": []
+    "kudos": [
+      {
+        "id": "e816ac5a-c0cf-4c5c-a79c-9e45cc192832",
+        "text": "Thanks so much for everything!",
+        "recipient": 5,
+        "author": 1,
+        "image": "/canvasImages/create/kc13.png",
+        "likes": 0,
+        "timestamp": "2022-05-25T19:26:44.710Z",
+        "comments": []
+      }
+    ]
   },
   {
     "userId": 6,
@@ -184,25 +195,7 @@
     "position": "Driver",
     "department": "Shipping",
     "email": "pmeany@kudo.com",
-    "kudos": [
-      {
-        "id": "c94cd07f-e2cf-4e17-8be7-c62d4a3bec0c",
-        "text": "Thank you for all your help!",
-        "recipient": 7,
-        "author": 1,
-        "image": "/canvasImages/create/kc12.png",
-        "likes": 0,
-        "timestamp": "2022-05-25T16:32:53.275Z",
-        "comments": [
-          {
-            "text": "Greatness is you!",
-            "author": 1,
-            "id": "8b3b1d77-6fac-479d-a1b9-d430be78612f",
-            "timestamp": "2022-05-25T16:33:20.472Z"
-          }
-        ]
-      }
-    ]
+    "kudos": []
   },
   {
     "userId": 8,
