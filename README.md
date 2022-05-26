@@ -1,11 +1,10 @@
-# 🎉 KUDOS!
-<img width="1280" alt="KUDOS" src="https://i.ibb.co/JcMThD9/KUDO-panel.png">
+<img alt="KUDOS" src="https://i.ibb.co/JcMThD9/KUDO-panel.png">
 
 Kudos, a peer-to-peer social media celebration platform to praise those you work with!
 
 ## Installation
 
-Install my-project with npm
+Install KUDOS with npm
 
 ```zsh
   cd client
@@ -19,12 +18,12 @@ Install my-project with npm
 
 ## Run
 
+Run both server and client.
+
 ```zsh
   cd server
   npm run dev
 ```
-
-Run both server and client.
 
 ## Features
 
