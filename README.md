@@ -1,5 +1,5 @@
 # 🎉 KUDOS!
-<img width="1280" alt="KUDOS" src="https://ibb.co/0ndLwHx">
+<img width="1280" alt="KUDOS" src="https://i.ibb.co/JcMThD9/KUDO-panel.png">
 
 Kudos, a peer-to-peer social media celebration platform to praise those you work with!
 
