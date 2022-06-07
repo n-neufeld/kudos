@@ -1,4 +1,4 @@
-<img alt="KUDOS" src="https://i.ibb.co/JcMThD9/KUDO-panel.png">
+<img alt="KUDOS" src="https://nathaniel2.imgbb.com/">
 
 A peer-to-peer social media celebration platform to praise those you work with!
 
