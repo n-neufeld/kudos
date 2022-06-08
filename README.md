@@ -8,6 +8,9 @@ A peer-to-peer social media celebration platform to praise those you work with!
 
  Curious to seem more? Try this app and see for yourself! 🚀
 
+Application Presentation:
+ [![Here](https://www.loom.com/share/e92bb26dd7bc491781b5a73d816bfd97)] 
+
 ## Installation
 
 Install KUDOS with npm
