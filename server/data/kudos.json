@@ -11,16 +11,16 @@
         "id": "3658145b-5494-4db8-85b9-37a6576943f7",
         "text": "Such an amazing job!",
         "image": "/canvasImages/kc0.png",
-        "likes": 4,
-        "timestamp": "2022-05-17T02:38:01.579Z",
+        "likes": 2,
+        "timestamp": "2022-05-26T02:38:01.579Z",
         "author": 2,
         "recipient": 1,
         "comments": [
           {
-            "id": "3658145b-5494-4db8-85b9-37a6512343f7",
-            "text": "Thanks so much!",
-            "timestamp": "2022-05-17T02:38:01.579Z",
-            "author": 1
+            "text": "thank you so much!",
+            "author": 1,
+            "id": "90f6b964-8800-4f78-aafd-04b8d1ff1d10",
+            "timestamp": "2022-05-26T21:47:21.053Z"
           }
         ]
       },
@@ -78,18 +78,11 @@
         "id": "3653145b-5494-4db8-85b9-37a65ddgt76943f7",
         "text": "Way to go with that sale! You worked so hard and it paid off.",
         "image": "/canvasImages/kc3.png",
-        "likes":4,
+        "likes": 4,
         "timestamp": "2022-05-17T02:38:01.579Z",
         "author": 3,
         "recipient": 2,
-        "comments": [
-          {
-            "text": "Great work, Tom!",
-            "author": 1,
-            "id": "d6f1ae8f-027c-42b6-bba4-bc0f91d50678",
-            "timestamp": "2022-05-22T19:03:58.042Z"
-          }
-        ]
+        "comments": []
       }
     ]
   },
@@ -107,8 +100,8 @@
         "recipient": 3,
         "author": 4,
         "image": "/canvasImages/kc4.png",
-        "likes": 7,
-        "timestamp": "2022-05-21T18:55:18.446Z",
+        "likes": 8,
+        "timestamp": "2022-05-26T18:55:18.446Z",
         "comments": [
           {
             "text": "You're so welcome, it was my pleasure! :)",
@@ -127,6 +120,12 @@
             "author": 5,
             "id": "d6f1ae8f-027c-42b6-bba4-bc0f91d50678",
             "timestamp": "2022-05-22T19:03:58.042Z"
+          },
+          {
+            "text": "That was great!",
+            "author": 1,
+            "id": "93923e88-b849-44dd-a398-20fa3008bfe2",
+            "timestamp": "2022-06-08T16:28:42.210Z"
           }
         ]
       }
@@ -146,9 +145,16 @@
         "recipient": 4,
         "author": 1,
         "image": "/canvasImages/create/kc8.png",
-        "likes": 1,
-        "timestamp": "2022-05-23T18:07:14.219Z",
-        "comments": []
+        "likes": 4,
+        "timestamp": "2022-05-27T18:07:14.219Z",
+        "comments": [
+          {
+            "text": "that was amazing!",
+            "author": 1,
+            "id": "1ffb2c95-c509-45ab-afcd-0f55f92f15d2",
+            "timestamp": "2022-06-08T16:35:05.723Z"
+          }
+        ]
       }
     ]
   },
